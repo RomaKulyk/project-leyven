@@ -16,6 +16,8 @@ class MainMenu:
         This is a method to define and click Main Logo button
     catalog
         This is a method to find catalog button
+    search
+        This is a method to find, clear and enter query into search field
     """
     def __init__(self, webdriver) -> None:
 
@@ -41,3 +43,15 @@ class MainMenu:
             By.XPATH, CATALOG)
         action.move_to_element(self.catalog_button)
         action.perform()
+
+    def search(self, user_input: str) -> None:
+        """
+        This is a method to find, clear and enter query into search field.
+        Parameters
+        user_input:str
+                   Username to log in with
+        """
+        self.search_field = self.driver.find_element(
+            By.XPATH, SEARCH_FIELD)
+        self.search_field.clear()
+        self.search_field.send_keys(user_input)

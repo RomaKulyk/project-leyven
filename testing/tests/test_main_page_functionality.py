@@ -43,6 +43,13 @@ def test_main_page(chrome_browser: object):
     catalog_dropdown.catalog_dropdown()
     assert catalog_dropdown.catalog_dropdown_container.is_enabled()
     assert catalog_dropdown.catalog_dropdown_container.is_displayed()
-
     
+    # 7.Find and click MAIN_LOGO button
+    main_menu.main_logo()
+    time.sleep(1)
 
+    # 8.Input some query into Search field
+    main_menu.search('Simparica')
+    assert main_menu.search_field.is_enabled()
+    assert main_menu.search_field.is_displayed()
+    time.sleep(3)

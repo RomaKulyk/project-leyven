@@ -17,3 +17,6 @@ CATALOG = "//div[@class='dropdown dropdown-hover']"
 
 # Catalog Dropdown
 CATALOG_DROPDOWN = "//div[@class='card dropdown-content card-compact z-[1] w-[1000px] bg-white p-2 text-slate-900 shadow-xl']"
+
+# Search Field
+SEARCH_FIELD = "(//input[@class='outline-none xl:cursor-pointer'])[1]"

@@ -27,7 +27,7 @@ def test_main_page(chrome_browser: object):
     hm_form = HelpMeForm(driver)
     # 4.Fill in the Help Me Form
     hm_form.enter_username("R2D2")
-    hm_form.enter_phone("095-731-85-54")
+    hm_form.enter_phone("095-777-77-77")
     hm_form.enter_your_question(
         "Why I have to log in if there is not any functionality for that?")
     time.sleep(5)
