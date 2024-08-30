@@ -52,4 +52,19 @@ def test_main_page(chrome_browser: object):
     main_menu.search('Simparica')
     assert main_menu.search_field.is_enabled()
     assert main_menu.search_field.is_displayed()
+    
+    
+    time.sleep(3)
+   
+    # 9.Click Cross Button
+    main_menu.cross()
+    assert main_menu.cross_button.is_enabled()
+    assert main_menu.cross_button.is_displayed()
+    main_menu.cross_button.click()
+    time.sleep(3)
+
+    # 10.Hover mouse over Phone button
+    main_menu.phone()
+    assert main_menu.phone_button.is_enabled()
+    assert main_menu.phone_button.is_displayed()
     time.sleep(3)

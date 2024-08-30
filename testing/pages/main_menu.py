@@ -18,6 +18,10 @@ class MainMenu:
         This is a method to find catalog button
     search
         This is a method to find, clear and enter query into search field
+    phone
+        This is a method to find and define Phone button of Main Menu
+    cross
+        This is a method to define Cross Button of Search Field
     """
     def __init__(self, webdriver) -> None:
 
@@ -55,3 +59,18 @@ class MainMenu:
             By.XPATH, SEARCH_FIELD)
         self.search_field.clear()
         self.search_field.send_keys(user_input)
+    
+    def phone(self) -> None:
+
+        action = ActionChains(self.driver)
+        """This is a method to find and define Phone button of Main Menu."""
+        self.phone_button = self.driver.find_element(
+            By.XPATH, PHONE)
+        action.move_to_element(self.phone_button)
+        action.perform()
+
+    def cross(self) -> None:
+        """This is a method to define Cross Button of Search Field."""
+        self.cross_button = self.driver.find_element(
+            By.XPATH, CROSS_BUTTON)
+

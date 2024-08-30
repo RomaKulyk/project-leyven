@@ -14,9 +14,7 @@ CLICK_SEND = "//button[@class = 'btn btn-primary btn-lg mx-auto mb-10 w-full max
 # Main Menu
 MAIN_LOGO = "//a[@class = 'btn btn-outline flex border-none']"
 CATALOG = "//div[@class='dropdown dropdown-hover']"
-
-# Catalog Dropdown
 CATALOG_DROPDOWN = "//div[@class='card dropdown-content card-compact z-[1] w-[1000px] bg-white p-2 text-slate-900 shadow-xl']"
-
-# Search Field
 SEARCH_FIELD = "(//input[@class='outline-none xl:cursor-pointer'])[1]"
+CROSS_BUTTON = "//*[contains(@class,'lucide lucide-x ')]"
+PHONE = "//div[@class = 'tooltip tooltip-bottom tooltip-info text-xl']"
