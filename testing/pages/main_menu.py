@@ -16,8 +16,6 @@ class MainMenu:
         This is a method to define and click Main Logo button
     catalog
         This is a method to find catalog button
-    catalog_dropdown
-        This is a method to find and define Catalog Dropdown Container.
     """
     def __init__(self, webdriver) -> None:
 
