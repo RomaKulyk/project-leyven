@@ -7,6 +7,7 @@ import time
 def test_main_page(chrome_browser: object):
     driver = chrome_browser
     main_page = MainPage(driver)
+    
     # 1.Open MAIN_URL page
     main_page.open_page(MAIN_URL)
     time.sleep(1)
