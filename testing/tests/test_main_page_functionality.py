@@ -1,6 +1,7 @@
 import pytest
 from testing.pages.main_page import *
 from testing.pages.hm_form import *
+from testing.pages.main_menu import *
 from testing.lib.constants import *
 import time
 
@@ -24,8 +25,9 @@ def test_main_page(chrome_browser: object):
     assert main_page.show_all_button.is_displayed()
     time.sleep(1)
     
+    main_menu = MainMenu(driver)
     # 4.Find and click MAIN_LOGO button
-    main_page.main_logo()
-    assert main_page.main_logo_button.is_enabled()
-    assert main_page.main_logo_button.is_displayed()
+    main_menu.main_logo()
+    assert main_menu.main_logo_button.is_enabled()
+    assert main_menu.main_logo_button.is_displayed()
 

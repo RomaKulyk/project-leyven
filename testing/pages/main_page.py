@@ -21,8 +21,6 @@ class MainPage:
        This is a method to define Help Me button 
     hm_form
         This is a method to define Help Me Form    
-    main_logo
-        This is a method to define and click Main Logo button
     """
     def __init__(self, webdriver) -> None:
         """
@@ -60,9 +58,3 @@ class MainPage:
         """This is a method to define Help Me Form."""
         self.help_me_form = self.driver.find_element(
             By.XPATH, HELP_ME_FORM)
-        
-    def main_logo(self) -> None:
-        """This is a method to define and click Main Logo button."""
-        self.main_logo_button = self.driver.find_element(
-            By.XPATH, MAIN_LOGO)
-        self.main_logo_button.click()
