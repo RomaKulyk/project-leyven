@@ -2,6 +2,7 @@ import pytest
 from testing.pages.main_page import *
 from testing.pages.hm_form import *
 from testing.pages.main_menu import *
+from testing.pages.catalog_dropdown import *
 from testing.lib.constants import *
 import time
 
@@ -30,4 +31,18 @@ def test_main_page(chrome_browser: object):
     main_menu.main_logo()
     assert main_menu.main_logo_button.is_enabled()
     assert main_menu.main_logo_button.is_displayed()
+
+    # 5.Hover mouse over Catalog button
+    main_menu.catalog()
+    assert main_menu.catalog_button.is_enabled()
+    assert main_menu.catalog_button.is_displayed()
+    time.sleep(1)
+
+    catalog_dropdown = CatalogDropdown(driver)
+    # 6.Ensure that Catalog Dropdown container is displayed
+    catalog_dropdown.catalog_dropdown()
+    assert catalog_dropdown.catalog_dropdown_container.is_enabled()
+    assert catalog_dropdown.catalog_dropdown_container.is_displayed()
+
+    
 
