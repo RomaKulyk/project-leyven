@@ -22,9 +22,15 @@ class MainMenu:
         This is a method to find and define Phone button of Main Menu
     cross
         This is a method to define Cross Button of Search Field
+    facebook
+        This is a method to find and define Facebook button
+    instagram
+        This is a method to find and define Instagram button
+    tiktok
+        This is a method to find and define Tiktok button
     """
-    def __init__(self, webdriver) -> None:
 
+    def __init__(self, webdriver) -> None:
         """
         This is a method to initialize instance of the MainMenu class.
         Parameters
@@ -40,7 +46,6 @@ class MainMenu:
         self.main_logo_button.click()
 
     def catalog(self) -> None:
-
         action = ActionChains(self.driver)
         """This is a method to find catalog button."""
         self.catalog_button = self.driver.find_element(
@@ -61,7 +66,6 @@ class MainMenu:
         self.search_field.send_keys(user_input)
     
     def phone(self) -> None:
-
         action = ActionChains(self.driver)
         """This is a method to find and define Phone button of Main Menu."""
         self.phone_button = self.driver.find_element(
@@ -74,3 +78,20 @@ class MainMenu:
         self.cross_button = self.driver.find_element(
             By.XPATH, CROSS_BUTTON)
 
+    def facebook(self) -> None:
+        """This is a method to find and define Facebook button."""
+        self.facebook_button = self.driver.find_element(
+            By.XPATH, FACEBOOK)
+        self.facebook_button.click()
+
+    def instagram(self) -> None:
+        """This is a method to find and define Instagram button."""
+        self.instagram_button = self.driver.find_element(
+            By.XPATH, INSTAGRAM)
+        self.instagram_button.click()
+        
+    def tiktok(self) -> None:
+        """This is a method to find and define Tiktok button."""
+        self.tiktok_button = self.driver.find_element(
+            By.XPATH, TIKTOK)
+        self.tiktok_button.click()

@@ -18,3 +18,7 @@ CATALOG_DROPDOWN = "//div[@class='card dropdown-content card-compact z-[1] w-[10
 SEARCH_FIELD = "(//input[@class='outline-none xl:cursor-pointer'])[1]"
 CROSS_BUTTON = "//*[contains(@class,'lucide lucide-x ')]"
 PHONE = "//div[@class = 'tooltip tooltip-bottom tooltip-info text-xl']"
+
+FACEBOOK = "(//*[contains(@href,'www.facebook.com')])[1]"
+INSTAGRAM = "(//*[contains(@href,'www.instagram.com')])[1]"
+TIKTOK = "(//*[contains(@href,'www.tiktok.com')])[1]"
