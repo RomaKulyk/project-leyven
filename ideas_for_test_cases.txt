@@ -1,0 +1,21 @@
+1. User Registration and Login: Verify that users can register and log in with
+valid credentials, and handle invalid credentials appropriately.
+2. Product Search: Ensure the search functionality returns relevant results
+based on keywords, filters, and categories.
+3. Product Details Page: Check that product details, images, prices, and
+availability are displayed correctly.
+4. Shopping Cart: Test adding, updating, and removing items from the cart, and
+verify the cart’s total price calculation.
+5. Checkout Process: Validate the entire checkout process, including address
+entry, payment options, and order review.
+6. Payment Gateway Integration: Ensure that various payment methods
+(credit/debit cards, PayPal, etc.) work correctly and securely.
+7. Order Confirmation and Tracking: Verify that users receive order confirmation
+emails and can track their orders.
+8 Coupon and Discount Application: Test the application of coupons and discounts
+during checkout and ensure they are calculated correctly.
+9. User Account Management: Check functionalities like updating profile
+information, viewing order history, and managing saved addresses.
+10. Security Testing: Ensure data protection, secure transactions, and
+protection against vulnerabilities like SQL injection and cross-site scripting
+(XSS).
