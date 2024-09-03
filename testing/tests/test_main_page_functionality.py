@@ -11,22 +11,32 @@ def test_main_page(chrome_browser: object):
     
     # 1.Open MAIN_URL page
     main_page.open_page(MAIN_URL)
-    time.sleep(1)
-
-    # 2.Find and click BUY_PRODUDCTS
-    main_page.buy_products()
-    assert main_page.buy_products_button.is_enabled()
-    # assert main_page.buy_products_button.is_displayed()
-    time.sleep(1)
+    time.sleep(3)
     
-    # 3.Find and click SHOW_ALL button
+    # 2.Find and click SHOW_ALL button
     main_page.show_all()
     assert main_page.show_all_button.is_enabled()
     assert main_page.show_all_button.is_displayed()
-    time.sleep(1)
-    
+    time.sleep(3)
+
     main_menu = MainMenu(driver)
-    # 4.Find and click MAIN_LOGO button
+    # 3.Find and click MAIN_LOGO button
     main_menu.main_logo()
     assert main_menu.main_logo_button.is_enabled()
     assert main_menu.main_logo_button.is_displayed()
+    time.sleep(3)
+
+    # 4.Find and click BUY_PRODUDCTS
+    main_page.buy_products()
+    time.sleep(3)    
+    assert main_page.buy_products_button.is_enabled()
+    # assert main_page.buy_products_button.is_displayed()
+    # main_page.buy_products_button.click()
+        
+    main_menu = MainMenu(driver)
+    # 5.Find and click MAIN_LOGO button
+    main_menu.main_logo()
+    assert main_menu.main_logo_button.is_enabled()
+    assert main_menu.main_logo_button.is_displayed()
+    time.sleep(3)
+
