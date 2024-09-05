@@ -1,6 +1,8 @@
 from selenium.webdriver.common.by import By
 from testing.lib.constants import *
 from selenium import webdriver
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
 
 class MainPage:
     """
@@ -39,13 +41,29 @@ class MainPage:
     def buy_products(self) -> None:
         """This is a method to define Buy Products button."""
         self.buy_products_button = self.driver.find_element(
-            By.XPATH, BUY_PRODUCTS)
+            By.XPATH, FRAME)
         # self.buy_products_button.click()
 
+    # def buy_products(self) -> None:
+    #     """This is a method to define Buy Products button."""
+    #     # self.driver.switch_to.frame(FRAME)
+    #     wait = WebDriverWait(self.driver, 10)
+    #     self.buy_products_button = wait.until(EC.element_to_be_clickable((
+    #         By.XPATH, FRAME)))
+        
+    # def show_all(self) -> None:
+    #     """This is a method to define Show All button."""
+    #     self.show_all_button = self.driver.find_element(
+    #         By.XPATH, SHOW_ALL)
+    #     self.show_all_button.click()
+    
     def show_all(self) -> None:
-        """This is a method to define Show All button."""
-        self.show_all_button = self.driver.find_element(
-            By.XPATH, SHOW_ALL)
+        """This is a method to define Buy Products button."""
+        wait = WebDriverWait(self.driver, 10)
+        # self.show_all_button = wait.until(EC.presence_of_element_located((
+        #     By.XPATH, SHOW_ALL)))
+        self.show_all_button = wait.until(EC.element_to_be_clickable((
+            By.XPATH, SHOW_ALL)))
         self.show_all_button.click()
         
     def help_me(self) -> None:

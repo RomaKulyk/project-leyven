@@ -30,8 +30,9 @@ def test_main_page(chrome_browser: object):
     main_page.buy_products()
     time.sleep(3)    
     assert main_page.buy_products_button.is_enabled()
-    # assert main_page.buy_products_button.is_displayed()
-    # main_page.buy_products_button.click()
+    assert main_page.buy_products_button.is_displayed()
+    main_page.buy_products_button.click()
+    time.sleep(3)
         
     main_menu = MainMenu(driver)
     # 5.Find and click MAIN_LOGO button

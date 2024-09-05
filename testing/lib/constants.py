@@ -1,6 +1,7 @@
 # MainPage
 MAIN_URL = "https://www.leyven.com.ua/"
 BUY_PRODUCTS = "//button[@class = 'btn btn-primary btn-lg text-white']"
+FRAME = "//div[@class = 'mt-3 sm:mb-10']"
 SHOW_ALL = "//button[@class = 'group mt-3 flex items-center gap-3 rounded-xl px-5 py-3 text-lg font-medium transition-all  duration-300 hover:bg-primary hover:text-white hover:shadow-xl max-sm:hidden sm:text-xl']"
 HELP_ME = "//div[@class = 'group fixed bottom-2 right-2 z-[1] rounded-full bg-primary transition duration-200 hover:scale-105 sm:bottom-5 sm:right-5']"
 
