@@ -1,0 +1,20 @@
+StaleElementReferenceException is one of the most common Selenium exceptions
+which is often surfaced when the web element you are trying to interact with
+is no longer associated with an HTML element in the DOM. As Selenium tries to
+reference a stale element, it throws a StaleElementReferenceException. It is 
+one of the WebDriverException class in Selenium.
+
+The possible reasons for the web element getting stale can be:
+- a page refresh;
+- DOM update;
+- location of the web element being changed.
+
+When does Stale Element Reference Exception occur?
+1. The HTML web element is No Longer present on the webpage:
+There can be scenarios when the web page gets refreshed or updated to a
+JavaScript operation and hence the reference of the elements to be interacted
+with gets stale leading to StaleElementReferenceException.
+2. Permanent deletion of the ReferencedElement:
+There can be scenarios where the referenced element might have been permanently
+deleted. For instance, if the web page where the element resides has been
+refreshed before the interaction with the element actually took place.
