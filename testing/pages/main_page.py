@@ -42,7 +42,6 @@ class MainPage:
         """This is a method to define Buy Products button."""
         self.buy_products_button = self.driver.find_element(
             By.XPATH, FRAME)
-        # self.buy_products_button.click()
 
     # def buy_products(self) -> None:
     #     """This is a method to define Buy Products button."""
@@ -64,8 +63,7 @@ class MainPage:
         #     By.XPATH, SHOW_ALL)))
         self.show_all_button = wait.until(EC.element_to_be_clickable((
             By.XPATH, SHOW_ALL)))
-        self.show_all_button.click()
-        
+                
     def help_me(self) -> None:
         """This is a method to define Help Me button."""
         self.help_me_button = self.driver.find_element(
@@ -76,3 +74,4 @@ class MainPage:
         """This is a method to define Help Me Form."""
         self.help_me_form = self.driver.find_element(
             By.XPATH, HELP_ME_FORM)
+
