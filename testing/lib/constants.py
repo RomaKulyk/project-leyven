@@ -16,6 +16,16 @@ CLICK_SEND = "//button[@class = 'btn btn-primary btn-lg mx-auto mb-10 w-full max
 MAIN_LOGO = "//a[@class = 'btn btn-outline flex border-none']"
 CATALOG = "//div[@class='dropdown dropdown-hover']"
 CATALOG_DROPDOWN = "//div[@class='card dropdown-content card-compact z-[1] w-[1000px] bg-white p-2 text-slate-900 shadow-xl']"
+
+CATALOG_DROPDOWN_ITEM_1 = "(//li[@class ='false link flex items-center justify-between font-medium no-underline transition-all duration-300'])[1]"
+CATALOG_DROPDOWN_ITEM_2 = "(//li[@class ='false link flex items-center justify-between font-medium no-underline transition-all duration-300'])[2]"
+CATALOG_DROPDOWN_ITEM_3 = "(//li[@class ='false link flex items-center justify-between font-medium no-underline transition-all duration-300'])[3]"
+CATALOG_DROPDOWN_ITEM_4 = "(//li[@class ='false link flex items-center justify-between font-medium no-underline transition-all duration-300'])[4]"
+CATALOG_DROPDOWN_ITEM_5 = "(//li[@class ='false link flex items-center justify-between font-medium no-underline transition-all duration-300'])[5]"
+CATALOG_DROPDOWN_ITEM_6 = "(//li[@class ='false link flex items-center justify-between font-medium no-underline transition-all duration-300'])[6]"
+CATALOG_DROPDOWN_ITEM_7 = "(//li[@class ='false link flex items-center justify-between font-medium no-underline transition-all duration-300'])[7]"
+CATALOG_DROPDOWN_ITEM_8 = "(//li[@class ='false link flex items-center justify-between font-medium no-underline transition-all duration-300'])[8]"
+
 SEARCH_FIELD = "(//input[@class='outline-none xl:cursor-pointer'])[1]"
 CROSS_BUTTON = "//*[contains(@class,'lucide lucide-x ')]"
 PHONE = "//div[@class = 'tooltip tooltip-bottom tooltip-info text-xl']"
