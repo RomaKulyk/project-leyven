@@ -26,7 +26,7 @@ CATALOG_DROPDOWN_ITEM_6 = "(//li[@class ='false link flex items-center justify-b
 CATALOG_DROPDOWN_ITEM_7 = "(//li[@class ='false link flex items-center justify-between font-medium no-underline transition-all duration-300'])[7]"
 CATALOG_DROPDOWN_ITEM_8 = "(//li[@class ='false link flex items-center justify-between font-medium no-underline transition-all duration-300'])[8]"
 
-SEARCH_FIELD = "(//input[@class='outline-none xl:cursor-pointer'])[1]"
+SEARCH_FIELD = "//input[@class='text-sm outline-none xl:cursor-pointer 2xl:text-lg']"
 CROSS_BUTTON = "//*[contains(@class,'lucide lucide-x ')]"
 PHONE = "//div[@class = 'tooltip tooltip-bottom tooltip-info text-xl']"
 
@@ -34,7 +34,7 @@ FACEBOOK = "(//*[contains(@href,'www.facebook.com')])[1]"
 INSTAGRAM = "(//*[contains(@href,'www.instagram.com')])[1]"
 TIKTOK = "(//*[contains(@href,'www.tiktok.com')])[1]"
 LOG_IN = "(//div[@class= 'hidden sm:flex'])[1]"
-CART = "(//div[@class= 'hidden sm:flex'])[2]"
+CART = "//div[contains(@class,'flex cursor-pointer items-center')]"
 
 # Footer
 FACEBOOK_FL = "Facebook"

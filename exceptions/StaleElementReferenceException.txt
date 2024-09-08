@@ -1,3 +1,5 @@
+https://www.browserstack.com/guide/stale-element-reference-exception-selenium
+
 StaleElementReferenceException is one of the most common Selenium exceptions
 which is often surfaced when the web element you are trying to interact with
 is no longer associated with an HTML element in the DOM. As Selenium tries to
