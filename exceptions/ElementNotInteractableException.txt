@@ -26,3 +26,10 @@ interacted with until the overlapping element is moved or removed.
 5. Element is not rendered: if the web element is rendered dynamically on the
 web page and is not fully loaded when the interaction takes place, it cannot be
 interacted until it is loaded completely.
+
+How to handle ElementNotInteractableExceptions in Selenium?
+1.Wait for the element to be visible.
+2.Scroll into the View.
+3.Enable the web element.
+4.Handle overlapping elements.
+5.Handle switching to correct frame.

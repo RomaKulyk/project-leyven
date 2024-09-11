@@ -1,0 +1,34 @@
+https://www.browserstack.com/guide/element-click-intercepted-exception-selenium
+
+ElementClickInterceptedException is an exception that occurs when we are trying
+to perform click operation on a web element but action is intercepted by another
+element. This often means that the intended element is not currently
+interactable because it is covered by another element on the page, such as
+pop-up, overlapping elements, etc.
+
+ElementClickInterceptedException can occurs in the following scenarios:
+1.Overlapping elements
+There may be overlapping elements on the web page like pop-up's or window modal
+displayed on the element you want to click. Overlapping elements can cause
+different exceptions but it will throw an ElementClickInterceptedException if we
+try to click the element.
+
+2.Displayed elements
+Another reason for getting ElementClickInterceptedException is that the element
+might be disabled when trying to perform click operation.
+
+3.Synchronization issues
+There may be synchronization issues while dealing with web applications.
+For example, when trying to click login button for a login page, web page load
+time should be considered before clicking on the login button.
+
+4.Dynamic Content Loading
+These days, most websites dynamically load their web pages using AJAX or 
+Javascript. In this case, it becomes difficult to locate elements, so it's
+better to wait for an element visibility and then perform the required action.
+
+How to handle ElementClickInterceptedException in Selenium?
+1.Check for Overlapping elements
+2.Use Explicit Waits
+3.Scroll to the element
+4.Increase the wait times between elements
