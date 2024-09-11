@@ -49,3 +49,15 @@ FACEBOOK_FB = "(//*[contains(@href,'www.facebook.com')])[3]"
 INSTAGRAM_FB = "(//*[contains(@href,'www.instagram.com')])[3]"
 TIKTOK_FB = "(//*[contains(@href,'www.tiktok.com')])[3]"
 MAIN_LOGO_FL = "//a[@class = 'flex items-center gap-3']"
+
+# Cart
+CHECKOUT = "//button[@class = 'btn btn-primary btn-lg text-white']"
+CONTINUE_SHOPPING = "//button[@class = 'btn btn-ghost text-primary']"
+CLOSE_CART = "//button[contains(@class,'h-fit cursor-pointer rounded-lg')]"
+REMOVE_PDP_1 = "(//div[contains(@class,'h-fit cursor-pointer')])[1]"
+
+# Product cards
+PR_CARD_1 = "(//div[@class = 'col-span-1'])[1]"
+PR_CARD_266 = "(//div[@class = 'coll-span-266'])[266]"
+TO_BUY_1 = "(//button[@class = 'btn bg-green-600 text-white hover:bg-green-500'])[1]"
+TO_BUY_2 = "(//button[@class = 'btn bg-green-600 text-white hover:bg-green-500'])[2]"
