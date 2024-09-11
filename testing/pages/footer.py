@@ -1,6 +1,8 @@
 from selenium.webdriver.common.by import By
 from testing.lib.constants import *
 from selenium import webdriver
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
 
 
 class Footer:
@@ -89,9 +91,12 @@ class Footer:
             By.XPATH, PUBLIC_OFERTA)
         
     def privacy_policy(self) -> None:
+        wait = WebDriverWait(self.driver, 10)
         """This is a method to find and define Privacy Policy link."""
-        self.privacy_policy_link = self.driver.find_element(
-            By.XPATH, PRIVACY_POLICY)
+        # self.privacy_policy_link = self.driver.find_element(
+        #     By.XPATH, PRIVACY_POLICY)
+        self.privacy_policy_link = wait.until(EC.element_to_be_clickable((
+            By.XPATH, PRIVACY_POLICY)))
         
     def facebook_fb(self) -> None:
         """This is a method to find and define Facebook button."""
