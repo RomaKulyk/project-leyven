@@ -35,8 +35,9 @@ def test_main_menu(chrome_browser: object):
                               CATALOG_DROPDOWN_ITEM_4,
                               CATALOG_DROPDOWN_ITEM_5,
                               CATALOG_DROPDOWN_ITEM_6,
-                              CATALOG_DROPDOWN_ITEM_7,]
-                              # CATALOG_DROPDOWN_ITEM_8,]
+                              CATALOG_DROPDOWN_ITEM_7,
+                              CATALOG_DROPDOWN_ITEM_8,
+                              CATALOG_DROPDOWN_ITEM_9]
     
     for item in catalog_dropdown_items:
         catalog_dropdown.catalog_dropdown_items(item)

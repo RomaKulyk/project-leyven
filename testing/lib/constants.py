@@ -17,14 +17,18 @@ MAIN_LOGO = "//a[@class = 'btn btn-outline flex border-none']"
 CATALOG = "//div[@class='dropdown dropdown-hover']"
 CATALOG_DROPDOWN = "//div[@class='card dropdown-content card-compact z-[1] w-[1000px] bg-white p-2 text-slate-900 shadow-xl']"
 
-CATALOG_DROPDOWN_ITEM_1 = "(//li[@class ='false link flex items-center justify-between font-medium no-underline transition-all duration-300'])[1]"
-CATALOG_DROPDOWN_ITEM_2 = "(//li[@class ='false link flex items-center justify-between font-medium no-underline transition-all duration-300'])[2]"
-CATALOG_DROPDOWN_ITEM_3 = "(//li[@class ='false link flex items-center justify-between font-medium no-underline transition-all duration-300'])[3]"
-CATALOG_DROPDOWN_ITEM_4 = "(//li[@class ='false link flex items-center justify-between font-medium no-underline transition-all duration-300'])[4]"
-CATALOG_DROPDOWN_ITEM_5 = "(//li[@class ='false link flex items-center justify-between font-medium no-underline transition-all duration-300'])[5]"
-CATALOG_DROPDOWN_ITEM_6 = "(//li[@class ='false link flex items-center justify-between font-medium no-underline transition-all duration-300'])[6]"
-CATALOG_DROPDOWN_ITEM_7 = "(//li[@class ='false link flex items-center justify-between font-medium no-underline transition-all duration-300'])[7]"
-CATALOG_DROPDOWN_ITEM_8 = "(//li[@class ='false link flex items-center justify-between font-medium no-underline transition-all duration-300'])[8]"
+UNSELECTED_DD_ITEM_CLS = 'false link flex items-center justify-between font-medium no-underline transition-all duration-300'
+SELECTED_DD_ITEM_CLS = 'rounded-xl bg-primary p-3 text-white link flex items-center justify-between font-medium no-underline transition-all duration-300'
+
+CATALOG_DROPDOWN_ITEM_1 = f"(//li[@class ='{UNSELECTED_DD_ITEM_CLS}' or @class = '{SELECTED_DD_ITEM_CLS}'])[1]"
+CATALOG_DROPDOWN_ITEM_2 = f"(//li[@class ='{UNSELECTED_DD_ITEM_CLS}' or @class = '{SELECTED_DD_ITEM_CLS}'])[2]"
+CATALOG_DROPDOWN_ITEM_3 = f"(//li[@class ='{UNSELECTED_DD_ITEM_CLS}' or @class = '{SELECTED_DD_ITEM_CLS}'])[3]"
+CATALOG_DROPDOWN_ITEM_4 = f"(//li[@class ='{UNSELECTED_DD_ITEM_CLS}' or @class = '{SELECTED_DD_ITEM_CLS}'])[4]"
+CATALOG_DROPDOWN_ITEM_5 = f"(//li[@class ='{UNSELECTED_DD_ITEM_CLS}' or @class = '{SELECTED_DD_ITEM_CLS}'])[5]"
+CATALOG_DROPDOWN_ITEM_6 = f"(//li[@class ='{UNSELECTED_DD_ITEM_CLS}' or @class = '{SELECTED_DD_ITEM_CLS}'])[6]"
+CATALOG_DROPDOWN_ITEM_7 = f"(//li[@class ='{UNSELECTED_DD_ITEM_CLS}' or @class = '{SELECTED_DD_ITEM_CLS}'])[7]"
+CATALOG_DROPDOWN_ITEM_8 = f"(//li[@class ='{UNSELECTED_DD_ITEM_CLS}' or @class = '{SELECTED_DD_ITEM_CLS}'])[8]"
+CATALOG_DROPDOWN_ITEM_9 = f"(//li[@class ='{UNSELECTED_DD_ITEM_CLS}' or @class = '{SELECTED_DD_ITEM_CLS}'])[9]"
 
 SEARCH_FIELD = "//input[@class='text-sm outline-none xl:cursor-pointer 2xl:text-lg']"
 CROSS_BUTTON = "//*[contains(@class,'lucide lucide-x ')]"
