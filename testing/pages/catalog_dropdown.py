@@ -35,13 +35,13 @@ class CatalogDropdown:
         self.catalog_dropdown_container = self.driver.find_element(
             By.XPATH, CATALOG_DROPDOWN)
         
-    def catalog_dropdown_items(self, locator):
+    def catalog_dropdown_items(self, locator) -> None:
         """This is a method to find and define Catalog Dropdown Item."""
         self.catalog_dropdown_item_link = self.driver.find_element(
             By.XPATH, locator)
         self.catalog_dropdown_item_link.click()
     
-    def catalog_dropdown_ul(self):
+    def catalog_dropdown_ul(self) -> None:
         """This is a method to find and define Catalog Dropdown Item."""
         # Store all elements of dropdown in a list        
         self.catalog_dropdown_elements = list(self.driver.find_elements(
