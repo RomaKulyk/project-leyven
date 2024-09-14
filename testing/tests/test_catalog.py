@@ -13,14 +13,14 @@ def test_main_menu(chrome_browser: object):
 
     # 1.Open MAIN_URL page
     main_page.open_page(MAIN_URL)
-    time.sleep(3)
+    time.sleep(0.5)
 
     main_menu = MainMenu(driver)
     # 2.Hover mouse over Catalog button
     main_menu.catalog()
     assert main_menu.catalog_button.is_enabled()
     assert main_menu.catalog_button.is_displayed()
-    time.sleep(3)
+    time.sleep(0.5)
 
     catalog_dropdown = CatalogDropdown(driver)
     # 3.Ensure that Catalog Dropdown container is displayed
@@ -28,7 +28,7 @@ def test_main_menu(chrome_browser: object):
     assert catalog_dropdown.catalog_dropdown_container.is_enabled()
     assert catalog_dropdown.catalog_dropdown_container.is_displayed()
 
-    # 4.Ensure that Catalog Dropdown Item is displayed and clickable
+    # 4.1.Ensure that Catalog Dropdown Item is displayed and clickable (Static)
     catalog_dropdown_items = [CATALOG_DROPDOWN_ITEM_1,
                               CATALOG_DROPDOWN_ITEM_2,
                               CATALOG_DROPDOWN_ITEM_3,
@@ -43,5 +43,11 @@ def test_main_menu(chrome_browser: object):
         catalog_dropdown.catalog_dropdown_items(item)
         assert catalog_dropdown.catalog_dropdown_container.is_enabled()
         assert catalog_dropdown.catalog_dropdown_container.is_displayed()
-        time.sleep(3)
+        time.sleep(0.5)
+    driver.back()
+    
+    # 4.2.Ensure that Catalog Dropdown Item is displayed and clickable (Dynamic)
+    catalog_dropdown.catalog_dropdown_ul()
+    assert catalog_dropdown.catalog_dropdown_ul_link.is_enabled()
+    time.sleep(0.5)
 

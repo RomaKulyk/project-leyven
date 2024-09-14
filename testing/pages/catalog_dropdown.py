@@ -1,7 +1,8 @@
 from selenium.webdriver.common.by import By
 from testing.lib.constants import *
 from selenium import webdriver
-from selenium.webdriver.common.action_chains import ActionChains
+import time
+
 
 class CatalogDropdown:
     """
@@ -36,3 +37,17 @@ class CatalogDropdown:
         self.catalog_dropdown_item_link = self.driver.find_element(
             By.XPATH, locator)
         self.catalog_dropdown_item_link.click()
+    
+    def catalog_dropdown_ul(self):
+        """This is a method to find and define Catalog Dropdown Item."""
+        self.catalog_dropdown_ul_link = self.driver.find_element(
+            By.XPATH, DROPDOWN_LIST)
+        # Store all elements of dropdown in a list        
+        self.catalog_dropdown_elements = list(self.driver.find_elements(
+                By.XPATH, DROPDOWN_LIST_ITEMS))
+        # Iterate the list using a for loop and click each options
+        for e in self.catalog_dropdown_elements:
+            e.click()
+            time.sleep(0.5)
+
+
