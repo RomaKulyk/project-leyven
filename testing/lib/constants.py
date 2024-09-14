@@ -17,11 +17,12 @@ MAIN_LOGO = "//a[@class = 'btn btn-outline flex border-none']"
 CATALOG = "//div[@class='dropdown dropdown-hover']"
 CATALOG_DROPDOWN = "//div[@class='card dropdown-content card-compact z-[1] w-[1000px] bg-white p-2 text-slate-900 shadow-xl']"
 
+# For Dynamic list definition
+DROPDOWN_LIST_ITEMS = "//ul[@class = 'flex flex-col gap-5']/child::li"
+
+# For Static list definition
 UNSELECTED_DD_ITEM_CLS = 'false link flex items-center justify-between font-medium no-underline transition-all duration-300'
 SELECTED_DD_ITEM_CLS = 'rounded-xl bg-primary p-3 text-white link flex items-center justify-between font-medium no-underline transition-all duration-300'
-
-DROPDOWN_LIST = "//ul[@class = 'flex flex-col gap-5']"
-DROPDOWN_LIST_ITEMS = "//ul[@class = 'flex flex-col gap-5']/child::li"
 CATALOG_DROPDOWN_ITEM_1 = f"(//li[@class ='{UNSELECTED_DD_ITEM_CLS}' or @class = '{SELECTED_DD_ITEM_CLS}'])[1]"
 CATALOG_DROPDOWN_ITEM_2 = f"(//li[@class ='{UNSELECTED_DD_ITEM_CLS}' or @class = '{SELECTED_DD_ITEM_CLS}'])[2]"
 CATALOG_DROPDOWN_ITEM_3 = f"(//li[@class ='{UNSELECTED_DD_ITEM_CLS}' or @class = '{SELECTED_DD_ITEM_CLS}'])[3]"

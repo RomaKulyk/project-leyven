@@ -17,6 +17,9 @@ class CatalogDropdown:
         This is a method to find and define Catalog Dropdown Container
     catalog_dropdown_items
         This is a method to find and define Catalog Dropdown Item
+    catalog_dropdown_ul
+        This is a method to find and define Catalog Dropdown Items for dynamic 
+        list definition
     """
     def __init__(self, webdriver) -> None:
         """
@@ -40,14 +43,10 @@ class CatalogDropdown:
     
     def catalog_dropdown_ul(self):
         """This is a method to find and define Catalog Dropdown Item."""
-        self.catalog_dropdown_ul_link = self.driver.find_element(
-            By.XPATH, DROPDOWN_LIST)
         # Store all elements of dropdown in a list        
         self.catalog_dropdown_elements = list(self.driver.find_elements(
                 By.XPATH, DROPDOWN_LIST_ITEMS))
-        # Iterate the list using a for loop and click each options
-        for e in self.catalog_dropdown_elements:
-            e.click()
-            time.sleep(0.5)
+
+
 
 
