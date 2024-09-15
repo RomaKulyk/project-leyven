@@ -75,3 +75,11 @@ class MainPage:
         self.help_me_form = self.driver.find_element(
             By.XPATH, HELP_ME_FORM)
 
+    def product_card(self, locator) -> None:
+        """This is a method to define Product card."""
+        self.product_card_n = self.driver.find_element(
+            By.XPATH, locator)
+        self.product_card_n.click()
+
+
+
