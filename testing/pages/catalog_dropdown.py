@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from testing.lib.constants import *
 from selenium import webdriver
 import time
+from selenium.webdriver.common.action_chains import ActionChains
 
 
 class CatalogDropdown:
@@ -36,16 +37,21 @@ class CatalogDropdown:
             By.XPATH, CATALOG_DROPDOWN)
         
     def catalog_dropdown_items(self, locator) -> None:
+        action = ActionChains(self.driver)
         """This is a method to find and define Catalog Dropdown Item."""
         self.catalog_dropdown_item_link = self.driver.find_element(
             By.XPATH, locator)
-        self.catalog_dropdown_item_link.click()
+        # hover coursor over the element found in previous line
+        action.move_to_element(self.catalog_dropdown_item_link)
+        action.perform()
+        # self.catalog_dropdown_item_link.click()
     
     def catalog_dropdown_ul(self) -> None:
         """This is a method to find and define Catalog Dropdown Item."""
         # Store all elements of dropdown in a list        
         self.catalog_dropdown_elements = list(self.driver.find_elements(
                 By.XPATH, DROPDOWN_LIST_ITEMS))
+
 
 
 

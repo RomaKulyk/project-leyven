@@ -44,8 +44,7 @@ def test_main_menu(chrome_browser: object):
         assert catalog_dropdown.catalog_dropdown_container.is_enabled()
         assert catalog_dropdown.catalog_dropdown_container.is_displayed()
         time.sleep(0.5)
-    driver.back()
-    
+
     # 4.2.Ensure that Catalog Dropdown Item is displayed and clickable (Dynamic)
     catalog_dropdown.catalog_dropdown_ul()
     for e in catalog_dropdown.catalog_dropdown_elements:
@@ -55,7 +54,7 @@ def test_main_menu(chrome_browser: object):
             assert catalog_dropdown.catalog_dropdown_elements[count].is_enabled()
             assert catalog_dropdown.catalog_dropdown_elements[count].is_displayed()
             time.sleep(0.5)
-            count =+ 1
+            # count =+ 1
 
 
   
