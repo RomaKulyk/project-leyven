@@ -50,11 +50,10 @@ def test_main_menu(chrome_browser: object):
     for e in catalog_dropdown.catalog_dropdown_elements:
             # Iterate the list using a for loop and click each options
             e.click()
-            count = 1
-            assert catalog_dropdown.catalog_dropdown_elements[count].is_enabled()
-            assert catalog_dropdown.catalog_dropdown_elements[count].is_displayed()
+            assert e.is_enabled()
+            assert e.is_displayed()
             time.sleep(0.5)
-            # count =+ 1
+
 
 
   
