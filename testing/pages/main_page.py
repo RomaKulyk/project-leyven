@@ -37,7 +37,7 @@ class MainPage:
         """This is a method to open a certain web page."""
         self.driver.get(url)
         self.driver.implicitly_wait(3)
-    
+    #---------------------------------------------------------------------------
     def buy_products(self) -> None:
         """This is a method to define Buy Products button."""
         self.buy_products_button = self.driver.find_element(
@@ -49,7 +49,7 @@ class MainPage:
     #     wait = WebDriverWait(self.driver, 10)
     #     self.buy_products_button = wait.until(EC.element_to_be_clickable((
     #         By.XPATH, FRAME)))
-        
+    #---------------------------------------------------------------------------    
     # def show_all(self) -> None:
     #     """This is a method to define Show All button."""
     #     self.show_all_button = self.driver.find_element(
@@ -63,7 +63,7 @@ class MainPage:
         #     By.XPATH, SHOW_ALL)))
         self.show_all_button = wait.until(EC.element_to_be_clickable((
             By.XPATH, SHOW_ALL)))
-                
+    #---------------------------------------------------------------------------            
     def help_me(self) -> None:
         """This is a method to define Help Me button."""
         self.help_me_button = self.driver.find_element(
@@ -86,5 +86,3 @@ class MainPage:
         # Store all elements of dropdown in a list        
         self.product_cards_n = list(self.driver.find_elements(
                 By.XPATH, PRODUCT_CARDS))
-
-
