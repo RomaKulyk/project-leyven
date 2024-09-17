@@ -64,7 +64,8 @@ CLOSE_CART = "//button[contains(@class,'h-fit cursor-pointer rounded-lg')]"
 REMOVE_PDP_1 = "(//div[contains(@class,'h-fit cursor-pointer')])[1]"
 
 # Product cards
-# PRODUCT_CARDS = "//div[contains(@class,'md:grid-cols-3 xl:grid-cols-5')]/child::div"
+PRODUCT_CARDS = "//div[contains(@class,'md:grid-cols-3 xl:grid-cols-5')]/child::div"
+# PRODUCT_CARDS = "((//div[@class = 'block w-full']/child::div)[2])/child::div"
 PR_CARD_1 = "(//div[@class = 'col-span-1'])[1]"
 PR_CARD_2 = "(//div[@class = 'col-span-1'])[2]"
 PR_CARD_266 = "(//div[@class = 'col-span-1'])[266]"

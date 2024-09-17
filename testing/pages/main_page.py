@@ -81,5 +81,10 @@ class MainPage:
             By.XPATH, locator)
         self.product_card_n.click()
 
+    def product_cards(self) -> None:
+        """This is a method to find and define Product card items."""
+        # Store all elements of dropdown in a list        
+        self.product_cards_n = list(self.driver.find_elements(
+                By.XPATH, PRODUCT_CARDS))
 
 
