@@ -41,8 +41,8 @@ def test_main_menu(chrome_browser: object):
     
     for item in catalog_dropdown_items:
         catalog_dropdown.catalog_dropdown_items(item)
-        assert catalog_dropdown.catalog_dropdown_container.is_enabled()
-        assert catalog_dropdown.catalog_dropdown_container.is_displayed()
+        assert catalog_dropdown.catalog_dropdown_item_link.is_enabled()
+        assert catalog_dropdown.catalog_dropdown_item_link.is_displayed()
         time.sleep(0.5)
 
     # 4.2.Ensure that Catalog Dropdown Item is displayed and clickable (Dynamic)
