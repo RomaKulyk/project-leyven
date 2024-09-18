@@ -71,6 +71,6 @@ class MainPage:
         """This is a method to find and define Product card items."""
         # Store all elements of dropdown in a list        
         self.product_cards_n = list(self.driver.find_elements(
-                By.XPATH, PRODUCT_CARDS))
+            By.XPATH, PRODUCT_CARDS))
         # print(self.product_cards_n)
-        print(len(self.product_cards_n))
+        # print(len(self.product_cards_n))

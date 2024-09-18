@@ -55,19 +55,19 @@ def test_main_page(chrome_browser: object):
     main_page.product_card(1)
     assert main_page.product_card_n.is_enabled()
     assert main_page.product_card_n.is_displayed()
-    time.sleep(0.5)
+    time.sleep(3)
     driver.back()
 
     # 8.Find and click 18th Product Card in the list
     main_page.product_card(18)
     assert main_page.product_card_n.is_enabled()
     assert main_page.product_card_n.is_displayed()
-    time.sleep(0.5)
+    time.sleep(3)
     driver.back()
 
     # 9.Find and click 18th Product Card in the list
     main_page.product_card(36)
     assert main_page.product_card_n.is_enabled()
     assert main_page.product_card_n.is_displayed()
-    time.sleep(0.5)
+    time.sleep(3)
     driver.back()
