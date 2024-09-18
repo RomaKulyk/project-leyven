@@ -58,16 +58,25 @@ def test_main_page(chrome_browser: object):
     time.sleep(0.5)
     driver.back()
 
-    # 8.Find and click 18th Product Card in the list
-    main_page.product_card(18)
+    # 8.Find and click second Product Card in the list
+    main_page.product_card(2)
     assert main_page.product_card_n.is_enabled()
     assert main_page.product_card_n.is_displayed()
     time.sleep(0.5)
     driver.back()
 
-    # 9.Find and click 18th Product Card in the list
-    main_page.product_card(36)
-    assert main_page.product_card_n.is_enabled()
-    assert main_page.product_card_n.is_displayed()
-    time.sleep(0.5)
-    driver.back()
+    # 9.Ensure that Product Card Items 1-36 is displayed and clickable (Dynamic)
+    main_page.product_cards()
+    for e in range(1,len(main_page.product_cards_n)):
+            # Iterate the list using a for loop and click each options
+            # wait = WebDriverWait(driver, 10)
+            # e = wait.until(EC.element_to_be_clickable((
+            # By.XPATH, PRODUCT_CARDS)))
+            time.sleep(0.5)
+            main_page.product_card(e)
+            time.sleep(0.5)
+            # assert e.is_enabled()
+            # assert e.is_displayed()
+            # assert main_page.product_cards_n.is_enabled()
+            # assert main_page.product_cards_n.is_displayed()
+            driver.back()

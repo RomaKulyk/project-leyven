@@ -1,7 +1,6 @@
 # MainPage
 MAIN_URL = "https://www.leyven.com.ua/"
-BUY_PRODUCTS = "//button[@class = 'btn btn-primary btn-lg text-white']"
-FRAME = "//div[@class = 'mt-3 sm:mb-10']"
+BUY_PRODUCTS = "//div[@class = 'mt-3 sm:mb-10']"
 SHOW_ALL = "//button[@class = 'group mt-3 flex items-center gap-3 rounded-xl px-5 py-3 text-lg font-medium transition-all  duration-300 hover:bg-primary hover:text-white hover:shadow-xl max-sm:hidden sm:text-xl']"
 HELP_ME = "//div[@class = 'group fixed bottom-2 right-2 z-[1] rounded-full bg-primary transition duration-200 hover:scale-105 sm:bottom-5 sm:right-5']"
 
@@ -66,8 +65,10 @@ REMOVE_PDP_1 = "(//div[contains(@class,'h-fit cursor-pointer')])[1]"
 # Product cards
 PRODUCT_CARDS = "//div[contains(@class,'md:grid-cols-3 xl:grid-cols-5')]/child::div"
 # PRODUCT_CARDS = "((//div[@class = 'block w-full']/child::div)[2])/child::div"
+PR_CARD = "(//div[@class = 'col-span-1'])"
 PR_CARD_1 = "(//div[@class = 'col-span-1'])[1]"
-PR_CARD_2 = "(//div[@class = 'col-span-1'])[2]"
+PR_CARD_18 = "(//div[@class = 'col-span-1'])[18]"
+PR_CARD_36 = "(//div[@class = 'col-span-1'])[36]"
 PR_CARD_266 = "(//div[@class = 'col-span-1'])[266]"
 TO_BUY_1 = "(//button[@class = 'btn bg-green-600 text-white hover:bg-green-500'])[1]"
 TO_BUY_2 = "(//button[@class = 'btn bg-green-600 text-white hover:bg-green-500'])[2]"

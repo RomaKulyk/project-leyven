@@ -37,33 +37,18 @@ class MainPage:
         """This is a method to open a certain web page."""
         self.driver.get(url)
         self.driver.implicitly_wait(3)
-    #---------------------------------------------------------------------------
+    
     def buy_products(self) -> None:
         """This is a method to define Buy Products button."""
         self.buy_products_button = self.driver.find_element(
-            By.XPATH, FRAME)
-
-    # def buy_products(self) -> None:
-    #     """This is a method to define Buy Products button."""
-    #     # self.driver.switch_to.frame(FRAME)
-    #     wait = WebDriverWait(self.driver, 10)
-    #     self.buy_products_button = wait.until(EC.element_to_be_clickable((
-    #         By.XPATH, FRAME)))
-    #---------------------------------------------------------------------------    
-    # def show_all(self) -> None:
-    #     """This is a method to define Show All button."""
-    #     self.show_all_button = self.driver.find_element(
-    #         By.XPATH, SHOW_ALL)
-    #     self.show_all_button.click()
+            By.XPATH, BUY_PRODUCTS)
     
     def show_all(self) -> None:
         """This is a method to define Buy Products button."""
         wait = WebDriverWait(self.driver, 10)
-        # self.show_all_button = wait.until(EC.presence_of_element_located((
-        #     By.XPATH, SHOW_ALL)))
         self.show_all_button = wait.until(EC.element_to_be_clickable((
             By.XPATH, SHOW_ALL)))
-    #---------------------------------------------------------------------------            
+                
     def help_me(self) -> None:
         """This is a method to define Help Me button."""
         self.help_me_button = self.driver.find_element(
@@ -75,10 +60,11 @@ class MainPage:
         self.help_me_form = self.driver.find_element(
             By.XPATH, HELP_ME_FORM)
 
-    def product_card(self, locator) -> None:
+    def product_card(self, index ) -> None:
         """This is a method to define Product card."""
-        self.product_card_n = self.driver.find_element(
-            By.XPATH, locator)
+        wait = WebDriverWait(self.driver, 10)
+        self.product_card_n = wait.until(EC.element_to_be_clickable((
+            By.XPATH, f"{PR_CARD}[{index}]")))
         self.product_card_n.click()
 
     def product_cards(self) -> None:
@@ -86,3 +72,5 @@ class MainPage:
         # Store all elements of dropdown in a list        
         self.product_cards_n = list(self.driver.find_elements(
                 By.XPATH, PRODUCT_CARDS))
+        # print(self.product_cards_n)
+        print(len(self.product_cards_n))
