@@ -15,21 +15,34 @@ def test_main_page(chrome_browser: object):
     main_page.open_page(MAIN_URL)
     time.sleep(3)
     
-    # 2.Find and click SHOW_ALL button
+    # 2.Ensure that Product Card Items in New Arrival is displayed
+    # and clickable (Dynamic)
+    main_page.new_arrival_cards()
+    for e in range(1, len(main_page.new_arrival_cards_n), 2):    
+            time.sleep(3)
+            main_page.new_arrival_card(e)
+            assert main_page.new_arrival_card_n.is_enabled()
+            assert main_page.new_arrival_card_n.is_displayed()
+            time.sleep(3)
+            driver.back()
+
+    # 3.Find and click SHOW_ALL button
     main_page.show_all()
     assert main_page.show_all_button.is_enabled()
     assert main_page.show_all_button.is_displayed()
     main_page.show_all_button.click()
     time.sleep(3)
 
-    # 3.Ensure that Product Card Items 1-36 is displayed and clickable (Dynamic)
+    # 4.Ensure that Product Card Items 1-36 is displayed and clickable (Dynamic)
     main_page.product_cards()
     # for e in range(1,len(main_page.product_cards_n)):
-    # for e in range(len(main_page.product_cards_n), 1, -7):
-    for e in range(1, len(main_page.product_cards_n), 3):    
+    for e in range(len(main_page.product_cards_n), 1, -7):
+    #for e in range(1, len(main_page.product_cards_n), 3):    
             time.sleep(3)
             main_page.product_card(e)
             assert main_page.product_card_n.is_enabled()
             assert main_page.product_card_n.is_displayed()
             time.sleep(3)
             driver.back()
+
+    
