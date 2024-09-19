@@ -27,5 +27,7 @@ def test_main_page(chrome_browser: object):
     for e in range(1,len(main_page.product_cards_n)):
             time.sleep(3)
             main_page.product_card(e)
+            assert main_page.product_card_n.is_enabled()
+            assert main_page.product_card_n.is_displayed()
             time.sleep(3)
             driver.back()
