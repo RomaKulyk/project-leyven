@@ -5,6 +5,7 @@ from testing.pages.hm_form import *
 from testing.pages.main_menu import *
 from testing.lib.constants import *
 import time
+import random
 
 
 def test_main_page(chrome_browser: object):
@@ -35,14 +36,13 @@ def test_main_page(chrome_browser: object):
 
     # 4.Ensure that Product Card Items 1-36 is displayed and clickable (Dynamic)
     main_page.product_cards()
-    # for e in range(1,len(main_page.product_cards_n)):
-    for e in range(len(main_page.product_cards_n), 1, -7):
-    #for e in range(1, len(main_page.product_cards_n), 3):    
+    step = random.randint(1,8)
+    print(step)
+    # for e in range(len(main_page.product_cards_n), 1, -7):
+    for e in range(1, len(main_page.product_cards_n), step):    
             time.sleep(3)
             main_page.product_card(e)
             assert main_page.product_card_n.is_enabled()
             assert main_page.product_card_n.is_displayed()
             time.sleep(3)
             driver.back()
-
-    
