@@ -1,8 +1,6 @@
 from selenium import webdriver
 import pytest
 from testing.pages.main_page import *
-from testing.pages.hm_form import *
-from testing.pages.main_menu import *
 from testing.lib.constants import *
 import time
 import random
