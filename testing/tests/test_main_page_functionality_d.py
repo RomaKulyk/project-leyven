@@ -1,5 +1,3 @@
-from selenium import webdriver
-import pytest
 from testing.pages.main_page import *
 from testing.lib.constants import *
 import time
