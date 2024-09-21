@@ -22,7 +22,9 @@ class MainPage:
     help_me
        This is a method to define Help Me button 
     hm_form
-        This is a method to define Help Me Form    
+        This is a method to define Help Me Form
+    sort_item
+        This is a method to define sorting functionality
     """
     def __init__(self, webdriver) -> None:
         """
@@ -85,3 +87,10 @@ class MainPage:
         # Store all elements of dropdown in a list        
         self.new_arrival_cards_n = list(self.driver.find_elements(
             By.XPATH, NA_PRODUCT_CARDS))
+
+    def sort_item(self, locator: str) -> None:
+        """This is a method to define sorting functionality."""
+        dropdown_list = self.driver.find_element(By.XPATH, SORT)
+        dropdown_list.click()
+        self.sort_menu_item = self.driver.find_element(By.XPATH, locator)
+        self.sort_menu_item.click()

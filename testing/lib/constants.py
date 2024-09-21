@@ -74,3 +74,8 @@ NA_PRODUCT_CARDS = "//ul[@class = 'mt-10 grid grid-cols-2 gap-5 lg:grid-cols-4 2
 
 TO_BUY_1 = "(//button[@class = 'btn bg-green-600 text-white hover:bg-green-500'])[1]"
 TO_BUY_2 = "(//button[@class = 'btn bg-green-600 text-white hover:bg-green-500'])[2]"
+
+SORT = "//select[contains(@class,'select w-full min-w-[180px]')]"
+SORT1 = "//select[contains(@class,'select w-full min-w-[180px]')]/option[@value='price_asc']"
+SORT2 = "//select[contains(@class,'select w-full min-w-[180px]')]/option[@value='price_desc']"
+SORT3 = "//select[contains(@class,'select w-full min-w-[180px]')]/option[@value='popular']"
