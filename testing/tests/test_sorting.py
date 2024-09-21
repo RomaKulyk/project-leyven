@@ -25,7 +25,11 @@ def test_main_page(chrome_browser: object):
     sort_options = [SORT1, SORT2, SORT3]
     for options in sort_options:
         main_page.sort_item(options)
+        main_page.dropdown_list.is_enabled()
+        main_page.dropdown_list.is_displayed()
         # verify if certain options is enabled and displayed
         assert main_page.sort_menu_item.is_displayed()
         assert main_page.sort_menu_item.is_enabled()
         time.sleep(3)
+    
+ 

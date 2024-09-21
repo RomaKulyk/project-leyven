@@ -90,7 +90,7 @@ class MainPage:
 
     def sort_item(self, locator: str) -> None:
         """This is a method to define sorting functionality."""
-        dropdown_list = self.driver.find_element(By.XPATH, SORT)
-        dropdown_list.click()
+        self.dropdown_list = self.driver.find_element(By.XPATH, SORT)
+        self.dropdown_list.click()
         self.sort_menu_item = self.driver.find_element(By.XPATH, locator)
         self.sort_menu_item.click()
