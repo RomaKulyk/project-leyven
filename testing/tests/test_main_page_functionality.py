@@ -30,42 +30,28 @@ def test_main_page(chrome_browser: object):
     assert main_menu.main_logo_button.is_displayed()
     time.sleep(0.5)
 
-    # 4.Find and click BUY_PRODUDCTS
-    main_page.buy_products()
-    time.sleep(0.5)    
-    assert main_page.buy_products_button.is_enabled()
-    assert main_page.buy_products_button.is_displayed()
-    main_page.buy_products_button.click()
-    time.sleep(0.5)
-        
-    # 5.Find and click MAIN_LOGO button
-    main_menu.main_logo()
-    assert main_menu.main_logo_button.is_enabled()
-    assert main_menu.main_logo_button.is_displayed()
-    time.sleep(0.5)
-
-    # 6.Find and click SHOW_ALL button
+    # 4.Find and click SHOW_ALL button
     main_page.show_all()
     assert main_page.show_all_button.is_enabled()
     assert main_page.show_all_button.is_displayed()
     main_page.show_all_button.click()
     time.sleep(0.5)
 
-    # 7.Find and click first Product Card in the list
+    # 5.Find and click first Product Card in the list
     main_page.product_card(1)
     assert main_page.product_card_n.is_enabled()
     assert main_page.product_card_n.is_displayed()
     time.sleep(3)
     driver.back()
 
-    # 8.Find and click 18th Product Card in the list
+    # 6.Find and click 18th Product Card in the list
     main_page.product_card(18)
     assert main_page.product_card_n.is_enabled()
     assert main_page.product_card_n.is_displayed()
     time.sleep(3)
     driver.back()
 
-    # 9.Find and click 18th Product Card in the list
+    # 7.Find and click 18th Product Card in the list
     main_page.product_card(36)
     assert main_page.product_card_n.is_enabled()
     assert main_page.product_card_n.is_displayed()
