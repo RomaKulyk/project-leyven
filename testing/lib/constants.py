@@ -29,7 +29,7 @@ CLICK_SEND = "//button[@class = 'btn btn-primary btn-lg mx-auto mb-10 w-full max
 # Main Menu
 MAIN_LOGO = "//a[@class = 'btn btn-outline flex border-none']"
 CATALOG = "//div[@class='dropdown dropdown-hover']"
-CATALOG_DROPDOWN = "//div[@class='card dropdown-content card-compact z-[1] w-[1000px] bg-white p-2 text-slate-900 shadow-xl']"
+CATALOG_DROPDOWN = "//div[@class='card dropdown-content card-compact w-[1000px] bg-white p-2 text-slate-900 shadow-xl']"
 
 # For Dynamic list definition
 DROPDOWN_LIST_ITEMS = "//ul[@class = 'flex flex-col gap-5']/child::li"
