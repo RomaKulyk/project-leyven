@@ -1,6 +1,8 @@
 from selenium.webdriver.common.by import By
 from testing.lib.constants import *
 from selenium import webdriver
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
 
 class CartPage:
     """
@@ -39,8 +41,9 @@ class CartPage:
         
     def checkout(self) -> None:
         """This is a method to define checkout button."""
-        self.checkout_button = self.driver.find_element(
-            By.XPATH, CHECKOUT)
+        wait = WebDriverWait(self.driver, 10)
+        self.checkout_button = wait.until(EC.element_to_be_clickable((
+            By.XPATH, CHECKOUT)))
         self.checkout_button.click()
 
     def close_cart(self) -> None:

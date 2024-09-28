@@ -75,6 +75,8 @@ def test_cart_page(chrome_browser: object):
     time.sleep(1)
     
     # 12. Return back to the main page
-    driver.back()
+    main_menu.main_logo()
     time.sleep(1)
+
+    
 
