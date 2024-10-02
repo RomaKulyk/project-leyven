@@ -16,8 +16,6 @@ class MainPage:
         This is a method to initialize instance of the MainPage class
     open_page
         This is a method to open a certain web page
-    buy_products
-        This is a method to define Buy Products button
     show_all
         This is a method to define Show All button
     help_me
@@ -44,11 +42,6 @@ class MainPage:
         """This is a method to open a certain web page."""
         self.driver.get(url)
         self.driver.implicitly_wait(3)
-
-    def buy_products(self) -> None:
-        """This is a method to define Buy Products button."""
-        self.buy_products_button = self.driver.find_element(
-            By.XPATH, BUY_PRODUCTS)
 
     def show_all(self) -> None:
         """This is a method to define Buy Products button."""
