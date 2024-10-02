@@ -27,12 +27,15 @@ def test_main_page(chrome_browser: object):
     
     # Create an object of the select class
     drop = Select(main_page.dropdown_list_sel)
+    
     # Select by value 
     drop.select_by_value('price_asc') 
     time.sleep(2)
+    # main_page.dropdown_list_sel.click()
    
     drop.select_by_value('price_desc')
     time.sleep(2)
+    # main_page.dropdown_list_sel.click()
     
     drop.select_by_value('popular')
     time.sleep(2)
