@@ -71,7 +71,8 @@ TIKTOK_FB = "(//*[contains(@href,'www.tiktok.com')])[3]"
 MAIN_LOGO_FL = "//a[@class = 'flex items-center gap-3']"
 
 # Cart
-CHECKOUT = "//button[@class = 'btn btn-primary btn-lg text-white']"
+# CHECKOUT = "//button[@class = 'btn btn-primary btn-lg text-white']"
+CHECKOUT = "//a[@class = 'false btn btn-primary btn-lg text-white']"
 CONTINUE_SHOPPING = "//button[@class = 'btn btn-ghost text-primary']"
 CLOSE_CART = "//button[contains(@class,'h-fit cursor-pointer rounded-lg')]"
 REMOVE_PDP_1 = "(//button[contains(@class,'hover:text-blue-600 max-sm:absolute  max-sm:left-1 max-sm:top-1')])[1]"
