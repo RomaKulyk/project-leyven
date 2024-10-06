@@ -57,10 +57,12 @@ class CategoryPage(MainPage):
 
     def show_more(self) -> None:
         """This is a method to find and define SHOW MORE button."""
-        action = ActionChains(self.driver)
-        self.show_more_button = self.driver.find_element(
-            By.XPATH, SHOW_MORE_BUTTON)
+        wait = WebDriverWait(self.driver, 10)
+        self.show_more_button = wait.until(EC.element_to_be_clickable((
+            By.XPATH, SHOW_MORE_BUTTON )))
+        
+        action = ActionChains(self.driver)        
         action.move_to_element(self.show_more_button)
         action.perform()
-        self.show_more_button.click()
         
+        self.show_more_button.click()
