@@ -94,3 +94,15 @@ SORT = "//select[contains(@class,'select w-full min-w-[180px]')]"
 SORT1 = "//option[@value='price_asc']"
 SORT2 = "//option[@value='price_desc']"
 SORT3 = "//option[@value='popular']"
+
+# Category Page
+FILTER_MENU_BAR = "//div[contains(@class,'flex-shrink-0 flex-col gap-8')]"
+FILTERS_LIST = "(//div[@class = 'flex flex-col'])[2]/child::details"
+
+# FILTER_ITEM = "//summary[@class = 'text-base-content/80 px-3 py-7 text-bse font-medium']"
+# FILTER_ITEM = "//div[@class = 'flex cursor-pointer items-center gap-2 text-sm']"
+# FILTER_ITEM = "//details[@class = 'collapse w-full']"
+# FILTER_ITEM = "//div[@class = 'group flex items-center space-x-2 hover:text-blue-600']"
+FILTER_ITEM = "(//div[@class = 'flex flex-col'])"
+
+SHOW_MORE_BUTTON = "//button[@class = 'btn btn-primary btn-lg mx-auto mb-10 flex gap-3 px-16 text-white']"
