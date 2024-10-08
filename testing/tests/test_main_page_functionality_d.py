@@ -30,7 +30,7 @@ def test_main_page(chrome_browser: object):
     main_page.show_all_button.click()
     time.sleep(3)
 
-    # 4.Ensure that Product Card Items 1-36 is displayed and clickable (Dynamic)
+    # 4.Ensure that Product Card Items are displayed and clickable (Dynamic)
     main_page.product_cards()
     step = random.randint(1,8)
     print(step)
@@ -40,5 +40,18 @@ def test_main_page(chrome_browser: object):
             main_page.product_card(e)
             assert main_page.product_card_n.is_enabled()
             assert main_page.product_card_n.is_displayed()
+            time.sleep(3)
+            driver.back()
+
+    # 5.Ensure that Hot Proposal Product Card Items are displayed and clickable 
+    # (Dynamic)
+    main_page.hot_proposal_cards()
+    step = random.randint(1,8)
+    print(step)
+    for e in range(1, len(main_page.hot_proposal_cards_n), step):    
+            time.sleep(3)
+            main_page.hot_proposal_card(e)
+            assert main_page.hot_proposal_card_n.is_enabled()
+            assert main_page.hot_proposal_card_n.is_displayed()
             time.sleep(3)
             driver.back()

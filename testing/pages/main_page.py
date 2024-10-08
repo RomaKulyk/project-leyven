@@ -28,6 +28,10 @@ class MainPage:
         This is a method to define sorting functionality with Sorting module
     product_card_price
         This is a method to find and define product price
+    hot_proposal_card
+        This is a method to define Hot Proposal Product card
+    hot_proposal_cards
+        This is a method to find and define Hot Proposal Product card items
     """
     def __init__(self, webdriver) -> None:
         """
@@ -85,6 +89,19 @@ class MainPage:
         # Store all elements of dropdown in a list
         self.new_arrival_cards_n = list(self.driver.find_elements(
             By.XPATH, NA_PRODUCT_CARDS))
+        
+    def hot_proposal_card(self, index) -> None:
+        """This is a method to define Hot Proposal Product card."""
+        wait = WebDriverWait(self.driver, 10)
+        self.hot_proposal_card_n = wait.until(EC.element_to_be_clickable((
+            By.XPATH, f"{HP_PR_CARD}[{index}]")))
+        self.hot_proposal_card_n.click()
+
+    def hot_proposal_cards(self) -> None:
+        """This is a method to find and define Hot Proposal Product card items."""
+        # Store all elements of dropdown in a list
+        self.hot_proposal_cards_n = list(self.driver.find_elements(
+            By.XPATH, HP_PR_CARDS))
 
     def sort_item(self, locator: str) -> None:
         """This is a method to define sorting functionality."""
