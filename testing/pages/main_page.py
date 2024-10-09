@@ -113,7 +113,6 @@ class MainPage:
     def sort_item_sel(self) -> None:
         """This is a method to define sorting functionality with Select module."""
         self.dropdown_list_sel = self.driver.find_element(By.XPATH, SORT)
-        self.dropdown_list_sel.click()
         assert self.dropdown_list_sel.is_displayed()
         self.dropdown_list_sel.click()
 

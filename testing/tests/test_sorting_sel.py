@@ -20,23 +20,17 @@ def test_main_page(chrome_browser: object):
     time.sleep(3)
 
     # 3.Find and click SORTING dropdown list    
-    # list of available options in dropdown
-    main_page.sort_item_sel()
-    assert main_page.dropdown_list_sel.is_displayed()
-    main_page.dropdown_list_sel.click()
-    
-    # Create an object of the select class
-    drop = Select(main_page.dropdown_list_sel)
-    
-    # Select by value 
-    drop.select_by_value('price_asc') 
-    time.sleep(2)
-    # main_page.dropdown_list_sel.click()
-   
-    drop.select_by_value('price_desc')
-    time.sleep(2)
-    # main_page.dropdown_list_sel.click()
-    
-    drop.select_by_value('popular')
-    time.sleep(2)
+    # list of available options in dropdown    
+    sort_options = ['price_asc', 'price_desc', 'popular']
+    for i in sort_options:
+        main_page.sort_item_sel()
+        time.sleep(2)
+        assert main_page.dropdown_list_sel.is_displayed()
+        main_page.dropdown_list_sel.click()
+        time.sleep(2)
+        # Create an object of the select class
+        drop = Select(main_page.dropdown_list_sel)
+        # Select by value
+        drop.select_by_value(i)
+        time.sleep(2)
 
