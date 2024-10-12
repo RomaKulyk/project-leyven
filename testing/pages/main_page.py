@@ -32,6 +32,8 @@ class MainPage:
         This is a method to define Hot Proposal Product card
     hot_proposal_cards
         This is a method to find and define Hot Proposal Product card items
+    to_buy
+        This is a method to find and defint TO BUY button on Product Cards
     """
     def __init__(self, webdriver) -> None:
         """
@@ -122,3 +124,12 @@ class MainPage:
             By.XPATH, PR_CARD_PRICE)
         text = self.product_card_price_value.text
         return int(text[0:-2])
+
+    def mp_to_buy(self, index) -> None:
+        "This is a method to find and defint TO BUY button on Product Cards."
+        # self.mp_to_buy_button = self.driver.find_element(
+        #     By.XPATH, f"{MP_TO_BUY}[{index}]")
+        wait = WebDriverWait(self.driver, 10)
+        self.mp_to_buy_button = wait.until(EC.element_to_be_clickable((
+            By.XPATH, f"{MP_TO_BUY}[{index}]")))
+        self.mp_to_buy_button.click()

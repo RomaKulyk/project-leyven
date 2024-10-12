@@ -1,5 +1,7 @@
 from testing.pages.main_page import *
 from testing.lib.constants import *
+from testing.pages.cart import *
+from testing.pages.page import *
 import time
 import random
 
@@ -11,42 +13,42 @@ def test_main_page(chrome_browser: object):
     # 1.Open MAIN_URL page
     main_page.open_page(MAIN_URL)
     time.sleep(3)
-    
-    # 1.1 Ensure that Product Card Items in Hot Proposals are displayed
-    # and clickable(Dynamic)
 
 
-
-
-    # 2.Ensure that Product Card Items in New Arrival is displayed
-    # and clickable (Dynamic)
-    main_page.new_arrival_cards()
-    for e in range(1, len(main_page.new_arrival_cards_n), 2):    
-            time.sleep(3)
-            main_page.new_arrival_card(e)
-            assert main_page.new_arrival_card_n.is_enabled()
-            assert main_page.new_arrival_card_n.is_displayed()
-            time.sleep(3)
-            driver.back()
-    # 2.1Add to Cart product from New Arrival
-
-    # 3.Find and click SHOW_ALL button
+    cart_page = CartPage(driver)
+    # 6.Find and click SHOW ALL button
     main_page.show_all()
     assert main_page.show_all_button.is_enabled()
     assert main_page.show_all_button.is_displayed()
     main_page.show_all_button.click()
-    time.sleep(3)
+    time.sleep(1)
 
-    # 4.Ensure that Product Card Items 1-36 is displayed and clickable (Dynamic)
-    main_page.product_cards()
-    step = random.randint(1,8)
-    print(step)
-    for e in range(1, len(main_page.product_cards_n), step):    
-            time.sleep(3)
-            main_page.product_card(e)
-            assert main_page.product_card_n.is_enabled()
-            assert main_page.product_card_n.is_displayed()
-            time.sleep(3)
-            driver.back()
+    page = InventoryPage(driver)
+    # 7.Add product 1 to cart from product's category page
+    page.to_buy(TO_BUY_1)
+    time.sleep(1)
+    
+    # 8.Find and click CONTINUE_SHOPPING button
+    cart_page.close_cart()
+    assert cart_page.continue_shopping_button.is_enabled()
+    assert cart_page.continue_shopping_button.is_displayed()
+    time.sleep(1)
+    
+    # 9.Add product 2 to cart from product's category page
+    page.to_buy(TO_BUY_2)
+    time.sleep(1)
 
-    # 4.1Add to Cart product from any Category
+
+
+
+
+
+    #     # 2.1 Add product from Hot Proposal category to cart
+#     main_page.mp_to_buy(1)
+#     time.sleep(3)
+#     cart_page.continue_shopping()
+
+#     # 2.2 Add product from Hot Proposal category to cart
+#     main_page.mp_to_buy(2)
+#     time.sleep(3)
+#     cart_page.continue_shopping()

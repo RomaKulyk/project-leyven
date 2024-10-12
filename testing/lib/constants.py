@@ -87,6 +87,7 @@ PR_CARD_266 = "(//div[@class = 'col-span-1'])[266]"
 NA_PR_CARD = "//ul[contains(@class,'mt-10 grid grid-cols-2 gap-5 lg:grid-cols-4')]/child::div"
 NA_PRODUCT_CARDS = "//ul[contains(@class,'mt-10 grid grid-cols-2 gap-5 lg:grid-cols-4')]/child::div"
 PR_CARD_PRICE = "(//div[(@class = 'text-2xl lg:text-4xl')])[1]"
+MP_TO_BUY = "(//button[@class = 'btn bg-green-600 text-xs text-white hover:bg-green-500 sm:text-sm xl:text-xs 2xl:text-sm'])"
 TO_BUY_1 = "(//button[@class = 'btn bg-green-600 text-xs text-white hover:bg-green-500 sm:text-sm xl:text-xs 2xl:text-sm'])[1]"
 TO_BUY_2 = "(//button[@class = 'btn bg-green-600 text-xs text-white hover:bg-green-500 sm:text-sm xl:text-xs 2xl:text-sm'])[2]"
 
