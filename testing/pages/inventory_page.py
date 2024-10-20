@@ -20,7 +20,7 @@ class InventoryPage(MainPage):
 
     def __init__(self, driver):
         """
-        This is a method to initialize instance of the MainPage class.
+        This is a method to initialize instance of the InventoryPage class.
         Parameters
         webdriver:object
                 webdriver to initialize

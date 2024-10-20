@@ -3,7 +3,7 @@ from testing.pages.main_page import *
 from testing.pages.cart import *
 from testing.pages.main_menu import *
 from testing.lib.constants import *
-from testing.pages.page import *
+from testing.pages.inventory_page import *
 import time
 
 
