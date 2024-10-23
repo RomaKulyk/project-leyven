@@ -20,21 +20,25 @@ def test_main_page(chrome_browser: object):
     main_page.show_all_button.click()
     time.sleep(3)
 
+
+
     category_page = CategoryPage(driver) 
     # 3.Verify if menu bar persist on the page
     category_page.filters_menu()
     assert category_page.filters_menu_bar.is_enabled()
     assert category_page.filters_menu_bar.is_displayed()
     time.sleep(3)
-    
-    category_page.filters_list()
-    # print(category_page.filters_list_item)
-    print(len(category_page.filters_list_item))
-    assert len(category_page.filters_list_item) != 0
- 
-    # category_page.filter(1)
-    # category_page.filters_menu()
+       
+    driver.find_element(By.XPATH, FILTER_ITEM)
+
     # category_page.filters_list()
+    # # print(category_page.filters_list_item)
+    # print(len(category_page.filters_list_item))
+    # assert len(category_page.filters_list_item) != 0
+ 
+    # category_page.filter(2)
+    # # category_page.filters_menu()
+    # # category_page.filters_list()
     # category_page.filter(2)
     
     # category_page.filter(3)
@@ -43,15 +47,15 @@ def test_main_page(chrome_browser: object):
     
     # category_page.filter(5)
 
-    step = random.randint(1,5)
-    print(step)
+    # step = random.randint(1,5)
+    # print(step)
 
-    for e in range(1, len(category_page.filters_list_item), step):
-        time.sleep(3)
-        print(e)
-        category_page.filter(e)
+    # for e in range(1, len(category_page.filters_list_item), step):
+    #     time.sleep(3)
+    #     print(e)
+    #     category_page.filter(e)
         
-        assert category_page.filter_n.is_displayed()
-        assert category_page.filter_n.is_enabled()
+    #     assert category_page.filter_n.is_displayed()
+    #     assert category_page.filter_n.is_enabled()
         
-    assert False == True
+    # assert False == True

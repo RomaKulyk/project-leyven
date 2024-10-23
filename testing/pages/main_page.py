@@ -136,9 +136,9 @@ class MainPage:
 
     def hp_to_buy(self, index) -> None:
         "This is a method to find and defint TO BUY button on Product Cards."
-        self.hp_to_buy_button = self.driver.find_element(
-            By.XPATH, f"{HP_TO_BUY}[{index}]")
-        # wait = WebDriverWait(self.driver, 10)
-        # self.hp_to_buy_button = wait.until(EC.element_to_be_clickable((
-        #     By.XPATH, f"{HP_TO_BUY}[{index}]")))
+        # self.hp_to_buy_button = self.driver.find_element(
+        #     By.XPATH, f"{HP_TO_BUY}[{index}]")
+        wait = WebDriverWait(self.driver, 10)
+        self.hp_to_buy_button = wait.until(EC.element_to_be_clickable((
+            By.XPATH, f"{HP_TO_BUY}[{index}]")))
         self.hp_to_buy_button.click()

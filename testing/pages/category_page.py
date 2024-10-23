@@ -6,6 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
 
+
 class CategoryPage(MainPage):
     """
     Constructs all the necessary attributes for the MainPage object.
@@ -46,12 +47,14 @@ class CategoryPage(MainPage):
    
     def filter(self, index) -> None:
         """This is a method to find and define filter itself."""
-        wait = WebDriverWait(self.driver, 10)
-        self.filter_n = wait.until(EC.element_to_be_clickable((
-            By.XPATH, f"{FILTER_ITEM}[{index}]")))
+        # wait = WebDriverWait(self.driver, 10)
+        # self.filter_n = wait.until(EC.element_to_be_clickable((
+        #     By.XPATH, f"{FILTER_ITEM}[{index}]")))
         # TimeoutException
-        # self.filter_n = self.driver.find_element(
-        #     By.XPATH, f"{FILTER_ITEM}[{index}]")
+        self.driver.implicitly_wait(3)
+        self.filter_n = self.driver.find_element(
+            By.XPATH, f"{FILTER_ITEM}[{index}]")
+    
         self.filter_n.click()
         # ElementNotInteractableException
 
