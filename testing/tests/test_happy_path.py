@@ -59,23 +59,24 @@ def test_main_page(chrome_browser: object):
     time.sleep(1)
     cart_page.continue_shopping_button.click()
     time.sleep(3)
-    # # 8. Add product from Hot Proposal category to cart
-    # main_page.mp_to_buy(2)
-    # time.sleep(3)
-    # cart_page.continue_shopping()
-    # assert cart_page.continue_shopping_button.is_displayed()
-    # assert cart_page.continue_shopping_button.is_displayed()
-    # time.sleep(1)
-    # cart_page.continue_shopping_button.click()
-
-    # time.sleep(3)
-
-
-    # action = ActionChains(driver)        
-    # action.scroll_to_element(main_page.show_all_button)
-    # action.perform()
-    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    # 8. Add product from Hot Proposal category to cart
+    main_page.mp_to_buy(2)
     time.sleep(3)
+    cart_page.continue_shopping()
+    assert cart_page.continue_shopping_button.is_displayed()
+    assert cart_page.continue_shopping_button.is_displayed()
+    time.sleep(1)
+    cart_page.continue_shopping_button.click()
+
+    time.sleep(3)
+
+    main_page.new_arrivals()
+    action = ActionChains(driver)        
+    # action.scroll_to_element(main_page.show_all_button)
+    action.scroll_to_element(main_page.new_arrival_span)
+    action.perform()
+    # driver.execute_script("window.scrollTo(300, document.body.scrollHeight);")
+    # time.sleep(3)
     
 
     # 9. Add product from New Arrival category to cart
