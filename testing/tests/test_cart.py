@@ -7,8 +7,8 @@ from testing.pages.inventory_page import *
 import time
 
 
-def test_cart_page(chrome_browser: object):
-    driver = chrome_browser
+def test_cart_page(browser: object):
+    driver = browser
     main_page = MainPage(driver)
 
     # 1.Open MAIN_URL page

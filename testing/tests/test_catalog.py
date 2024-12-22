@@ -7,8 +7,8 @@ from testing.lib.constants import *
 import time
 
 
-def test_main_menu(chrome_browser: object):
-    driver = chrome_browser
+def test_main_menu(browser: object):
+    driver = browser
     main_page = MainPage(driver)
 
     # 1.Open MAIN_URL page

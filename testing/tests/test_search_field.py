@@ -6,8 +6,8 @@ import time
 
 @pytest.mark.parametrize('user_input',[('Simparica'),('Sim'),
                          ('Сім'),('10024337'),(10022531)])
-def test_main_menu(chrome_browser: object, user_input: str):
-    driver = chrome_browser
+def test_main_menu(browser: object, user_input: str):
+    driver = browser
     main_page = MainPage(driver)
 
     # 1.Open MAIN_URL page

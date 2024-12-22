@@ -4,8 +4,8 @@ import time
 import random
 
 
-def test_main_page(chrome_browser: object):
-    driver = chrome_browser
+def test_main_page(browser: object):
+    driver = browser
     main_page = MainPage(driver)
     
     # 1.Open MAIN_URL page

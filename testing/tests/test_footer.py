@@ -5,8 +5,8 @@ from testing.lib.constants import *
 import time
 
 
-def test_footer(chrome_browser: object):
-    driver = chrome_browser
+def test_footer(browser: object):
+    driver = browser
     main_page = MainPage(driver)
 
     # 1.Open MAIN_URL page

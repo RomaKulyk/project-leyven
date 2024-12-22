@@ -8,8 +8,8 @@ from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
-def test_main_page(chrome_browser: object):
-    driver = chrome_browser
+def test_main_page(browser: object):
+    driver = browser
     main_page = MainPage(driver)
     
     # 1.Open MAIN_URL page
