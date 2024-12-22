@@ -1,4 +1,0 @@
-Status: Deprecated as better validation and more specific exceptions for 
-selector errors have been introduced.
-Replacement: This broad exception is no longer required because more 
-descriptive exceptions or built-in validation exist.

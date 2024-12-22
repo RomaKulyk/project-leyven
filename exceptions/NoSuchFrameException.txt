@@ -1,6 +1,0 @@
-NoSuchFrameException thrown when frame target to be switched doesn't exist.
-
-https://www.w3.org/TR/html401/present/frames.html#h-16.2.2
-HTML frames allow authors to present documents in multiple views, which may be
-independent windows or subwindows. Multiple views offer designers a way to keep
-certain information visible, while other veiws are scrolle or replaced.
