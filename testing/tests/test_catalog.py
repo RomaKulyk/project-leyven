@@ -1,5 +1,5 @@
 import pytest
-from testing.pages.main_page import *
+from testing.pages.main_page import MainPage
 from testing.pages.hm_form import *
 from testing.pages.main_menu import *
 from testing.pages.catalog_dropdown import *
