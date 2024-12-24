@@ -54,13 +54,13 @@ class MainPage:
     def go_to_category_1(self) -> None:
         """This is a method to define GO_TO_CATEGORY_1 button."""
         wait = WebDriverWait(self.driver, 10)
-        self.go_to_category_1 = wait.until(EC.element_to_be_clickable((
+        self.go_to_category_1_button = wait.until(EC.element_to_be_clickable((
             By.XPATH, GO_TO_CATEGORY_1)))
         
     def go_to_category_2(self) -> None:
         """This is a method to define GO_TO_CATEGORY_2 button."""
         wait = WebDriverWait(self.driver, 10)
-        self.go_to_category_2 = wait.until(EC.element_to_be_clickable((
+        self.go_to_category_2_button = wait.until(EC.element_to_be_clickable((
             By.XPATH, GO_TO_CATEGORY_2)))
         
     def help_me(self) -> None:
