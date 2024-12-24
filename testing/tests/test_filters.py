@@ -1,6 +1,7 @@
-from testing.pages.main_page import *
-from testing.pages.category_page import *
-from testing.lib.constants import *
+from testing.pages.main_page import MainPage
+from testing.pages.category_page import CategoryPage
+from testing.lib.constants import MAIN_URL, FILTER_ITEM
+from selenium.webdriver.common.by import By
 import time
 import random
 
@@ -13,11 +14,11 @@ def test_main_page(browser: object):
     main_page.open_page(MAIN_URL)
     time.sleep(3)
 
-    # 2.Find and click SHOW_ALL button
-    main_page.show_all()
-    assert main_page.show_all_button.is_enabled()
-    assert main_page.show_all_button.is_displayed()
-    main_page.show_all_button.click()
+    # 2.Find and click GO_TO_CATEGORY_1 button
+    main_page.go_to_category_1()
+    assert main_page.go_to_category_1.is_enabled()
+    assert main_page.go_to_category_1.is_displayed()
+    main_page.go_to_category_1.click()
     time.sleep(3)
 
 
