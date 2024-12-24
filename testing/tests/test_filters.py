@@ -16,9 +16,9 @@ def test_main_page(browser: object):
 
     # 2.Find and click GO_TO_CATEGORY_1 button
     main_page.go_to_category_1()
-    assert main_page.go_to_category_1.is_enabled()
-    assert main_page.go_to_category_1.is_displayed()
-    main_page.go_to_category_1.click()
+    assert main_page.go_to_category_1_button.is_enabled()
+    assert main_page.go_to_category_1_button.is_displayed()
+    main_page.go_to_category_1_button.click()
     time.sleep(3)
 
 
