@@ -42,11 +42,11 @@ def test_cart_page(browser: object):
     assert cart_page.close_cart_button.is_displayed()
     time.sleep(1)
     
-    # 6.Find and click SHOW ALL button
-    main_page.show_all()
-    assert main_page.show_all_button.is_enabled()
-    assert main_page.show_all_button.is_displayed()
-    main_page.show_all_button.click()
+    # 6.Find and click GO_TO_CATEGORY_1 button
+    main_page.go_to_category_1()
+    assert main_page.go_to_category_1.is_enabled()
+    assert main_page.go_to_category_1.is_displayed()
+    main_page.go_to_category_1.click()
     time.sleep(1)
 
     page = InventoryPage(driver)

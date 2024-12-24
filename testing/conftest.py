@@ -34,6 +34,7 @@ def browser(config):
 
     # Make its calls wait for elements to appear
     b.implicitly_wait(config['implicit_wait'])
+    b.maximize_window()
 
     # Return the WebDriver instance for the setup
     yield b

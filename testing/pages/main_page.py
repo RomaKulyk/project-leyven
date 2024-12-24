@@ -16,8 +16,10 @@ class MainPage:
         This is a method to initialize instance of the MainPage class
     open_page
         This is a method to open a certain web page
-    show_all
-        This is a method to define Show All button
+    go_to_category_1
+        This is a method to define GO_TO_CATEGORY_1 button
+    go_to_category_2
+        This is a method to define GO_TO_CATEGORY_2 button
     help_me
        This is a method to define Help Me button
     hm_form
@@ -49,12 +51,18 @@ class MainPage:
         self.driver.get(url)
         self.driver.implicitly_wait(3)
 
-    def show_all(self) -> None:
-        """This is a method to define Buy Products button."""
+    def go_to_category_1(self) -> None:
+        """This is a method to define GO_TO_CATEGORY_1 button."""
         wait = WebDriverWait(self.driver, 10)
-        self.show_all_button = wait.until(EC.element_to_be_clickable((
-            By.XPATH, SHOW_ALL)))
-
+        self.go_to_category_1 = wait.until(EC.element_to_be_clickable((
+            By.XPATH, GO_TO_CATEGORY_1)))
+        
+    def go_to_category_2(self) -> None:
+        """This is a method to define GO_TO_CATEGORY_2 button."""
+        wait = WebDriverWait(self.driver, 10)
+        self.go_to_category_2 = wait.until(EC.element_to_be_clickable((
+            By.XPATH, GO_TO_CATEGORY_2)))
+        
     def help_me(self) -> None:
         """This is a method to define Help Me button."""
         self.help_me_button = self.driver.find_element(
