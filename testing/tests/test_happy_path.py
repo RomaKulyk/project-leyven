@@ -2,7 +2,6 @@ from testing.pages.main_page import MainPage
 from testing.lib.constants import MAIN_URL, TO_BUY_1, TO_BUY_2
 from testing.pages.cart import CartPage
 from testing.pages.inventory_page import InventoryPage
-import time
 from selenium.webdriver.common.action_chains import ActionChains
 
 
@@ -12,8 +11,6 @@ def test_main_page(browser: object):
     
     # 1. Open MAIN_URL page
     main_page.open_page(MAIN_URL)
-    time.sleep(3)
-
 
     cart_page = CartPage(driver)
     # 2. Find and click GO_TO_CATEGORY_1 button
@@ -21,34 +18,27 @@ def test_main_page(browser: object):
     assert main_page.go_to_category_1_button.is_enabled()
     assert main_page.go_to_category_1_button.is_displayed()
     main_page.go_to_category_1_button.click()
-    time.sleep(1)
 
     page = InventoryPage(driver)
     # 3. Add product 1 to cart from product's category page
     page.to_buy(TO_BUY_1)
-    time.sleep(1)
     
     # 4. Find and click CONTINUE_SHOPPING button
     cart_page.continue_shopping()
     assert cart_page.continue_shopping_button.is_displayed()
     assert cart_page.continue_shopping_button.is_displayed()
-    time.sleep(1)
     cart_page.continue_shopping_button.click()
     
     page = InventoryPage(driver)
     # 5. Add product 2 to cart from product's category page
     page.to_buy(TO_BUY_2)
-    time.sleep(1)
 
     # 6. Find and click CONTINUE_SHOPPING button
     cart_page.continue_shopping()
     assert cart_page.continue_shopping_button.is_displayed()
     assert cart_page.continue_shopping_button.is_displayed()
-    time.sleep(1)
     cart_page.continue_shopping_button.click()
     driver.back()
-    time.sleep(3)
-
     
     # # 7. Add product from Hot Proposal category to cart
     # main_page.mp_to_buy(1)
@@ -56,7 +46,7 @@ def test_main_page(browser: object):
     # cart_page.continue_shopping()
     # assert cart_page.continue_shopping_button.is_displayed()
     # assert cart_page.continue_shopping_button.is_displayed()
-    # time.sleep(1)
+    # 
     # cart_page.continue_shopping_button.click()
     # time.sleep(3)
     # # 8. Add product from Hot Proposal category to cart
@@ -65,7 +55,7 @@ def test_main_page(browser: object):
     # cart_page.continue_shopping()
     # assert cart_page.continue_shopping_button.is_displayed()
     # assert cart_page.continue_shopping_button.is_displayed()
-    # time.sleep(1)
+    # 
     # cart_page.continue_shopping_button.click()
 
     # time.sleep(3)
