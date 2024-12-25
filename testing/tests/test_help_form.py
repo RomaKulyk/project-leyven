@@ -1,8 +1,7 @@
 import pytest
-from testing.pages.main_page import *
-from testing.pages.hm_form import *
-from testing.lib.constants import *
-import time
+from testing.pages.main_page import MainPage
+from testing.pages.hm_form import HelpMeForm
+from testing.lib.constants import MAIN_URL
 
 def test_main_page(browser: object):
     driver = browser
@@ -10,19 +9,16 @@ def test_main_page(browser: object):
     
     # 1.Open MAIN_URL page
     main_page.open_page(MAIN_URL)
-    time.sleep(1)
 
     # 2.Find and click HELP_ME button
     main_page.help_me()
     assert main_page.help_me_button.is_enabled()
     assert main_page.help_me_button.is_displayed()
-    time.sleep(1)
 
     # 3.Ensure that Help Me Form is displayed
     main_page.hm_form()
     assert main_page.help_me_form.is_enabled()
     assert main_page.help_me_form.is_displayed()
-    time.sleep(1)
     
     hm_form = HelpMeForm(driver)
     # 4.Fill in the Help Me Form
@@ -30,4 +26,4 @@ def test_main_page(browser: object):
     hm_form.enter_phone("095-777-77-77")
     hm_form.enter_your_question(
         "Why I have to log in if there is not any functionality for that?")
-    time.sleep(5)
+
