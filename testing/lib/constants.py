@@ -46,8 +46,15 @@ CATALOG_DROPDOWN_ITEM_7 = f"(//li/a[@class ='{UNSELECTED_DD_ITEM_CLS}' or @class
 CATALOG_DROPDOWN_ITEM_8 = f"(//li/a[@class ='{UNSELECTED_DD_ITEM_CLS}' or @class = '{SELECTED_DD_ITEM_CLS}'])[8]"
 CATALOG_DROPDOWN_ITEM_9 = f"(//li/a[@class ='{UNSELECTED_DD_ITEM_CLS}' or @class = '{SELECTED_DD_ITEM_CLS}'])[9]"
 
-SEARCH_FIELD = "//input[@class='text-sm outline-none xl:cursor-pointer 2xl:text-lg']"
-CROSS_BUTTON = "//*[contains(@class,'lucide lucide-x ')]"
+# SEARCH_FIELD = "//input[@class='text-sm outline-none xl:cursor-pointer 2xl:text-lg']"
+# SEARCH_FIELD = "//div[@class='ml-auto md:flex-1']"  # Selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+# SEARCH_FIELD = "//div[@class='hidden md:flex']"  # Selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+# SEARCH_FIELD = "//div[@class='hidden md:flex']/child::div"  # Selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+# SEARCH_FIELD = "//label[@class='flex h-[36px] items-center gap-[20px] rounded-[500px] bg-white px-[28px] text-foreground xl:h-[48px] xl:w-[326px] xl:cursor-pointer']"  # Selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+# SEARCH_FIELD = "//input[@class='w-full bg-transparent text-[18px] font-[500] outline-none xl:cursor-pointer']"  # Selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+
+# CROSS_BUTTON = "//*[contains(@class,'lucide lucide-x ')]"
+CROSS_BUTTON = "//*[@class='pr-5']"
 PHONE = "//div[@class = 'tooltip tooltip-bottom tooltip-info text-xl']"
 
 FACEBOOK = "(//*[contains(@href,'www.facebook.com')])[1]"
@@ -77,12 +84,9 @@ CLOSE_CART = "//button[contains(@class,'h-fit rounded-lg p-1 outline-none')]"
 REMOVE_PDP_1 = "(//button[@class='h-fit'])[1]"
 
 # Product cards
-PRODUCT_CARDS = "//div[contains(@class,'md:grid-cols-3 xl:grid-cols-5')]/child::div"
-PR_CARD = "(//div[@class = 'col-span-1'])"
-PR_CARD_1 = "(//div[@class = 'col-span-1'])[1]"
-PR_CARD_18 = "(//div[@class = 'col-span-1'])[18]"
-PR_CARD_36 = "(//div[@class = 'col-span-1'])[36]"
-PR_CARD_266 = "(//div[@class = 'col-span-1'])[266]"
+PRODUCT_CARDS_C_2 = "//div[contains(@class,'sm:grid-cols-3 grid w-fit grid-cols-2 gap-[12px] xl:gap-[30px]')]"
+PR_CARD_C_2 = "//div[contains(@class,'sm:grid-cols-3 grid w-fit grid-cols-2 gap-[12px] xl:gap-[30px]')]/child::a"
+
 NA_PR_CARD = "//ul[contains(@class,'mt-10 grid grid-cols-2 gap-5 lg:grid-cols-4')]/child::div"
 NA_PRODUCT_CARDS = "//ul[contains(@class,'mt-10 grid grid-cols-2 gap-5 lg:grid-cols-4')]/child::div"
 PR_CARD_PRICE = "(//div[(@class = 'text-2xl lg:text-4xl')])[1]"

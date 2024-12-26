@@ -78,14 +78,14 @@ class MainPage:
         """This is a method to define Product card."""
         wait = WebDriverWait(self.driver, 10)
         self.product_card_n = wait.until(EC.element_to_be_clickable((
-            By.XPATH, f"{PR_CARD}[{index}]")))
+            By.XPATH, f"{PR_CARD_C_2}[{index}]")))
         self.product_card_n.click()
 
     def product_cards(self) -> None:
         """This is a method to find and define Product card items."""
         # Store all elements of dropdown in a list
         self.product_cards_n = list(self.driver.find_elements(
-            By.XPATH, PRODUCT_CARDS))
+            By.XPATH, PRODUCT_CARDS_C_2))
 
     def new_arrival_card(self, index) -> None:
         """This is a method to define Product card."""

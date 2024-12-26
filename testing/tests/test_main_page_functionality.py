@@ -1,8 +1,8 @@
 import pytest
-from testing.pages.main_page import *
-from testing.pages.hm_form import *
-from testing.pages.main_menu import *
-from testing.lib.constants import *
+from testing.pages.main_page import MainPage
+from testing.pages.hm_form import HelpMeForm
+from testing.pages.main_menu import MainMenu
+from testing.lib.constants import MAIN_URL
 import time
 from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
@@ -16,11 +16,11 @@ def test_main_page(browser: object):
     main_page.open_page(MAIN_URL)
     time.sleep(0.5)
     
-    # 2.Find and click SHOW_ALL button
-    main_page.show_all()
-    assert main_page.show_all_button.is_enabled()
-    assert main_page.show_all_button.is_displayed()
-    main_page.show_all_button.click()
+    # 2.Find and click GO_TO_CATEGORY_1 button
+    main_page.go_to_category_1()
+    assert main_page.go_to_category_1_button.is_enabled()
+    assert main_page.go_to_category_1_button.is_displayed()
+    main_page.go_to_category_1_button.click()
     time.sleep(0.5)
 
     main_menu = MainMenu(driver)
@@ -30,11 +30,11 @@ def test_main_page(browser: object):
     assert main_menu.main_logo_button.is_displayed()
     time.sleep(0.5)
 
-    # 4.Find and click SHOW_ALL button
-    main_page.show_all()
-    assert main_page.show_all_button.is_enabled()
-    assert main_page.show_all_button.is_displayed()
-    main_page.show_all_button.click()
+    # 4.Find and click GO_TO_CATEGORY_2 button
+    main_page.go_to_category_2()
+    assert main_page.go_to_category_2_button.is_enabled()
+    assert main_page.go_to_category_2_button.is_displayed()
+    main_page.go_to_category_2_button.click()
     time.sleep(0.5)
 
     # 5.Find and click first Product Card in the list
