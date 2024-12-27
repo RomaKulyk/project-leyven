@@ -4,9 +4,7 @@ from testing.pages.hm_form import HelpMeForm
 from testing.pages.main_menu import MainMenu
 from testing.lib.constants import MAIN_URL
 import time
-from selenium import webdriver
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.wait import WebDriverWait
+
 
 def test_main_page(browser: object):
     driver = browser
