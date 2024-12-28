@@ -91,12 +91,12 @@ class MainMenu:
         self.search_field_inn.send_keys(user_input)
         
     def phone(self) -> None:
-        action = ActionChains(self.driver)
+        # action = ActionChains(self.driver)
         """This is a method to find and define Phone button of Main Menu."""
         self.phone_button = self.driver.find_element(
             By.XPATH, PHONE)
-        action.move_to_element(self.phone_button)
-        action.perform()
+        # action.move_to_element(self.phone_button)
+        # action.perform()
 
     def cross(self) -> None:
         """This is a method to define Cross Button of Search Field."""

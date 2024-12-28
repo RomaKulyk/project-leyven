@@ -1,9 +1,9 @@
 import pytest
-from testing.pages.main_page import *
-from testing.pages.hm_form import *
-from testing.pages.main_menu import *
-from testing.pages.catalog_dropdown import *
-from testing.lib.constants import *
+from testing.pages.main_page import MainPage
+from testing.pages.hm_form import HelpMeForm
+from testing.pages.main_menu import MainMenu
+from testing.pages.catalog_dropdown import CatalogDropdown
+from testing.lib.constants import MAIN_URL
 import time
 
 
@@ -35,9 +35,9 @@ def test_main_menu(browser: object):
     time.sleep(1)
 
     # 5.Input some query into Search field
-    main_menu.search('Simparica')
-    assert main_menu.search_field.is_enabled()
-    assert main_menu.search_field.is_displayed()
+    main_menu.search_out()
+    assert main_menu.search_field_out.is_enabled()
+    assert main_menu.search_field_out.is_displayed()
     time.sleep(3)
 
     # 6.Click Cross Button
@@ -85,3 +85,9 @@ def test_main_menu(browser: object):
     assert main_menu.cart_button.is_enabled()
     assert main_menu.cart_button.is_displayed()
     time.sleep(3)
+
+
+# TO_DO-1 - Check in step # 7 that appropriate tooltip is shown and that
+# correct phone number is shown, and that phone number was copied after click
+
+# TO_DO-2 - Return back to the Main Page after openin social medis pages

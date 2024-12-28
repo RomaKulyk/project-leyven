@@ -50,12 +50,12 @@ SEARCH_FIELD_OUT = "(//input[@class='w-full bg-transparent text-[18px] font-[500
 SEARCH_FIELD_INN = "(//input[@class='w-full bg-transparent text-[18px] font-[500] outline-none xl:cursor-pointer'])[4]"
 
 CROSS_BUTTON = "//*[@class='pr-5']"
-PHONE = "//div[@class = 'tooltip tooltip-bottom tooltip-info text-xl']"
+PHONE = "//div[@class = 'relative flex items-center gap-[8px] xl:cursor-pointer']"
 
 FACEBOOK = "(//*[contains(@href,'www.facebook.com')])[1]"
 INSTAGRAM = "(//*[contains(@href,'www.instagram.com')])[1]"
 TIKTOK = "(//*[contains(@href,'www.tiktok.com')])[1]"
-LOG_IN = "(//a[@class= 'pl-[10px]'])[1]"
+LOG_IN = "(//a[@class= 'pl-[10px]'])[2]"
 CART = "(//div[@class = 'indicator'])[2]"
 
 # Footer
