@@ -1,7 +1,17 @@
 from selenium.webdriver.common.by import By
-from testing.lib.constants import *
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
+from testing.lib.constants import MAIN_LOGO,\
+                                  CATALOG,\
+                                  SEARCH_FIELD_OUT,\
+                                  SEARCH_FIELD_INN,\
+                                  PHONE,\
+                                  CROSS_BUTTON,\
+                                  FACEBOOK,\
+                                  INSTAGRAM,\
+                                  TIKTOK,\
+                                  LOG_IN,\
+                                  CART
 
 
 class MainMenu:
@@ -17,8 +27,10 @@ class MainMenu:
         This is a method to define and click Main Logo button
     catalog
         This is a method to find catalog button
-    search
-        This is a method to find, clear and enter query into search field
+    search_out
+        This is a method to invoke search field
+    search_inn
+        This is a method to clear and enter query into search field
     phone
         This is a method to find and define Phone button of Main Menu
     cross
@@ -58,18 +70,26 @@ class MainMenu:
         action.move_to_element(self.catalog_button)
         action.perform()
 
-    def search(self, user_input: str) -> None:
+    def search_out(self) -> None:
         """
-        This is a method to find, clear and enter query into search field.
+        This is a method to invoke search field
+        """
+        self.search_field_out = self.driver.find_element(
+            By.XPATH, SEARCH_FIELD_OUT)
+        self.search_field_out.click()
+        
+    def search_inn(self, user_input: str) -> None:
+        """
+        This is a method to clear and enter query into search field.
         Parameters
         user_input:str
-                   Username to log in with
+                   Product to find
         """
-        self.search_field = self.driver.find_element(
-            By.XPATH, SEARCH_FIELD)
-        self.search_field.clear()
-        self.search_field.send_keys(user_input)
-
+        self.search_field_inn = self.driver.find_element(
+            By.XPATH, SEARCH_FIELD_INN)
+        self.search_field_inn.clear()
+        self.search_field_inn.send_keys(user_input)
+        
     def phone(self) -> None:
         action = ActionChains(self.driver)
         """This is a method to find and define Phone button of Main Menu."""

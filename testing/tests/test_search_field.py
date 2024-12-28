@@ -15,10 +15,16 @@ def test_main_menu(browser: object, user_input: str):
     time.sleep(1)
     
     main_menu = MainMenu(driver)
-    # 2.Input some query into Search field
-    main_menu.search(user_input)
-    assert main_menu.search_field.is_enabled()
-    assert main_menu.search_field.is_displayed()
+    # 2.Click on search field to start search
+    main_menu.search_out()
+    assert main_menu.search_field_out.is_enabled()
+    assert main_menu.search_field_out.is_displayed()
+    time.sleep(3)
+
+    # 3. Input some query into Search field
+    main_menu.search_inn(user_input)
+    assert main_menu.search_field_inn.is_enabled()
+    assert main_menu.search_field_inn.is_displayed()
     time.sleep(3)
 
     # 3.Click Cross Button
@@ -27,3 +33,5 @@ def test_main_menu(browser: object, user_input: str):
     assert main_menu.cross_button.is_displayed()
     main_menu.cross_button.click()
     time.sleep(3)
+
+    # TO_DO_1 - change assertion in step # 3 for more appropriate ones

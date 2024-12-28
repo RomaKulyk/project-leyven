@@ -46,21 +46,16 @@ CATALOG_DROPDOWN_ITEM_7 = f"(//li/a[@class ='{UNSELECTED_DD_ITEM_CLS}' or @class
 CATALOG_DROPDOWN_ITEM_8 = f"(//li/a[@class ='{UNSELECTED_DD_ITEM_CLS}' or @class = '{SELECTED_DD_ITEM_CLS}'])[8]"
 CATALOG_DROPDOWN_ITEM_9 = f"(//li/a[@class ='{UNSELECTED_DD_ITEM_CLS}' or @class = '{SELECTED_DD_ITEM_CLS}'])[9]"
 
-# SEARCH_FIELD = "//input[@class='text-sm outline-none xl:cursor-pointer 2xl:text-lg']"
-# SEARCH_FIELD = "//div[@class='ml-auto md:flex-1']"  # Selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
-# SEARCH_FIELD = "//div[@class='hidden md:flex']"  # Selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
-# SEARCH_FIELD = "//div[@class='hidden md:flex']/child::div"  # Selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
-# SEARCH_FIELD = "//label[@class='flex h-[36px] items-center gap-[20px] rounded-[500px] bg-white px-[28px] text-foreground xl:h-[48px] xl:w-[326px] xl:cursor-pointer']"  # Selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
-# SEARCH_FIELD = "//input[@class='w-full bg-transparent text-[18px] font-[500] outline-none xl:cursor-pointer']"  # Selenium.common.exceptions.ElementNotInteractableException: Message: element not interactable
+SEARCH_FIELD_OUT = "(//input[@class='w-full bg-transparent text-[18px] font-[500] outline-none xl:cursor-pointer'])[3]"  
+SEARCH_FIELD_INN = "(//input[@class='w-full bg-transparent text-[18px] font-[500] outline-none xl:cursor-pointer'])[4]"
 
-# CROSS_BUTTON = "//*[contains(@class,'lucide lucide-x ')]"
 CROSS_BUTTON = "//*[@class='pr-5']"
 PHONE = "//div[@class = 'tooltip tooltip-bottom tooltip-info text-xl']"
 
 FACEBOOK = "(//*[contains(@href,'www.facebook.com')])[1]"
 INSTAGRAM = "(//*[contains(@href,'www.instagram.com')])[1]"
 TIKTOK = "(//*[contains(@href,'www.tiktok.com')])[1]"
-LOG_IN = "(//div[@class= 'hidden sm:flex'])[1]"
+LOG_IN = "(//a[@class= 'pl-[10px]'])[1]"
 CART = "(//div[@class = 'indicator'])[2]"
 
 # Footer
