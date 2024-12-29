@@ -79,23 +79,17 @@ CLOSE_CART = "//button[contains(@class,'h-fit rounded-lg p-1 outline-none')]"
 REMOVE_PDP_1 = "(//button[@class='h-fit'])[1]"
 
 # Product cards
-PRODUCT_CARDS_C_2 = "//div[contains(@class,'sm:grid-cols-3 grid w-fit grid-cols-2 gap-[12px] xl:gap-[30px]')]"
-PR_CARD_C_2 = "//div[contains(@class,'sm:grid-cols-3 grid w-fit grid-cols-2 gap-[12px] xl:gap-[30px]')]/child::a"
-
-NA_PR_CARD = "//div[@class='sm:grid-cols-3 grid w-fit grid-cols-2 gap-[12px] xl:gap-[30px]']/child::a"
-NA_PRODUCT_CARDS = "//div[@class='sm:grid-cols-3 grid w-fit grid-cols-2 gap-[12px] xl:gap-[30px]']/child::a"
+PRODUCT_CARDS = "//div[@class='sm:grid-cols-3 grid w-fit grid-cols-2 gap-[12px] xl:gap-[30px]']/child::a"
+PR_CARD = "//div[contains(@class,'sm:grid-cols-3 grid w-fit grid-cols-2 gap-[12px] xl:gap-[30px]')]/child::a"
 
 PR_CARD_PRICE = "(//div[(@class = 'text-2xl lg:text-4xl')])[1]"
 MP_TO_BUY = "(//button[@class = 'btn bg-green-600 text-xs text-white hover:bg-green-500 sm:text-sm xl:text-xs 2xl:text-sm'])"
 HP_TO_BUY = "//ul[contains(@class,'mt-10 grid grid-cols-2 gap-5 lg:grid-cols-4 2xl:grid-cols-6')]/child::div/descendant::button[contains(text(),'Купити')]"
 TO_BUY_1 = "(//button[contains(@class, 'h-[47px] transition-all duration-300')])[1]"
 TO_BUY_2 = "(//button[contains(@class, 'h-[47px] transition-all duration-300')])[2]"
-NEW_ARRIVALS = "//div[@class = 'space-y-5 bg-sky-100 px-4 py-20 lg:px-0']"
+# NEW_ARRIVALS = "//div[@class = 'space-y-5 bg-sky-100 px-4 py-20 lg:px-0']"
 
-HP_PR_CARD = "//div[@class='sm:grid-cols-3 grid w-fit grid-cols-2 gap-[12px] xl:gap-[30px]']/child::a"
-HP_PR_CARDS = "//div[@class='sm:grid-cols-3 grid w-fit grid-cols-2 gap-[12px] xl:gap-[30px]']/child::a"
-
-SORT = "//select[contains(@class,'select w-full min-w-[180px]')]"
+SORT = "//select[contains(@class,'select w-full max-w-[250px] rounded-[50px] ')]"
 SORT1 = "//option[@value='price_asc']"
 SORT2 = "//option[@value='price_desc']"
 SORT3 = "//option[@value='popular']"

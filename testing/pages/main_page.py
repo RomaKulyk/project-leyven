@@ -30,10 +30,10 @@ class MainPage:
         This is a method to define sorting functionality with Sorting module
     product_card_price
         This is a method to find and define product price
-    hot_proposal_card
-        This is a method to define Hot Proposal Product card
-    hot_proposal_cards
-        This is a method to find and define Hot Proposal Product card items
+    product_card
+        This is a method to define Product card
+    product_cards
+        This is a method to find and define Product card item's list
     to_buy
         This is a method to find and defint TO BUY button on Product Cards
     """
@@ -74,45 +74,6 @@ class MainPage:
         self.help_me_form = self.driver.find_element(
             By.XPATH, HELP_ME_FORM)
 
-    def product_card(self, index) -> None:
-        """This is a method to define Product card."""
-        wait = WebDriverWait(self.driver, 10)
-        self.product_card_n = wait.until(EC.element_to_be_clickable((
-            By.XPATH, f"{PR_CARD_C_2}[{index}]")))
-        self.product_card_n.click()
-
-    def product_cards(self) -> None:
-        """This is a method to find and define Product card items."""
-        # Store all elements of dropdown in a list
-        self.product_cards_n = list(self.driver.find_elements(
-            By.XPATH, PRODUCT_CARDS_C_2))
-
-    def new_arrival_card(self, index) -> None:
-        """This is a method to define Product card."""
-        wait = WebDriverWait(self.driver, 10)
-        self.new_arrival_card_n = wait.until(EC.element_to_be_clickable((
-            By.XPATH, f"{NA_PR_CARD}[{index}]")))
-        self.new_arrival_card_n.click()
-
-    def new_arrival_cards(self) -> None:
-        """This is a method to find and define Product card items."""
-        # Store all elements of dropdown in a list
-        self.new_arrival_cards_n = list(self.driver.find_elements(
-            By.XPATH, NA_PRODUCT_CARDS))
-        
-    def hot_proposal_card(self, index) -> None:
-        """This is a method to define Hot Proposal Product card."""
-        wait = WebDriverWait(self.driver, 10)
-        self.hot_proposal_card_n = wait.until(EC.element_to_be_clickable((
-            By.XPATH, f"{HP_PR_CARD}[{index}]")))
-        self.hot_proposal_card_n.click()
-
-    def hot_proposal_cards(self) -> None:
-        """This is a method to find and define Hot Proposal Product card items."""
-        # Store all elements of dropdown in a list
-        self.hot_proposal_cards_n = list(self.driver.find_elements(
-            By.XPATH, HP_PR_CARDS))
-
     def sort_item(self, locator: str) -> None:
         """This is a method to define sorting functionality."""
         self.dropdown_list = self.driver.find_element(By.XPATH, SORT)
@@ -151,10 +112,23 @@ class MainPage:
             By.XPATH, f"{HP_TO_BUY}[{index}]")))
         self.hp_to_buy_button.click()
 
-    def new_arrivals(self) -> None:
-        "This is a method to find and define NEW_ARRIVALS section."
-        # self.new_arrivals_span = self.driver.find_element(
-        #     By.XPATH, NEW_ARRIVALS)
+    def product_card(self, index) -> None:
+        """This is a method to define Product card."""
         wait = WebDriverWait(self.driver, 10)
-        self.new_arrival_span = wait.until(EC.element_to_be_clickable((
-            By.XPATH, NEW_ARRIVALS)))
+        self.product_card_n = wait.until(EC.element_to_be_clickable((
+            By.XPATH, f"{PR_CARD}[{index}]")))
+        self.product_card_n.click()
+
+    def product_cards(self) -> None:
+        """This is a method to find and define Product card item's list."""
+        # Store all elements of dropdown in a list
+        self.product_cards_n = list(self.driver.find_elements(
+            By.XPATH, PRODUCT_CARDS))
+        
+    # # OBSOLETED CATEGORY?
+    # def new_arrivals(self) -> None:
+    #     "This is a method to find and define NEW_ARRIVALS section."
+    #     wait = WebDriverWait(self.driver, 10)
+    #     self.new_arrival_span = wait.until(EC.element_to_be_clickable((
+    #         By.XPATH, NEW_ARRIVALS)))
+

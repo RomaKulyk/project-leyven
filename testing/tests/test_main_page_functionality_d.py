@@ -21,12 +21,12 @@ def test_main_page(browser: object):
     
     # 3.Ensure that Product Card Items in New Arrival is displayed
     # and clickable (Dynamic)
-    main_page.new_arrival_cards()
-    for e in range(1, len(main_page.new_arrival_cards_n), 2):    
+    main_page.product_cards()
+    for e in range(1, len(main_page.product_cards_n), 2):    
             time.sleep(3)
-            main_page.new_arrival_card(e)
-            assert main_page.new_arrival_card_n.is_enabled()
-            assert main_page.new_arrival_card_n.is_displayed()
+            main_page.product_card(e)
+            assert main_page.product_card_n.is_enabled()
+            assert main_page.product_card_n.is_displayed()
             time.sleep(3)
             driver.back()
 
@@ -46,13 +46,13 @@ def test_main_page(browser: object):
 
     # 6.Ensure that Hot Proposal Product Card Items are displayed and clickable 
     # (Dynamic)
-    main_page.hot_proposal_cards()
+    main_page.product_cards()
     step = random.randint(1,8)
     print(step)
-    for e in range(1, len(main_page.hot_proposal_cards_n), step):    
+    for e in range(1, len(main_page.product_cards_n), step):    
             time.sleep(3)
-            main_page.hot_proposal_card(e)
-            assert main_page.hot_proposal_card_n.is_enabled()
-            assert main_page.hot_proposal_card_n.is_displayed()
+            main_page.product_card(e)
+            assert main_page.product_card_n.is_enabled()
+            assert main_page.product_card_n.is_displayed()
             time.sleep(3)
             driver.back()
