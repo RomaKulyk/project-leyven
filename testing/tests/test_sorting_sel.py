@@ -1,7 +1,7 @@
-from testing.pages.main_page import *
-from testing.lib.constants import *
+from testing.pages.main_page import MainPage
 import time
 from selenium.webdriver.support.ui import Select
+from testing.lib.constants import MAIN_URL
 
 
 def test_main_page(browser: object):
@@ -12,12 +12,11 @@ def test_main_page(browser: object):
     main_page.open_page(MAIN_URL)
     time.sleep(3)
     
-    # 2.Find and click SHOW_ALL button
-    main_page.show_all()
-    assert main_page.show_all_button.is_enabled()
-    assert main_page.show_all_button.is_displayed()
-    main_page.show_all_button.click()
-    time.sleep(3)
+    # 2.Find and click GO_TO_CATEGORY_1 button
+    main_page.go_to_category_2()
+    assert main_page.go_to_category_2_button.is_enabled()
+    assert main_page.go_to_category_2_button.is_displayed()
+    main_page.go_to_category_2_button.click()
 
     # 3.Find and click SORTING dropdown list    
     # list of available options in dropdown    

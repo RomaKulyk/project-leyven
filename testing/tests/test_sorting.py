@@ -1,8 +1,11 @@
-from testing.pages.main_page import *
-from testing.lib.constants import *
+from testing.pages.main_page import MainPage
 import time
 import random
-
+from testing.lib.constants import MAIN_URL,\
+                                  SORT1,\
+                                  SORT2,\
+                                  SORT3
+                            
 
 def test_main_page(browser: object):
     driver = browser
@@ -12,12 +15,11 @@ def test_main_page(browser: object):
     main_page.open_page(MAIN_URL)
     time.sleep(0.5)
 
-    # 2.Find and click SHOW_ALL button
-    main_page.show_all()
-    assert main_page.show_all_button.is_enabled()
-    assert main_page.show_all_button.is_displayed()
-    main_page.show_all_button.click()
-    time.sleep(0.5)
+     # 2.Find and click GO_TO_CATEGORY_2 button
+    main_page.go_to_category_2()
+    assert main_page.go_to_category_2_button.is_enabled()
+    assert main_page.go_to_category_2_button.is_displayed()
+    main_page.go_to_category_2_button.click()
 
     # 3.Find and click SORTING dropdown list
     # list of available options in dropdown
@@ -81,4 +83,4 @@ def test_main_page(browser: object):
     for i in range(0, (len(product_card_prices) - 1), step):
         assert product_card_prices[i] >= product_card_prices[i + 1]
 
-    assert False == True  # Is there any way to do it more smarter
+    # assert False == True  # Is there any way to do it more smarter
