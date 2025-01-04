@@ -1,8 +1,11 @@
 from testing.pages.main_page import MainPage
-from testing.lib.constants import MAIN_URL, TO_BUY_1, TO_BUY_2
 from testing.pages.cart import CartPage
 from testing.pages.inventory_page import InventoryPage
-from selenium.webdriver.common.action_chains import ActionChains
+from testing.lib.constants import MAIN_URL,\
+                                  TO_BUY_1,\
+                                  TO_BUY_2,\
+                                  TO_BUY_3,\
+                                  TO_BUY_4
 
 
 def test_main_page(browser: object):
@@ -40,53 +43,35 @@ def test_main_page(browser: object):
     cart_page.continue_shopping_button.click()
     driver.back()
     
-    # # 7. Add product from Hot Proposal category to cart
-    # main_page.mp_to_buy(1)
-    # time.sleep(3)
-    # cart_page.continue_shopping()
-    # assert cart_page.continue_shopping_button.is_displayed()
-    # assert cart_page.continue_shopping_button.is_displayed()
-    # 
-    # cart_page.continue_shopping_button.click()
-    # time.sleep(3)
-    # # 8. Add product from Hot Proposal category to cart
-    # main_page.mp_to_buy(2)
-    # time.sleep(3)
-    # cart_page.continue_shopping()
-    # assert cart_page.continue_shopping_button.is_displayed()
-    # assert cart_page.continue_shopping_button.is_displayed()
-    # 
-    # cart_page.continue_shopping_button.click()
+    main_page = MainPage(driver)
 
-    # time.sleep(3)
+    # 7. Open MAIN_URL page
+    main_page.open_page(MAIN_URL)
 
-    # main_page.new_arrivals()
-    # action = ActionChains(driver)        
-    # # action.scroll_to_element(main_page.show_all_button)
-    # action.scroll_to_element(main_page.new_arrival_span)
-    # action.perform()
-    # # driver.execute_script("window.scrollTo(300, document.body.scrollHeight);")
-    # # time.sleep(3)
+    cart_page = CartPage(driver)
+    # 8. Find and click GO_TO_CATEGORY_2 button
+    main_page.go_to_category_2()
+    assert main_page.go_to_category_2_button.is_enabled()
+    assert main_page.go_to_category_2_button.is_displayed()
+    main_page.go_to_category_2_button.click()
+
+    page = InventoryPage(driver)
+    # 9. Add product 1 to cart from product's category page
+    page.to_buy(TO_BUY_3)
     
+    # 10. Find and click CONTINUE_SHOPPING button
+    cart_page.continue_shopping()
+    assert cart_page.continue_shopping_button.is_displayed()
+    assert cart_page.continue_shopping_button.is_displayed()
+    cart_page.continue_shopping_button.click()
+    
+    page = InventoryPage(driver)
+    # 11. Add product 2 to cart from product's category page
+    page.to_buy(TO_BUY_4)
 
-    # # 9. Add product from New Arrival category to cart
-    # main_page.hp_to_buy(1)
-    # time.sleep(3)
-    # cart_page.continue_shopping()
-    # assert cart_page.continue_shopping_button.is_displayed()
-    # assert cart_page.continue_shopping_button.is_displayed()
-    # time.sleep(3)
-    # cart_page.continue_shopping_button.click()
-    # time.sleep(3)
-
-    # # 10. Add product from New Arrival category to cart
-    # main_page.hp_to_buy(6)
-    # time.sleep(3)
-    # cart_page.continue_shopping()
-    # assert cart_page.continue_shopping_button.is_displayed()
-    # assert cart_page.continue_shopping_button.is_displayed()
-    # time.sleep(3)
-    # cart_page.continue_shopping_button.click()
-    # time.sleep(3)
-
+    # 12. Find and click CONTINUE_SHOPPING button
+    cart_page.continue_shopping()
+    assert cart_page.continue_shopping_button.is_displayed()
+    assert cart_page.continue_shopping_button.is_displayed()
+    cart_page.continue_shopping_button.click()
     driver.back()
