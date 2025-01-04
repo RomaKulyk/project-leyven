@@ -83,10 +83,10 @@ PRODUCT_CARDS = "//div[@class='sm:grid-cols-3 grid w-fit grid-cols-2 gap-[12px] 
 PR_CARD = "//div[contains(@class,'sm:grid-cols-3 grid w-fit grid-cols-2 gap-[12px] xl:gap-[30px]')]/child::a"
 
 PR_CARD_PRICE = "(//div[(@class = 'text-2xl lg:text-4xl')])[1]"
-MP_TO_BUY = "(//button[@class = 'btn bg-green-600 text-xs text-white hover:bg-green-500 sm:text-sm xl:text-xs 2xl:text-sm'])"
-HP_TO_BUY = "//ul[contains(@class,'mt-10 grid grid-cols-2 gap-5 lg:grid-cols-4 2xl:grid-cols-6')]/child::div/descendant::button[contains(text(),'Купити')]"
 TO_BUY_1 = "(//button[contains(@class, 'h-[47px] transition-all duration-300')])[1]"
 TO_BUY_2 = "(//button[contains(@class, 'h-[47px] transition-all duration-300')])[2]"
+TO_BUY_3 = "(//button[contains(@class, 'h-[47px] transition-all duration-300')])[3]"
+TO_BUY_4 = "(//button[contains(@class, 'h-[47px] transition-all duration-300')])[4]"
 # NEW_ARRIVALS = "//div[@class = 'space-y-5 bg-sky-100 px-4 py-20 lg:px-0']"
 
 SORT = "//select[contains(@class,'select w-full max-w-[250px] rounded-[50px] ')]"

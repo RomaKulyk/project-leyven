@@ -94,24 +94,6 @@ class MainPage:
         text = self.product_card_price_value.text
         return int(text[0:-2])
 
-    def mp_to_buy(self, index) -> None:
-        "This is a method to find and defint TO BUY button on Product Cards."
-        # self.mp_to_buy_button = self.driver.find_element(
-        #     By.XPATH, f"{MP_TO_BUY}[{index}]")
-        wait = WebDriverWait(self.driver, 10)
-        self.mp_to_buy_button = wait.until(EC.element_to_be_clickable((
-            By.XPATH, f"{MP_TO_BUY}[{index}]")))
-        self.mp_to_buy_button.click()
-
-    def hp_to_buy(self, index) -> None:
-        "This is a method to find and define TO BUY button on Product Cards."
-        # self.hp_to_buy_button = self.driver.find_element(
-        #     By.XPATH, f"{HP_TO_BUY}[{index}]")
-        wait = WebDriverWait(self.driver, 10)
-        self.hp_to_buy_button = wait.until(EC.element_to_be_clickable((
-            By.XPATH, f"{HP_TO_BUY}[{index}]")))
-        self.hp_to_buy_button.click()
-
     def product_card(self, index) -> None:
         """This is a method to define Product card."""
         wait = WebDriverWait(self.driver, 10)
@@ -124,11 +106,3 @@ class MainPage:
         # Store all elements of dropdown in a list
         self.product_cards_n = list(self.driver.find_elements(
             By.XPATH, PRODUCT_CARDS))
-        
-    # # OBSOLETED CATEGORY?
-    # def new_arrivals(self) -> None:
-    #     "This is a method to find and define NEW_ARRIVALS section."
-    #     wait = WebDriverWait(self.driver, 10)
-    #     self.new_arrival_span = wait.until(EC.element_to_be_clickable((
-    #         By.XPATH, NEW_ARRIVALS)))
-
