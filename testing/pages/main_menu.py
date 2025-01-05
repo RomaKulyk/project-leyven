@@ -11,7 +11,9 @@ from testing.lib.constants import MAIN_LOGO,\
                                   INSTAGRAM,\
                                   TIKTOK,\
                                   LOG_IN,\
-                                  CART
+                                  CART,\
+                                  SEARCH_FOUND_ITEMS,\
+                                  SEARCH_FOUND_ITEM
 
 
 class MainMenu:
@@ -31,6 +33,10 @@ class MainMenu:
         This is a method to invoke search field
     search_inn
         This is a method to clear and enter query into search field
+    search_list
+        This is a method to define list of founded items by search
+    search_item
+        This is a method to define every founded items by search
     phone
         This is a method to find and define Phone button of Main Menu
     cross
@@ -89,7 +95,23 @@ class MainMenu:
             By.XPATH, SEARCH_FIELD_INN)
         self.search_field_inn.clear()
         self.search_field_inn.send_keys(user_input)
+
+    def search_list(self):
+        """
+        This is a method to define list of founded items by search.
+        """
+        self.search_found_list = list(self.driver.find_elements(
+            By.XPATH, SEARCH_FOUND_ITEMS))
         
+    def search_item(self, index):
+        """
+        This is a method to define every founded items by search.
+        """
+        self.search_found_item = self.driver.find_element(
+            By.XPATH, f"{SEARCH_FOUND_ITEM}[{index}]")
+        text = self.search_found_item.text
+        return text
+
     def phone(self) -> None:
         # action = ActionChains(self.driver)
         """This is a method to find and define Phone button of Main Menu."""
