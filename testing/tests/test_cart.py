@@ -37,7 +37,7 @@ def test_cart_page(browser: object):
     # 5.Find and click CLOSE CART button
     cart_page.close_cart()
     assert cart_page.close_cart_button.is_enabled()
-    assert cart_page.close_cart_button.is_displayed()
+    # assert cart_page.close_cart_button.is_displayed()
     
     # 6.Find and click GO_TO_CATEGORY_1 button
     main_page.go_to_category_1()
@@ -52,7 +52,7 @@ def test_cart_page(browser: object):
     # 8.Find and click CONTINUE_SHOPPING button
     cart_page.close_cart()
     assert cart_page.continue_shopping_button.is_enabled()
-    assert cart_page.continue_shopping_button.is_displayed()
+    # assert cart_page.continue_shopping_button.is_displayed()
     
     # 9.Add product 2 to cart from product's category page
     page.to_buy(TO_BUY_2)

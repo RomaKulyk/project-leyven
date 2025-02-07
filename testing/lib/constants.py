@@ -1,7 +1,7 @@
 # MainPage
 MAIN_URL = "https://www.leyven.com.ua/"
 SHOW_ALL = "//button[@class = 'group mt-3 flex items-center gap-3 rounded-xl px-5 py-3 text-lg font-medium transition-all  duration-300 hover:bg-primary hover:text-white hover:shadow-xl max-sm:hidden sm:text-xl']"
-GO_TO_CATEGORY_1 = "(//div[@class ='font-[500] flex items-center gap-[6px] xl:text-[14px] opacity-70'])[2]"
+GO_TO_CATEGORY_1 = "(//div[@class ='font-[500] flex items-center gap-[6px] xl:text-[16px]'])[2]"
 GO_TO_CATEGORY_2 = "(//div[@class ='font-[500] flex items-center gap-[6px] xl:text-[14px] opacity-70'])[3]"
 HELP_ME = "//div[@class = 'fixed bottom-2 right-2 z-[1] transition duration-200 sm:bottom-5 sm:right-5']"
 
@@ -75,8 +75,8 @@ TIKTOK_FB = "(//*[contains(@href,'www.tiktok.com')])[3]"
 MAIN_LOGO_FL = "//a[@class = 'flex items-center gap-3']"
 
 # Cart
-CHECKOUT = "//button[contains(@class,'text-[18px] h-[47px] xl:h-[69px] transition-all duration-300')]"
-CONTINUE_SHOPPING = "//button/span[@class = 'group relative inline-block']"
+CHECKOUT = "//button[contains(@class,'text-[16px] h-[47px] xl:h-[69px] transition-all duration-300')]"
+CONTINUE_SHOPPING = "//button/span[@class = 'group relative inline-block h-fit']"
 CLOSE_CART = "//button[contains(@class,'h-fit rounded-lg p-1 outline-none')]"
 REMOVE_PDP_1 = "(//button[@class='h-fit'])[1]"
 

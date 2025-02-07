@@ -36,8 +36,9 @@ class CartPage:
 
     def continue_shopping(self) -> None:
         """This is a method to define continue shopping button."""
-        self.continue_shopping_button = self.driver.find_element(
-            By.XPATH, CONTINUE_SHOPPING)
+        wait = WebDriverWait(self.driver, 10)
+        self.continue_shopping_button = wait.until(EC.element_to_be_clickable((
+            By.XPATH, CONTINUE_SHOPPING)))
         
     def checkout(self) -> None:
         """This is a method to define checkout button."""
@@ -48,8 +49,9 @@ class CartPage:
 
     def close_cart(self) -> None:
         """This is a method to define close cart button."""
-        self.close_cart_button = self.driver.find_element(
-            By.XPATH, CLOSE_CART)
+        wait = WebDriverWait(self.driver, 10)
+        self.close_cart_button = wait.until(EC.element_to_be_clickable((
+            By.XPATH, CLOSE_CART)))
         self.close_cart_button.click()
 
     def remove_pdp(self, locator) -> None:
