@@ -73,17 +73,17 @@ class Footer:
     def about_us(self) -> None:
         """This is a method to find and define About Us link."""
         self.about_us_link = self.driver.find_element(
-            By.XPATH, ABOUT_US)
+            By.LINK_TEXT, ABOUT_US)
         
     def contacts(self) -> None:
         """This is a method to find and define Contacts link."""
         self.contacts_link = self.driver.find_element(
-            By.XPATH, CONTACTS)
+            By.LINK_TEXT, CONTACTS)
         
     def payment(self) -> None:
         """This is a method to find and define Payment link."""
         self.payment_link = self.driver.find_element(
-            By.XPATH, PAYMENT)
+            By.LINK_TEXT, PAYMENT)
     
     def public_oferta(self) -> None:
         """This is a method to find and define Public Oferta link."""
