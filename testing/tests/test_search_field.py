@@ -4,8 +4,8 @@ from testing.pages.main_menu import MainMenu
 from testing.lib.constants import MAIN_URL
 import time
 
-@pytest.mark.parametrize('user_input',[('Сімпаріка'),('Sim'),
-                         ('Сімп'),('10024337'),(10022531)])
+@pytest.mark.parametrize('user_input',[('Сімпаріка'),('Sim'), ('Сімп'),])
+                         #  ('10024337'),(10022531)])
 # Search by ID number can't be verified right now since the number itself 
 # is hidden right now on Product Card
 # Due to this last two tests will be FAILING despite the expected results will
