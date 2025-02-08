@@ -46,8 +46,8 @@ CATALOG_DROPDOWN_ITEM_7 = f"(//li/a[@class ='{UNSELECTED_DD_ITEM_CLS}' or @class
 CATALOG_DROPDOWN_ITEM_8 = f"(//li/a[@class ='{UNSELECTED_DD_ITEM_CLS}' or @class = '{SELECTED_DD_ITEM_CLS}'])[8]"
 CATALOG_DROPDOWN_ITEM_9 = f"(//li/a[@class ='{UNSELECTED_DD_ITEM_CLS}' or @class = '{SELECTED_DD_ITEM_CLS}'])[9]"
 
-SEARCH_FIELD_OUT = "(//input[@class='w-full bg-transparent text-[18px] font-[500] outline-none xl:cursor-pointer'])[3]"  
-SEARCH_FIELD_INN = "(//input[@class='w-full bg-transparent text-[18px] font-[500] outline-none xl:cursor-pointer'])[4]"
+SEARCH_FIELD_OUT = "(//input[@class='w-full bg-transparent text-[14px] font-[500] outline-none xl:cursor-pointer'])[3]"  
+SEARCH_FIELD_INN = "(//input[@class='w-full bg-transparent text-[14px] font-[500] outline-none xl:cursor-pointer'])[4]"
 SEARCH_FOUND_ITEMS = "//div[@class='mt-10 flex flex-col gap-5 xl:gap-10']/child::a"
 SEARCH_FOUND_ITEM = "//div[@class='mt-10 flex flex-col gap-5 xl:gap-10']/child::a"
 
