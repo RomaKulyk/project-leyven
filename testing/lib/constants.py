@@ -89,9 +89,8 @@ TO_BUY_1 = "(//button[contains(@class, 'h-[47px] transition-all duration-300')])
 TO_BUY_2 = "(//button[contains(@class, 'h-[47px] transition-all duration-300')])[2]"
 TO_BUY_3 = "(//button[contains(@class, 'h-[47px] transition-all duration-300')])[3]"
 TO_BUY_4 = "(//button[contains(@class, 'h-[47px] transition-all duration-300')])[4]"
-# NEW_ARRIVALS = "//div[@class = 'space-y-5 bg-sky-100 px-4 py-20 lg:px-0']"
 
-SORT = "//select[contains(@class,'select w-full max-w-[250px] rounded-[50px] ')]"
+SORT = "//select[contains(@class,'select bg-transparent text-[14px]')]"
 SORT1 = "//option[@value='price_asc']"
 SORT2 = "//option[@value='price_desc']"
 SORT3 = "//option[@value='popular']"
