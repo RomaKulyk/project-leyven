@@ -81,8 +81,8 @@ CLOSE_CART = "//button[contains(@class,'h-fit rounded-lg p-1 outline-none')]"
 REMOVE_PDP_1 = "(//button[@class='h-fit'])[1]"
 
 # Product cards
-PRODUCT_CARDS = "//div[@class='sm:grid-cols-3 grid w-fit grid-cols-2 gap-[12px] xl:gap-[30px]']/child::a"
-PR_CARD = "//a[contains(@class,'group relative flex h-full flex-1 flex-col rounded-[20px] bg-white')]/child::div"
+PRODUCT_CARDS = "//div[@class='grid w-full grid-cols-2 gap-3 sm:grid-cols-4 xl:gap-5']/child::a"
+PR_CARD = "//a[@class='group relative flex h-full flex-1 flex-col rounded-[20px] bg-white']"
 
 PR_CARD_PRICE = "(//div[(@class = 'text-2xl lg:text-4xl')])[1]"
 TO_BUY_1 = "(//button[contains(@class, 'h-[47px] transition-all duration-300')])[1]"

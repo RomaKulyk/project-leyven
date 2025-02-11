@@ -31,6 +31,7 @@ def test_main_page(browser: object):
     assert main_page.go_to_category_2_button.is_displayed()
     main_page.go_to_category_2_button.click()
 
+    main_page.product_cards()
     # 5.Find and click first Product Card in the list
     main_page.product_card(1)
     assert main_page.product_card_n.is_enabled()
