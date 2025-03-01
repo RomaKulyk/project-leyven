@@ -7,7 +7,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 class CatalogDropdown:
     """
-    Constructs all the necessary attributes for the MainMenu object.
+    Constructs all the necessary attributes for the CatalogDropdown object.
     Attributes:
     webdriver:object
                 It is an object of webdriver class
@@ -31,7 +31,7 @@ class CatalogDropdown:
         """
         self.driver = webdriver
     
-    def catalog_dropdown(self):
+    def catalog_dropdown(self) -> None:
         """This is a method to find and define Catalog Dropdown Container."""
         self.catalog_dropdown_container = self.driver.find_element(
             By.XPATH, CATALOG_DROPDOWN)

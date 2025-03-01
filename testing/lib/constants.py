@@ -28,14 +28,14 @@ CLICK_SEND = "//button[@class = 'btn btn-primary btn-lg mx-auto mb-10 w-full max
 # Main Menu
 MAIN_LOGO = "(//img[@alt='Лейвен логотип'])[2]"
 CATALOG = "//div[@class='dropdown dropdown-hover']"
-CATALOG_DROPDOWN = "//div[@class='card dropdown-content card-compact z-20 w-[1000px] border-t-4 bg-white p-2 text-slate-900 shadow-xl']"
+CATALOG_DROPDOWN = "//div[@class='dropdown-content z-20 w-[1000px] rounded-xl border bg-base-100 shadow-2xl']"
 
 # For Dynamic list definition
-DROPDOWN_LIST_ITEMS = "//ul[@class = 'flex flex-col gap-7']/child::li"
+DROPDOWN_LIST_ITEMS = "//ul[@class = 'flex flex-col gap-2']/child::li"
 
 # For Static list definition
-UNSELECTED_DD_ITEM_CLS = 'false transition-all duration-300'
-SELECTED_DD_ITEM_CLS = 'underline transition-all duration-300'
+UNSELECTED_DD_ITEM_CLS = 'hover:bg-primary/5 block rounded-lg p-3 text-sm transition-all duration-200 text-base-content'
+SELECTED_DD_ITEM_CLS = 'hover:bg-primary/5 block rounded-lg p-3 text-sm transition-all duration-200 bg-primary/5 font-medium text-secondary'
 CATALOG_DROPDOWN_ITEM_1 = f"(//li/a[@class ='{UNSELECTED_DD_ITEM_CLS}' or @class = '{SELECTED_DD_ITEM_CLS}'])[1]"
 CATALOG_DROPDOWN_ITEM_2 = f"(//li/a[@class ='{UNSELECTED_DD_ITEM_CLS}' or @class = '{SELECTED_DD_ITEM_CLS}'])[2]"
 CATALOG_DROPDOWN_ITEM_3 = f"(//li/a[@class ='{UNSELECTED_DD_ITEM_CLS}' or @class = '{SELECTED_DD_ITEM_CLS}'])[3]"
