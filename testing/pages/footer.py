@@ -51,69 +51,78 @@ class Footer:
 
     def main_logo_fb(self) -> None:
         """This is a method to define and click Main Logo button."""
-        self.main_logo_button = self.driver.find_element(
-            By.XPATH, MAIN_LOGO_FL)
+        wait = WebDriverWait(self.driver, 10)
+        self.main_logo_button = wait.until(EC.element_to_be_clickable((
+            By.XPATH, MAIN_LOGO_FL)))
         self.main_logo_button.click()
 
     def facebook_fl(self) -> None:
         """This is a method to find and define Facebook link."""
-        self.facebook_link = self.driver.find_element(
-            By.LINK_TEXT, FACEBOOK_FL)
+        wait = WebDriverWait(self.driver, 10)
+        self.facebook_link = wait.until(EC.element_to_be_clickable((
+            By.LINK_TEXT, FACEBOOK_FL)))
         
     def instagram_fl(self) -> None:
         """This is a method to find and define Instagram link."""
-        self.instagram_link = self.driver.find_element(
-            By.LINK_TEXT, INSTAGRAM_FL)
+        wait = WebDriverWait(self.driver, 10)
+        self.instagram_link = wait.until(EC.element_to_be_clickable((
+            By.LINK_TEXT, INSTAGRAM_FL)))
         
     def tiktok_fl(self) -> None:
         """This is a method to find and define Tiktok link."""
-        self.tiktok_link = self.driver.find_element(
-            By.LINK_TEXT, TIKTOK_FL)
+        wait = WebDriverWait(self.driver, 10)
+        self.tiktok_link = wait.until(EC.element_to_be_clickable((
+            By.LINK_TEXT, TIKTOK_FL)))
     
     def about_us(self) -> None:
         """This is a method to find and define About Us link."""
-        self.about_us_link = self.driver.find_element(
-            By.LINK_TEXT, ABOUT_US)
+        wait = WebDriverWait(self.driver, 10)
+        self.about_us_link = wait.until(EC.element_to_be_clickable((
+            By.LINK_TEXT, ABOUT_US)))
         
     def contacts(self) -> None:
         """This is a method to find and define Contacts link."""
-        self.contacts_link = self.driver.find_element(
-            By.LINK_TEXT, CONTACTS)
+        wait = WebDriverWait(self.driver, 10)
+        self.contacts_link = wait.until(EC.element_to_be_clickable((
+            By.LINK_TEXT, CONTACTS)))
         
     def payment(self) -> None:
         """This is a method to find and define Payment link."""
-        self.payment_link = self.driver.find_element(
-            By.LINK_TEXT, PAYMENT)
+        wait = WebDriverWait(self.driver, 10)
+        self.payment_link = wait.until(EC.element_to_be_clickable((
+            By.LINK_TEXT, PAYMENT)))
     
     def public_oferta(self) -> None:
         """This is a method to find and define Public Oferta link."""
-        self.public_oferta_link = self.driver.find_element(
-            By.XPATH, PUBLIC_OFERTA)
+        wait = WebDriverWait(self.driver, 10)
+        self.public_oferta_link= wait.until(EC.element_to_be_clickable((
+            By.XPATH, PUBLIC_OFERTA)))
         
     def privacy_policy(self) -> None:
-        wait = WebDriverWait(self.driver, 10)
         """This is a method to find and define Privacy Policy link."""
-        # self.privacy_policy_link = self.driver.find_element(
-        #     By.XPATH, PRIVACY_POLICY)
+        wait = WebDriverWait(self.driver, 10)
         self.privacy_policy_link = wait.until(EC.element_to_be_clickable((
             By.XPATH, PRIVACY_POLICY)))
         
     def facebook_fb(self) -> None:
         """This is a method to find and define Facebook button."""
-        self.facebook_fb_button = self.driver.find_element(
-            By.XPATH, FACEBOOK_FB)
+        wait = WebDriverWait(self.driver, 10)
+        self.facebook_fb_button = wait.until(EC.element_to_be_clickable((
+            By.XPATH, FACEBOOK_FB)))
         self.facebook_fb_button.click()
 
     def instagram_fb(self) -> None:
         """This is a method to find and define Instagram button."""
-        self.instagram_fb_button = self.driver.find_element(
-            By.XPATH, INSTAGRAM_FB)
+        wait = WebDriverWait(self.driver, 10)
+        self.instagram_fb_button = wait.until(EC.element_to_be_clickable((
+            By.XPATH, INSTAGRAM_FB)))
         self.instagram_fb_button.click()
         
     def tiktok_fb(self) -> None:
         """This is a method to find and define Tiktok button."""
-        self.tiktok_fb_button = self.driver.find_element(
-            By.XPATH, TIKTOK_FB)
+        wait = WebDriverWait(self.driver, 10)
+        self.tiktok_fb_button = wait.until(EC.element_to_be_clickable((
+            By.XPATH, TIKTOK_FB)))
         self.tiktok_fb_button.click()
 
 
