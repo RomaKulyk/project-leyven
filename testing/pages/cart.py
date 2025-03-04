@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
+
 class CartPage:
     """
     Constructs all the necessary attributes for the CartPage object.
@@ -39,7 +40,7 @@ class CartPage:
         wait = WebDriverWait(self.driver, 10)
         self.continue_shopping_button = wait.until(EC.element_to_be_clickable((
             By.XPATH, CONTINUE_SHOPPING)))
-        
+
     def checkout(self) -> None:
         """This is a method to define checkout button."""
         wait = WebDriverWait(self.driver, 10)
@@ -56,5 +57,7 @@ class CartPage:
 
     def remove_pdp(self, locator) -> None:
         """This method defines removing item from cart through pdp."""
-        remove_button = self.driver.find_element(By.XPATH, locator)
-        remove_button.click()
+        wait = WebDriverWait(self.driver, 10)
+        self.remove_button = wait.until(EC.element_to_be_clickable((
+            By.XPATH, CLOSE_CART)))
+        self.remove_button.click()

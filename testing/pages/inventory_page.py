@@ -1,6 +1,8 @@
 from selenium.webdriver.common.by import By
 from testing.lib.constants import *
 from testing.pages.main_page import MainPage
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 class InventoryPage(MainPage):
@@ -35,6 +37,8 @@ class InventoryPage(MainPage):
 
     def to_buy(self, locator) -> None:
         """This method defines 'TO_BUY' button from pdp."""
-        self.to_buy_button = self.driver.find_element(
-            By.XPATH, locator)
+
+        wait = WebDriverWait(self.driver, 10)
+        self.to_buy_button = wait.until(EC.element_to_be_clickable((
+            By.XPATH, locator)))
         self.to_buy_button.click()

@@ -87,8 +87,8 @@ PR_CARD = "//a[@class='group relative flex h-full flex-1 flex-col rounded-[20px]
 PR_CARD_PRICE = "(//div[(@class = 'text-2xl lg:text-4xl')])[1]"
 TO_BUY_1 = "(//button[contains(@class, 'h-[47px] transition-all duration-300')])[1]"
 TO_BUY_2 = "(//button[contains(@class, 'h-[47px] transition-all duration-300')])[2]"
-TO_BUY_3 = "(//button[contains(@class, 'h-[47px] transition-all duration-300')])[3]"
-TO_BUY_4 = "(//button[contains(@class, 'h-[47px] transition-all duration-300')])[4]"
+TO_BUY_5 = "(//button[contains(@class, 'h-[47px] transition-all duration-300')])[5]"
+TO_BUY_6 = "(//button[contains(@class, 'h-[47px] transition-all duration-300')])[6]"
 
 SORT = "//select[contains(@class,'select bg-transparent text-[14px]')]"
 SORT1 = "//option[@value='price_asc']"
