@@ -75,7 +75,7 @@ TIKTOK_FB = "(//*[contains(@href,'www.tiktok.com')])[3]"
 MAIN_LOGO_FL = "//a[@class = 'flex items-center gap-3']"
 
 # Cart
-CHECKOUT = "//button[contains(@class,'text-[16px] h-[47px] xl:h-[69px] transition-all duration-300')]"
+CHECKOUT = "//a[@class='false w-full']"
 CONTINUE_SHOPPING = "//button/span[@class = 'group relative inline-block h-fit']"
 CLOSE_CART = "//button[contains(@class,'h-fit rounded-lg p-1 outline-none')]"
 REMOVE_PDP_1 = "(//button[@class='h-fit'])[1]"

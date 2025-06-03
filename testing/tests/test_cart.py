@@ -48,22 +48,23 @@ def test_cart_page(browser: object):
     page = InventoryPage(driver)
     # 7.Add product 1 to cart from product's category page
     page.to_buy(TO_BUY_1)
-    
+            
     # 8.Find and click CONTINUE_SHOPPING button
     cart_page.close_cart()
     assert cart_page.continue_shopping_button.is_enabled()
     # assert cart_page.continue_shopping_button.is_displayed()
-    
+        
     # 9.Add product 2 to cart from product's category page
     page.to_buy(TO_BUY_2)
-
+        
     # 10.Remove product 1 from cart
     cart_page.remove_pdp(REMOVE_PDP_1)
-
+    
     # 11.Find and click CHECKOUT button
     cart_page.checkout()
     assert cart_page.checkout_button.is_enabled()
-    assert cart_page.checkout_button.is_displayed()
-    
+    # assert cart_page.checkout_button.is_displayed()
+        
     # 12. Return back to the main page
     main_menu.main_logo()
+

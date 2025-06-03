@@ -59,5 +59,5 @@ class CartPage:
         """This method defines removing item from cart through pdp."""
         wait = WebDriverWait(self.driver, 10)
         self.remove_button = wait.until(EC.element_to_be_clickable((
-            By.XPATH, CLOSE_CART)))
+            By.XPATH, locator)))
         self.remove_button.click()
