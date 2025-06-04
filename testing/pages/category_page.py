@@ -67,5 +67,4 @@ class CategoryPage(MainPage):
         action = ActionChains(self.driver)        
         action.scroll_to_element(self.show_more_button)
         action.perform()
-        
-        self.show_more_button.click()
+

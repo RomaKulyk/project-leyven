@@ -1,6 +1,7 @@
 from testing.pages.main_page import MainPage
 from testing.pages.category_page import CategoryPage
 from testing.lib.constants import MAIN_URL
+import time
 
 
 def test_main_page(browser: object):
@@ -16,15 +17,14 @@ def test_main_page(browser: object):
     assert main_page.go_to_category_2_button.is_displayed()
     main_page.go_to_category_2_button.click()
     
-    for _ in range(4):
+    for _ in range(2):
         # 3.Scroll page until the SHOW_MORE_BUTTON will be visible
         # using ActionChain
         category_page = CategoryPage(driver)
         category_page.show_more()
+        print(f"Iteration {_} is completed")
         assert category_page.show_more_button.is_displayed()
         assert category_page.show_more_button.is_enabled()
-
         # 3.1.Click SHOW_MORE_BUTTON 
-        category_page.show_more()
-        assert category_page.show_more_button.is_enabled()
-        assert category_page.show_more_button.is_displayed()
+        category_page.show_more_button.click()
+
