@@ -3,6 +3,7 @@ from testing.lib.constants import *
 from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.common.action_chains import ActionChains
 
 
 class MainPage:
@@ -28,6 +29,8 @@ class MainPage:
         This is a method to define sorting functionality
     sort_item_sel
         This is a method to define sorting functionality with Sorting module
+    scroll_to_the_footer
+        This is a method to scroll page to the Footer be visible
     product_card_price
         This is a method to find and define product price
     product_card
@@ -36,7 +39,10 @@ class MainPage:
         This is a method to find and define Product card item's list
     to_buy
         This is a method to find and defint TO BUY button on Product Cards
+    verify_the_page_title
+        This is a method to verify the page title
     """
+    
     def __init__(self, webdriver) -> None:
         """
         This is a method to initialize instance of the MainPage class.
@@ -106,3 +112,19 @@ class MainPage:
         # Store all elements of dropdown in a list
         self.product_cards_n = list(self.driver.find_elements(
             By.XPATH, PRODUCT_CARDS))
+        
+    def scroll_to_the_footer(self) -> None:
+        """This is a method to scroll page to the Footer be visible."""
+        wait = WebDriverWait(self.driver, 15)
+        self.footer = wait.until(EC.visibility_of_element_located((
+            By.XPATH, FOOTER)))
+        
+        action = ActionChains(self.driver)        
+        action.scroll_to_element(self.footer)
+        action.perform()
+        
+    def verify_the_page_title(self, title: str) -> None:
+        """This is a method to verify the page title."""
+        self.title = self.driver.title
+        assert self.title == title, f"Expected title: {title}, but got: {self.title}"
+

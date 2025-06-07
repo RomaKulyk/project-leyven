@@ -61,6 +61,7 @@ LOG_IN = "(//a[@class= 'pl-[10px]'])[2]"
 CART = "(//div[@class = 'indicator'])[2]"
 
 # Footer
+FOOTER = "//div[@class='bg-secondary']"
 FACEBOOK_FL = "Facebook"
 INSTAGRAM_FL = "Instagram"
 TIKTOK_FL = "Tiktok"

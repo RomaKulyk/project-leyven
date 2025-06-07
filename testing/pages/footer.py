@@ -85,7 +85,7 @@ class Footer:
         wait = WebDriverWait(self.driver, 10)
         self.contacts_link = wait.until(EC.element_to_be_clickable((
             By.LINK_TEXT, CONTACTS)))
-        
+                 
     def payment(self) -> None:
         """This is a method to find and define Payment link."""
         wait = WebDriverWait(self.driver, 10)
@@ -124,10 +124,6 @@ class Footer:
         self.tiktok_fb_button = wait.until(EC.element_to_be_clickable((
             By.XPATH, TIKTOK_FB)))
         self.tiktok_fb_button.click()
-
-
-    
-
 
 
     

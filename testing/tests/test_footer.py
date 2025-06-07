@@ -1,7 +1,9 @@
 import pytest
 from testing.pages.main_page import MainPage
+from testing.pages.main_menu import MainMenu
 from testing.pages.footer import Footer
 from testing.lib.constants import MAIN_URL
+import time
 
 
 def test_footer(browser: object):
@@ -12,62 +14,69 @@ def test_footer(browser: object):
     main_page.open_page(MAIN_URL)
 
     footer = Footer(driver)
+    ############################################################################
     # 2.Find and click Facebook link
     footer.facebook_fl()
     assert footer.facebook_link.is_enabled()
     assert footer.facebook_link.is_displayed()
     footer.facebook_link.click()
     driver.back()
-
+   
     # 3.Find and click Instagram link
     footer.instagram_fl()
     assert footer.instagram_link.is_enabled()
     assert footer.instagram_link.is_displayed()
     footer.instagram_link.click()
     driver.back()
-
+   
     # 4.Find and click Tiktok link
     footer.tiktok_fl()
     assert footer.tiktok_link.is_enabled()
     assert footer.tiktok_link.is_displayed()
     footer.tiktok_link.click()
     driver.back()
-
+    ############################################################################
+    main_menu = MainMenu(driver)
     # 5.Find and click About Us link
     footer.about_us()
     assert footer.about_us_link.is_enabled()
     assert footer.about_us_link.is_displayed()
     footer.about_us_link.click()
-    driver.back()
-
+    main_menu.main_logo()
+    main_page.scroll_to_the_footer()
+    
     # 6.Find and click Contacts link
     footer.contacts()
     assert footer.contacts_link.is_enabled()
     assert footer.contacts_link.is_displayed()
     footer.contacts_link.click()
-    driver.back()
+    main_menu.main_logo()
+    main_page.scroll_to_the_footer()
 
     # 7.Find and click Payment link
     footer.payment()
     assert footer.payment_link.is_enabled()
     assert footer.payment_link.is_displayed()
     footer.payment_link.click()
-    driver.back()
+    main_menu.main_logo()
+    main_page.scroll_to_the_footer()
 
     # 8.Find and click Public Oferta link
     footer.public_oferta()
     assert footer.public_oferta_link.is_enabled()
     assert footer.public_oferta_link.is_displayed()
     footer.public_oferta_link.click()
-    driver.back()
+    main_menu.main_logo()
+    main_page.scroll_to_the_footer()
     
     # 9.Find and click Privacy Policy link
     footer.privacy_policy()
     assert footer.privacy_policy_link.is_enabled()
     assert footer.privacy_policy_link.is_displayed()
     footer.privacy_policy_link.click()
-    driver.back()
-
+    main_menu.main_logo()
+    main_page.scroll_to_the_footer()
+    ############################################################################
     # 10.Find and click Facebook button
     footer.facebook_fb()
     assert footer.facebook_fb_button.is_enabled()
@@ -82,7 +91,7 @@ def test_footer(browser: object):
     footer.tiktok_fb()
     assert footer.tiktok_fb_button.is_enabled()
     assert footer.tiktok_fb_button.is_displayed()
-    
+    ############################################################################
     # 13.Find and click MAIN_LOGO button
     footer.main_logo_fb()
     assert footer.main_logo_button.is_enabled()
