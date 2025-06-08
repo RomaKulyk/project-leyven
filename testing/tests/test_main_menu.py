@@ -92,3 +92,7 @@ def test_main_menu(browser: object):
 # correct phone number is shown, and that phone number was copied after click
 
 # TO_DO-2 - Return back to the Main Page after opening social media pages
+# TO_DO-3 - Check that Log In button redirects to the Log In page
+# TO_DO-4 - Check that Cart button redirects to the Cart page
+# TO_DO-5 - Check the Main Menu language switcher functionality
+# TO_DO-6 - Check the "Кошик" button functionality
