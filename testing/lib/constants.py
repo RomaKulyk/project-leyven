@@ -51,13 +51,13 @@ SEARCH_FIELD_INN = "(//input[@class='w-full bg-transparent text-[14px] font-[500
 SEARCH_FOUND_ITEMS = "//div[@class='mt-10 flex flex-col gap-5 xl:gap-10']/child::a"
 SEARCH_FOUND_ITEM = "//div[@class='mt-10 flex flex-col gap-5 xl:gap-10']/child::a"
 
-CROSS_BUTTON = "//*[@class='pr-5']"
+CROSS_BUTTON = "(//button[@class='ml-auto text-base-content/80'])[2]"
 PHONE = "//div[@class = 'relative flex items-center gap-[8px] xl:cursor-pointer']"
 
 FACEBOOK = "(//*[contains(@href,'www.facebook.com')])[1]"
 INSTAGRAM = "(//*[contains(@href,'www.instagram.com')])[1]"
 TIKTOK = "(//*[contains(@href,'www.tiktok.com')])[1]"
-LOG_IN = "(//a[@class= 'pl-[10px]'])[2]"
+LOG_IN = "(//a[@class= 'pl-[14px]'])[2]"
 CART = "(//div[@class = 'indicator'])[2]"
 
 # Footer

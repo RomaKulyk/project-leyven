@@ -1,5 +1,7 @@
 from selenium.webdriver.common.by import By
 from selenium import webdriver
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from testing.lib.constants import MAIN_LOGO,\
                                   CATALOG,\
@@ -122,8 +124,12 @@ class MainMenu:
 
     def cross(self) -> None:
         """This is a method to define Cross Button of Search Field."""
-        self.cross_button = self.driver.find_element(
-            By.XPATH, CROSS_BUTTON)
+        # self.cross_button = self.driver.find_element(
+        #     By.XPATH, CROSS_BUTTON)
+        wait = WebDriverWait(self.driver, 10)
+        self.cross_button = wait.until(EC.element_to_be_clickable((
+            By.XPATH, CROSS_BUTTON)))
+        
 
     def facebook(self) -> None:
         """This is a method to find and define Facebook button."""
