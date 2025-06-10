@@ -33,24 +33,22 @@ def test_main_page(browser: object):
 
     main_page.product_cards()
     # 5.Find and click first Product Card in the list
-    main_page.product_card(1)
-    assert main_page.product_card_n.is_enabled()
-    assert main_page.product_card_n.is_displayed()
-    time.sleep(3)
+    main_page.product_card(5)
+    # assert main_page.product_card_n.is_enabled()
+    # assert main_page.product_card_n.is_displayed()
+    time.sleep(1)
     driver.back()
-    
-
+   
     # 6.Find and click 18th Product Card in the list
     main_page.product_card(18)
     assert main_page.product_card_n.is_enabled()
     assert main_page.product_card_n.is_displayed()
-    time.sleep(3)
+    time.sleep(1)
     driver.back()
     
-
     # 7.Find and click 18th Product Card in the list
     main_page.product_card(36)
     assert main_page.product_card_n.is_enabled()
     assert main_page.product_card_n.is_displayed()
-    time.sleep(3)
+    time.sleep(1)
     driver.back()

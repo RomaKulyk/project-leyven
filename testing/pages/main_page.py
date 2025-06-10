@@ -105,14 +105,16 @@ class MainPage:
         wait = WebDriverWait(self.driver, 10)
         self.product_card_n = wait.until(EC.element_to_be_clickable((
             By.XPATH, f"{PR_CARD}[{index}]")))
+        # self.product_card_n = self.driver.find_element(
+        #     By.XPATH, f"{PR_CARD}[{index}]")
         self.product_card_n.click()
-
+        
     def product_cards(self) -> None:
         """This is a method to find and define Product card item's list."""
         # Store all elements of dropdown in a list
         self.product_cards_n = list(self.driver.find_elements(
             By.XPATH, PRODUCT_CARDS))
-        
+    
     def scroll_to_the_footer(self) -> None:
         """This is a method to scroll page to the Footer be visible."""
         wait = WebDriverWait(self.driver, 15)
