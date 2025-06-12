@@ -50,14 +50,11 @@ class CategoryPage(MainPage):
         # wait = WebDriverWait(self.driver, 10)
         # self.filter_n = wait.until(EC.element_to_be_clickable((
         #     By.XPATH, f"{FILTER_ITEM}[{index}]")))
-        # TimeoutException
-        self.driver.implicitly_wait(3)
+        
+        # self.driver.implicitly_wait(3)
         self.filter_n = self.driver.find_element(
             By.XPATH, f"{FILTER_ITEM}[{index}]")
-    
-        self.filter_n.click()
-        # ElementNotInteractableException
-
+        
     def show_more(self) -> None:
         """This is a method to find and define SHOW MORE button."""
         wait = WebDriverWait(self.driver, 10)

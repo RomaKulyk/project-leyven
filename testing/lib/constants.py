@@ -99,6 +99,11 @@ SORT3 = "//option[@value='popular']"
 
 # Category Page
 FILTER_MENU_BAR = "//div[contains(@class,'flex h-fit flex-col gap-[30px] rounded-[20px] bg-white p-5')]"
-FILTERS_LIST = "(//div[@class = 'flex flex-col'])[2]/child::details"
-FILTER_ITEM = "(//*[contains(text(),'Бренд')])[1]"
+# FILTERS_LIST = "(//div[@class = 'flex flex-col'])[2]/child::details"
+FILTERS_LIST = "(//div[@class = 'flex flex-col gap-[22px]'])[2]/child::div"
+# FILTER_ITEM = "(//*[contains(text(),'Бренд')])[1]"
+FILTER_ITEM = "//div[@class= 'font-[500] text-[14px] xl:text-[14px]']"
+
+FILTERS_ELEMENTS = "(//div[@class='flex flex-col gap-[12px]'])[3]"
+
 SHOW_MORE_BUTTON = "//button[contains(@class,'text-[16px] h-[47px] xl:h-[69px] transition-all duration-300 active:scale-95 font-[600]')]"
