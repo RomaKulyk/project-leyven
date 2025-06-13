@@ -18,6 +18,9 @@ AMMUNITION = "(//a[contains(@class,'flex w-full gap-3 rounded-full bg-white')])[
 CAROUSEL_ITEM = "//div[contains(@class,'relative h-[250px] w-full')]"
 CAROUSEL_ITEMS = "//div[contains(@class,'relative h-[250px] w-full')]/child::a/img"
 
+PRODUCT_CATEGORIES = "//ul[contains(@class,'mx-auto mt-2 hidden items-center')]/child::li"
+PRODUCT_CATEGORY = "//ul[contains(@class,'mx-auto mt-2 hidden items-center')]/child::li"
+
 # Help Me Form
 HELP_ME_FORM = "//form[@class = 'modal-box mx-auto flex max-w-[800px] flex-col gap-5 overflow-hidden rounded-[50px] bg-white font-medium xl:p-10']"
 ENTER_USERNAME = "//input[@id = 'name']"

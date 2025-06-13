@@ -37,6 +37,10 @@ class MainPage:
         This is a method to define Product card
     product_cards
         This is a method to find and define Product card item's list
+    product_category
+        This is a method to define Product category
+    product_categories
+        This is a method to find and define Product categories item's list
     to_buy
         This is a method to find and defint TO BUY button on Product Cards
     verify_the_page_title
@@ -79,6 +83,21 @@ class MainPage:
         """This is a method to define Help Me Form."""
         self.help_me_form = self.driver.find_element(
             By.XPATH, HELP_ME_FORM)
+        
+    def product_category(self, index) -> None:
+        """This is a method to define Product category."""
+        # wait = WebDriverWait(self.driver, 10)
+        # self.product_category_n = wait.until(EC.element_to_be_clickable((
+        #     By.XPATH, f"{PRODUCT_CATEGORY}[{index}]")))
+        self.product_category_n = self.driver.find_element(
+            By.XPATH, f"{PRODUCT_CATEGORY}[{index}]")
+        self.product_category_n.click()
+        
+    def product_categories(self) -> None:
+        """This is a method to find and define Product categories item's list."""
+        # Store all elements of categories in a list
+        self.product_categories_list = list(self.driver.find_elements(
+            By.XPATH, PRODUCT_CATEGORIES))
 
     def sort_item(self, locator: str) -> None:
         """This is a method to define sorting functionality."""

@@ -9,13 +9,13 @@ from selenium.webdriver.common.action_chains import ActionChains
 
 class CategoryPage(MainPage):
     """
-    Constructs all the necessary attributes for the MainPage object.
+    Constructs all the necessary attributes for the CategoryPage object.
     Attributes:
     webdriver:object
                 It is an object of webdriver class
     Methods:
     __init__
-        This is a method to initialize instance of the MainPage class
+        This is a method to initialize instance of the CategoryPage class
     filters_menu
         This is a method to find and define Filters Menu
     filters_list
@@ -28,7 +28,7 @@ class CategoryPage(MainPage):
 
     def __init__(self, webdriver) -> None:
         """
-        This is a method to initialize instance of the MainPage class.
+        This is a method to initialize instance of the CategoryPage class.
         Parameters
         webdriver:object
                 webdriver to initialize
