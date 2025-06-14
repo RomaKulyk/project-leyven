@@ -47,6 +47,16 @@ class MainPage:
         This is a method to verify the page title
     """
     
+    main_page_popular_categories = ["🐕 Собакам",
+                                    "🐈 Котам",
+                                    "🍖 Корми",
+                                    "💊 Сімпаріка",
+                                    "🏭 Бренди",
+                                    "📒 Блог",
+                                    "🛏️ Лежаки",
+                                    "🔥 Акції",
+                                    "✨ Новинки"]
+    
     def __init__(self, webdriver) -> None:
         """
         This is a method to initialize instance of the MainPage class.
