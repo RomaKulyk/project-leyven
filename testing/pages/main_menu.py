@@ -13,6 +13,7 @@ from testing.lib.constants import MAIN_LOGO,\
                                   INSTAGRAM,\
                                   TIKTOK,\
                                   LOG_IN,\
+                                  LANGUAGE_BUTTON,\
                                   CART,\
                                   SEARCH_FOUND_ITEMS,\
                                   SEARCH_FOUND_ITEM
@@ -66,8 +67,9 @@ class MainMenu:
 
     def main_logo(self) -> None:
         """This is a method to define and click Main Logo button."""
-        self.main_logo_button = self.driver.find_element(
-            By.XPATH, MAIN_LOGO)
+        wait = WebDriverWait(self.driver, 10)
+        self.main_logo_button = wait.until(EC.element_to_be_clickable((
+            By.XPATH, MAIN_LOGO)))
         self.main_logo_button.click()
 
     def catalog(self) -> None:
@@ -114,6 +116,12 @@ class MainMenu:
         text = self.search_found_item.text
         return text
 
+    def cross(self) -> None:
+        """This is a method to define Cross Button of Search Field."""
+        wait = WebDriverWait(self.driver, 10)
+        self.cross_button = wait.until(EC.element_to_be_clickable((
+            By.XPATH, CROSS_BUTTON)))
+        
     def phone(self) -> None:
         # action = ActionChains(self.driver)
         """This is a method to find and define Phone button of Main Menu."""
@@ -121,16 +129,7 @@ class MainMenu:
             By.XPATH, PHONE)
         # action.move_to_element(self.phone_button)
         # action.perform()
-
-    def cross(self) -> None:
-        """This is a method to define Cross Button of Search Field."""
-        # self.cross_button = self.driver.find_element(
-        #     By.XPATH, CROSS_BUTTON)
-        wait = WebDriverWait(self.driver, 10)
-        self.cross_button = wait.until(EC.element_to_be_clickable((
-            By.XPATH, CROSS_BUTTON)))
-        
-
+       
     def facebook(self) -> None:
         """This is a method to find and define Facebook button."""
         self.facebook_button = self.driver.find_element(
@@ -148,6 +147,12 @@ class MainMenu:
         self.tiktok_button = self.driver.find_element(
             By.XPATH, TIKTOK)
         self.tiktok_button.click()
+
+    def language_switcher(self) -> None:
+        """This is a method to find and define Language button."""
+        self.language_button = self.driver.find_element(
+            By.XPATH, LANGUAGE_BUTTON)
+        # self.language_button.click()
 
     def log_in(self) -> None:
         "This is a method to find and define Log In button."

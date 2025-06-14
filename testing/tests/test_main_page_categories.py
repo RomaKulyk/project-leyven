@@ -74,4 +74,5 @@ def test_main_page_categories(browser: object):
     assert 1 == 0
 
 
-    
+# TO-DO_1 - Implement some login functionality to be able to log test execution
+# order to the file.

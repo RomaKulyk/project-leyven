@@ -53,12 +53,18 @@ def test_main_menu(browser: object):
     assert main_menu.phone_button.is_enabled()
     assert main_menu.phone_button.is_displayed()
     time.sleep(3)
-
+    ############################################################################
     # 8.Find and click Facebook button
     main_menu.facebook()
     assert main_menu.facebook_button.is_enabled()
     assert main_menu.facebook_button.is_displayed()
     time.sleep(3)
+    # 8.1 Switch to the new window opened by Facebook button
+    # and close it
+    window_handles = driver.window_handles
+    driver.switch_to.window(window_handles[-1])
+    driver.close()
+    driver.switch_to.window(window_handles[0])
 
     # 9.Find and click Instagram button
     main_menu.instagram()
@@ -66,13 +72,34 @@ def test_main_menu(browser: object):
     assert main_menu.instagram_button.is_displayed()
     time.sleep(3)
 
+    # 9.1 Switch to the new window opened by Instagram button
+    # and close it
+    window_handles = driver.window_handles
+    driver.switch_to.window(window_handles[-1])
+    driver.close()
+    driver.switch_to.window(window_handles[0])
+
     # 10.Find and click Tiktok button
     main_menu.tiktok()
     assert main_menu.tiktok_button.is_enabled()
     assert main_menu.tiktok_button.is_displayed()
     time.sleep(3)
 
-    # 11.Find and click Log In button
+    # 10.1 Switch to the new window opened by Tiktok button
+    # and close it
+    window_handles = driver.window_handles
+    driver.switch_to.window(window_handles[-1])
+    driver.close()
+    driver.switch_to.window(window_handles[0])
+################################################################################
+    # 11.Find and click Language Switcher button
+    main_menu.language_switcher()
+    assert main_menu.language_button.is_enabled()
+    assert main_menu.language_button.is_displayed()
+    time.sleep(3)
+    # main_menu.main_logo()
+
+    # 12.Find and click Log In button
     main_menu.log_in()
     assert main_menu.log_in_button.is_enabled()
     assert main_menu.log_in_button.is_displayed()
@@ -81,7 +108,7 @@ def test_main_menu(browser: object):
     driver.back()
     time.sleep(3)
 
-    # 12.Find and click Cart button
+    # 13.Find and click Cart button
     main_menu.cart()
     assert main_menu.cart_button.is_enabled()
     assert main_menu.cart_button.is_displayed()
@@ -91,7 +118,7 @@ def test_main_menu(browser: object):
 # TO_DO-1 - Check in step # 7 that appropriate tooltip is shown and that
 # correct phone number is shown, and that phone number was copied after click
 
-# TO_DO-2 - Return back to the Main Page after opening social media pages
+# TO_DO-2 - Return back to the Main Page after opening social media pages - DONE
 # TO_DO-3 - Check that Log In button redirects to the Log In page
 # TO_DO-4 - Check that Cart button redirects to the Cart page
 # TO_DO-5 - Check the Main Menu language switcher functionality

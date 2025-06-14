@@ -32,6 +32,7 @@ CLICK_SEND = "//button[@class = 'btn btn-primary btn-lg mx-auto mb-10 w-full max
 MAIN_LOGO = "(//img[@alt='Лейвен логотип'])[2]"
 CATALOG = "//div[@class='dropdown dropdown-hover']"
 CATALOG_DROPDOWN = "//div[@class='dropdown-content z-20 w-[1000px] rounded-xl border bg-base-100 shadow-2xl']"
+LANGUAGE_BUTTON = "//button[contains(@class,'flex h-9 items-center justify-between whitespace-nowrap')]"
 
 # For Dynamic list definition
 DROPDOWN_LIST_ITEMS = "//ul[@class = 'flex flex-col gap-2']/child::li"

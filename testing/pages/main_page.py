@@ -158,4 +158,3 @@ class MainPage:
         """This is a method to verify the page title."""
         self.title = self.driver.title
         assert self.title == title, f"Expected title: {title}, but got: {self.title}"
-
