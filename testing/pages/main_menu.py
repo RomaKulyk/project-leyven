@@ -7,6 +7,7 @@ from testing.lib.constants import MAIN_LOGO,\
                                   CATALOG,\
                                   SEARCH_FIELD_OUT,\
                                   SEARCH_FIELD_INN,\
+                                  SOCIAL_MEDIA_BUTTONS_LIST_ITEMS,\
                                   PHONE,\
                                   CROSS_BUTTON,\
                                   FACEBOOK,\
@@ -44,12 +45,10 @@ class MainMenu:
         This is a method to find and define Phone button of Main Menu
     cross
         This is a method to define Cross Button of Search Field
-    facebook
-        This is a method to find and define Facebook button
-    instagram
-        This is a method to find and define Instagram button
-    tiktok
-        This is a method to find and define Tiktok button
+    find_social_media_buttons
+        This is a method to find and define Social Media buttons list
+    click_social_media_button
+        This is a method to find and click Social Media button
     log_in
         This is a method to find and define Log In button
     cart
@@ -129,25 +128,18 @@ class MainMenu:
             By.XPATH, PHONE)
         # action.move_to_element(self.phone_button)
         # action.perform()
-       
-    def facebook(self) -> None:
-        """This is a method to find and define Facebook button."""
-        self.facebook_button = self.driver.find_element(
-            By.XPATH, FACEBOOK)
-        self.facebook_button.click()
 
-    def instagram(self) -> None:
-        """This is a method to find and define Instagram button."""
-        self.instagram_button = self.driver.find_element(
-            By.XPATH, INSTAGRAM)
-        self.instagram_button.click()
+    def click_social_media_button(self, index: int) -> None:
+        """This is a method to find and click Social Media button."""
+        self.social_media_button_n = self.driver.find_element(
+            By.XPATH, f"{SOCIAL_MEDIA_BUTTONS_LIST_ITEMS}[{index}]")
+        self.social_media_button_n.click()
 
-    def tiktok(self) -> None:
-        """This is a method to find and define Tiktok button."""
-        self.tiktok_button = self.driver.find_element(
-            By.XPATH, TIKTOK)
-        self.tiktok_button.click()
-
+    def find_social_media_buttons(self) -> None:
+        """This is a method to find and define Social Media buttons list."""
+        self.social_media_buttons_list =  list(self.driver.find_elements(
+            By.XPATH, SOCIAL_MEDIA_BUTTONS_LIST_ITEMS))
+    
     def language_switcher(self) -> None:
         """This is a method to find and define Language button."""
         self.language_button = self.driver.find_element(

@@ -71,7 +71,7 @@ def test_main_page_categories(browser: object):
         print('=' * 100)
         main_menu.main_logo()
 
-    assert 1 == 0
+    # assert 1 == 0
 
 
 # TO-DO_1 - Implement some login functionality to be able to log test execution

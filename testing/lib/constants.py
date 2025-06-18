@@ -33,6 +33,8 @@ MAIN_LOGO = "(//img[@alt='Лейвен логотип'])[2]"
 CATALOG = "//div[@class='dropdown dropdown-hover']"
 CATALOG_DROPDOWN = "//div[@class='dropdown-content z-20 w-[1000px] rounded-xl border bg-base-100 shadow-2xl']"
 LANGUAGE_BUTTON = "//button[contains(@class,'flex h-9 items-center justify-between whitespace-nowrap')]"
+SOCIAL_MEDIA_BUTTONS_LIST = "//div[@class='flex items-center gap-5 xl:scale-90 2xl:scale-100']"
+SOCIAL_MEDIA_BUTTONS_LIST_ITEMS = "//div[@class='flex items-center gap-5 xl:scale-90 2xl:scale-100']/child::a"
 
 # For Dynamic list definition
 DROPDOWN_LIST_ITEMS = "//ul[@class = 'flex flex-col gap-2']/child::li"
@@ -52,9 +54,7 @@ CATALOG_DROPDOWN_ITEM_9 = f"(//li/a[@class ='{UNSELECTED_DD_ITEM_CLS}' or @class
 
 SEARCH_FIELD_OUT = "(//input[@class='w-full bg-transparent text-[14px] font-[500] outline-none xl:cursor-pointer'])[3]"  
 SEARCH_FIELD_INN = "(//input[@class='w-full bg-transparent text-[14px] font-[500] outline-none xl:cursor-pointer'])[4]"
-# SEARCH_FOUND_ITEMS = "//div[@class='mt-10 flex flex-col gap-5 xl:gap-10']/child::a"
 SEARCH_FOUND_ITEMS = "//div[@class='flex-1 overflow-y-auto px-6 py-4']/child::div"
-# SEARCH_FOUND_ITEM = "//div[@class='mt-10 flex flex-col gap-5 xl:gap-10']/child::a"
 SEARCH_FOUND_ITEM = "//div[@class='flex-1 overflow-y-auto px-6 py-4']/child::div/child::div/child::a"
 
 CROSS_BUTTON = "(//button[@class='ml-auto text-base-content/80'])[2]"
@@ -103,9 +103,7 @@ SORT3 = "//option[@value='popular']"
 
 # Category Page
 FILTER_MENU_BAR = "//div[contains(@class,'flex h-fit flex-col gap-[30px] rounded-[20px] bg-white p-5')]"
-# FILTERS_LIST = "(//div[@class = 'flex flex-col'])[2]/child::details"
 FILTERS_LIST = "(//div[@class = 'flex flex-col gap-[22px]'])[2]/child::div"
-# FILTER_ITEM = "(//*[contains(text(),'Бренд')])[1]"
 FILTER_ITEM = "//div[@class= 'font-[500] text-[14px] xl:text-[14px]']"
 
 FILTERS_ELEMENTS = "(//div[@class='flex flex-col gap-[12px]'])[3]"
