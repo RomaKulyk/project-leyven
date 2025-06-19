@@ -32,12 +32,10 @@ class Footer:
         This is a method to find and define Public Oferta link
     privacy_policy
         This is a method to find and define Privacy Policy link
-    facebook
-        This is a method to find and define Facebook button
-    instagram
-        This is a method to find and define Instagram button
-    tiktok
-        This is a method to find and define Tiktok button
+    click_footer_social_media_button
+        This is a method to find and click footer's Social Media button
+    find_footer_social_media_buttons
+        This is a method to find footer's Social Media buttons list
     """
 
     def __init__(self, webdriver) -> None:
@@ -103,27 +101,14 @@ class Footer:
         wait = WebDriverWait(self.driver, 10)
         self.privacy_policy_link = wait.until(EC.element_to_be_clickable((
             By.XPATH, PRIVACY_POLICY)))
-        
-    def facebook_fb(self) -> None:
-        """This is a method to find and define Facebook button."""
-        wait = WebDriverWait(self.driver, 10)
-        self.facebook_fb_button = wait.until(EC.element_to_be_clickable((
-            By.XPATH, FACEBOOK_FB)))
-        self.facebook_fb_button.click()
-
-    def instagram_fb(self) -> None:
-        """This is a method to find and define Instagram button."""
-        wait = WebDriverWait(self.driver, 10)
-        self.instagram_fb_button = wait.until(EC.element_to_be_clickable((
-            By.XPATH, INSTAGRAM_FB)))
-        self.instagram_fb_button.click()
-        
-    def tiktok_fb(self) -> None:
-        """This is a method to find and define Tiktok button."""
-        wait = WebDriverWait(self.driver, 10)
-        self.tiktok_fb_button = wait.until(EC.element_to_be_clickable((
-            By.XPATH, TIKTOK_FB)))
-        self.tiktok_fb_button.click()
-
-
     
+    def click_footer_social_media_button(self, index: int) -> None:
+        """This is a method to find and click footer's Social Media button."""
+        self.footer_social_media_button_n = self.driver.find_element(
+            By.XPATH, f"{FOOTER_SOCIAL_MEDIA_BUTTONS_LIST_ITEMS}[{index}]")
+        self.footer_social_media_button_n.click()
+
+    def find_footer_social_media_buttons(self) -> None:
+        """This is a method to find footer's Social Media buttons list."""
+        self.footer_social_media_buttons_list =  list(self.driver.find_elements(
+            By.XPATH, FOOTER_SOCIAL_MEDIA_BUTTONS_LIST_ITEMS))

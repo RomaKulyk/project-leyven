@@ -33,7 +33,6 @@ MAIN_LOGO = "(//img[@alt='Лейвен логотип'])[2]"
 CATALOG = "//div[@class='dropdown dropdown-hover']"
 CATALOG_DROPDOWN = "//div[@class='dropdown-content z-20 w-[1000px] rounded-xl border bg-base-100 shadow-2xl']"
 LANGUAGE_BUTTON = "//button[contains(@class,'flex h-9 items-center justify-between whitespace-nowrap')]"
-SOCIAL_MEDIA_BUTTONS_LIST = "//div[@class='flex items-center gap-5 xl:scale-90 2xl:scale-100']"
 SOCIAL_MEDIA_BUTTONS_LIST_ITEMS = "//div[@class='flex items-center gap-5 xl:scale-90 2xl:scale-100']/child::a"
 
 # For Dynamic list definition
@@ -79,6 +78,7 @@ FACEBOOK_FB = "(//*[contains(@href,'www.facebook.com')])[3]"
 INSTAGRAM_FB = "(//*[contains(@href,'www.instagram.com')])[3]"
 TIKTOK_FB = "(//*[contains(@href,'www.tiktok.com')])[3]"
 MAIN_LOGO_FL = "//a[@class = 'flex items-center gap-3']"
+FOOTER_SOCIAL_MEDIA_BUTTONS_LIST_ITEMS = "//div[@class='flex items-center gap-5 xl:scale-90 2xl:scale-100']/child::a"
 
 # Cart
 CHECKOUT = "//a[@class='false w-full']"

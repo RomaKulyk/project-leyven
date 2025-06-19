@@ -10,9 +10,6 @@ from testing.lib.constants import MAIN_LOGO,\
                                   SOCIAL_MEDIA_BUTTONS_LIST_ITEMS,\
                                   PHONE,\
                                   CROSS_BUTTON,\
-                                  FACEBOOK,\
-                                  INSTAGRAM,\
-                                  TIKTOK,\
                                   LOG_IN,\
                                   LANGUAGE_BUTTON,\
                                   CART,\

@@ -76,23 +76,28 @@ def test_footer(browser: object):
     footer.privacy_policy_link.click()
     main_menu.main_logo()
     main_page.scroll_to_the_footer()
-    ############################################################################
-    # 10.Find and click Facebook button
-    footer.facebook_fb()
-    assert footer.facebook_fb_button.is_enabled()
-    assert footer.facebook_fb_button.is_displayed()
+
+    # 10.Find and click social media buttons
+    footer.find_footer_social_media_buttons()
+    print(len(footer.footer_social_media_buttons_list))
+    print(footer.footer_social_media_buttons_list)
+    for i in range((len(footer.footer_social_media_buttons_list) + 1) // 2):
+        footer.click_footer_social_media_button(i + 1)
+        assert footer.footer_social_media_button_n.is_enabled(), \
+            f"Social media button {i} is not enabled."
+        assert footer.footer_social_media_button_n.is_displayed(), \
+            f"Social media button {i} is not displayed."
+        time.sleep(1)
+
+        # It goes to the social media page close it and returns back 
+        # to the Main Page 
+        window_handles = driver.window_handles
+        driver.switch_to.window(window_handles[-1])
+        time.sleep(1)
+        driver.close()
+        driver.switch_to.window(window_handles[0])
     
-    # 11.Find and click Instagram button
-    footer.instagram_fb()
-    assert footer.instagram_fb_button.is_enabled()
-    assert footer.instagram_fb_button.is_displayed()
-    
-    # 12.Find and click Tiktok button
-    footer.tiktok_fb()
-    assert footer.tiktok_fb_button.is_enabled()
-    assert footer.tiktok_fb_button.is_displayed()
-    ############################################################################
-    # 13.Find and click MAIN_LOGO button
+    # 11.Find and click MAIN_LOGO button
     footer.main_logo_fb()
     assert footer.main_logo_button.is_enabled()
     assert footer.main_logo_button.is_displayed()
