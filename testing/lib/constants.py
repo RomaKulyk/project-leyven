@@ -80,6 +80,7 @@ TIKTOK_FB = "(//*[contains(@href,'www.tiktok.com')])[3]"
 MAIN_LOGO_FL = "//a[@class = 'flex items-center gap-3']"
 FOOTER_SOCIAL_MEDIA_BUTTONS_LIST_ITEMS = "//div[@class='flex items-center gap-5 xl:scale-90 2xl:scale-100']/child::a"
 FOOTER_SOCIAL_MEDIA_LINKS_LIST_ITEMS = "//footer/nav[1]/child::a"
+FOOTER_ABOUT_US_LINKS_LIST_ITEMS = "//footer/nav[2]/child::a"
 
 # Cart
 CHECKOUT = "//a[@class='false w-full']"

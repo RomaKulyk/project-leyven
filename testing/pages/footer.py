@@ -36,6 +36,12 @@ class Footer:
         This is a method to find footer's Social Media link
     find_footer_social_media_links
         This is a method to find footer's Social Media links list
+    click_footer_about_us_link
+        This is a method to find and click footer's About Us link
+    find_footer_about_us_link
+        This is a method to find footer's About Us link
+    find_footer_about_us_links
+        This is a method to find footer's About Us links list
     """
 
     def __init__(self, webdriver) -> None:
@@ -56,7 +62,6 @@ class Footer:
 
     def click_footer_social_media_link(self, index: int) -> None:
         """This is a method to find and click footer's Social Media link."""
-        
         self.footer_social_media_link_n = self.driver.find_element(
             By.XPATH, f"{FOOTER_SOCIAL_MEDIA_LINKS_LIST_ITEMS}[{index}]")
         self.footer_social_media_link_n.click()
@@ -88,6 +93,22 @@ class Footer:
         wait = WebDriverWait(self.driver, 10)
         self.payment_link = wait.until(EC.element_to_be_clickable((
             By.LINK_TEXT, PAYMENT)))
+        
+    def click_footer_about_us_link(self, index: int) -> None:
+        """This is a method to find and click footer's About Us link."""
+        self.footer_about_us_link_n = self.driver.find_element(
+            By.XPATH, f"{FOOTER_ABOUT_US_LINKS_LIST_ITEMS}[{index}]")
+        self.footer_about_us_link_n.click()
+        
+    def find_footer_about_us_link(self, index: int) -> None:
+        """This is a method to find footer's About Us link."""
+        self.footer_about_us_link_n = self.driver.find_element(
+            By.XPATH, f"{FOOTER_ABOUT_US_LINKS_LIST_ITEMS}[{index}]")
+        
+    def find_footer_about_us_links(self) -> None:
+        """This is a method to find footer's About Us links list."""
+        self.footer_about_us_links_list =  list(self.driver.find_elements(
+            By.XPATH, FOOTER_ABOUT_US_LINKS_LIST_ITEMS))
     
     def public_oferta(self) -> None:
         """This is a method to find and define Public Oferta link."""
