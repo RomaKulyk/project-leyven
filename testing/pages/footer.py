@@ -16,12 +16,6 @@ class Footer:
         This is a method to initialize instance of the MainPage class
     main_logo
         This is a method to define and click Main Logo button
-    facebook_fl
-        This is a method to find and define Facebook link
-    instagram_fl
-        This is a method to find and define Instagram link
-    tiktok_fl
-        This is a method to find and define Tiktok link
     about_us
         This is a method to find and define About Us link
     contacts
@@ -36,6 +30,12 @@ class Footer:
         This is a method to find and click footer's Social Media button
     find_footer_social_media_buttons
         This is a method to find footer's Social Media buttons list
+    click_footer_social_media_link
+        This is a method to find and click footer's Social Media link
+    find_footer_social_media_link
+        This is a method to find footer's Social Media link
+    find_footer_social_media_links
+        This is a method to find footer's Social Media links list
     """
 
     def __init__(self, webdriver) -> None:
@@ -54,23 +54,22 @@ class Footer:
             By.XPATH, MAIN_LOGO_FL)))
         self.main_logo_button.click()
 
-    def facebook_fl(self) -> None:
-        """This is a method to find and define Facebook link."""
-        wait = WebDriverWait(self.driver, 10)
-        self.facebook_link = wait.until(EC.element_to_be_clickable((
-            By.LINK_TEXT, FACEBOOK_FL)))
+    def click_footer_social_media_link(self, index: int) -> None:
+        """This is a method to find and click footer's Social Media link."""
         
-    def instagram_fl(self) -> None:
-        """This is a method to find and define Instagram link."""
-        wait = WebDriverWait(self.driver, 10)
-        self.instagram_link = wait.until(EC.element_to_be_clickable((
-            By.LINK_TEXT, INSTAGRAM_FL)))
-        
-    def tiktok_fl(self) -> None:
-        """This is a method to find and define Tiktok link."""
-        wait = WebDriverWait(self.driver, 10)
-        self.tiktok_link = wait.until(EC.element_to_be_clickable((
-            By.LINK_TEXT, TIKTOK_FL)))
+        self.footer_social_media_link_n = self.driver.find_element(
+            By.XPATH, f"{FOOTER_SOCIAL_MEDIA_LINKS_LIST_ITEMS}[{index}]")
+        self.footer_social_media_link_n.click()
+
+    def find_footer_social_media_link(self, index: int) -> None:
+        """This is a method to find footer's Social Media link."""
+        self.footer_social_media_link_n = self.driver.find_element(
+            By.XPATH, f"{FOOTER_SOCIAL_MEDIA_LINKS_LIST_ITEMS}[{index}]")
+
+    def find_footer_social_media_links(self) -> None:
+        """This is a method to find footer's Social Media links list."""
+        self.footer_social_media_links_list =  list(self.driver.find_elements(
+            By.XPATH, FOOTER_SOCIAL_MEDIA_LINKS_LIST_ITEMS))
     
     def about_us(self) -> None:
         """This is a method to find and define About Us link."""
