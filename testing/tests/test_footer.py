@@ -20,9 +20,9 @@ def test_footer(browser: object):
         footer.find_footer_social_media_link(i)  
 
         assert footer.footer_social_media_link_n.is_enabled(), \
-            f"Social media button {i} is not enabled."
+            f"Social media link {i} is not enabled."
         assert footer.footer_social_media_link_n.is_displayed(), \
-            f"Social media button {i} is not displayed."
+            f"Social media link {i} is not displayed."
         
         # 2.2.Click the social media link
         footer.click_footer_social_media_link(i)
@@ -36,45 +36,46 @@ def test_footer(browser: object):
         footer.find_footer_about_us_link(i)  
 
         assert footer.footer_about_us_link_n.is_enabled(), \
-            f"About us button {i} is not enabled."
+            f"About us link {i} is not enabled."
         assert footer.footer_about_us_link_n.is_displayed(), \
-            f"About us button {i} is not displayed."
+            f"About us link {i} is not displayed."
         
         # 3.2.Click the About us link
         footer.click_footer_about_us_link(i)
         print(f"About Us link {i} is clicked.")
         footer.main_logo_fb()
         main_page.scroll_to_the_footer()
-    
-    # 4.Find and click Public Oferta link
-    footer.public_oferta()
-    assert footer.public_oferta_link.is_enabled()
-    assert footer.public_oferta_link.is_displayed()
-    footer.public_oferta_link.click()
-    footer.main_logo_fb()
-    main_page.scroll_to_the_footer()
-    
-    # 5.Find and click Privacy Policy link
-    footer.privacy_policy()
-    assert footer.privacy_policy_link.is_enabled()
-    assert footer.privacy_policy_link.is_displayed()
-    footer.privacy_policy_link.click()
-    footer.main_logo_fb()
-    main_page.scroll_to_the_footer()
 
-    # 6.Find and click social media buttons
+    footer.find_footer_legal_links()
+    for i in range(1,len(footer.footer_legal_links_list) + 1):
+        # 4.1.Find the Legal link
+        footer.find_footer_legal_link(i)  
+
+        assert footer.footer_legal_link_n.is_enabled(), \
+            f"Legal link {i} is not enabled."
+        assert footer.footer_about_us_link_n.is_displayed(), \
+            f"Legal link {i} is not displayed."
+        
+        # 4.2.Click the Legal link
+        footer.click_footer_legal_link(i)
+        print(f"About Legal {i} is clicked.")
+        footer.main_logo_fb()
+        main_page.scroll_to_the_footer()
+
+    
     footer.find_footer_social_media_buttons()
-    # print(len(footer.footer_social_media_buttons_list))
-    # print(footer.footer_social_media_buttons_list)
-
     for i in range((len(footer.footer_social_media_buttons_list) + 1) // 2):
-        footer.click_footer_social_media_button(i + 1)
+        # 5.1.Find Social Media buttons
+        footer.find_footer_social_media_button(i + 1)
         assert footer.footer_social_media_button_n.is_enabled(), \
-            f"Social media button {i} is not enabled."
+            f"Social media button {i + 1} is not enabled."
         assert footer.footer_social_media_button_n.is_displayed(), \
-            f"Social media button {i} is not displayed."
+            f"Social media button {i + 1} is not displayed."
         time.sleep(1)
-
+        # 5.2.Click Social Media buttons
+        footer.click_footer_social_media_button(i + 1)
+        print(f"Social media button {i + 1} is clicked.")
+        
         # It goes to the social media page close it and returns back 
         # to the Main Page 
         window_handles = driver.window_handles
@@ -87,5 +88,9 @@ def test_footer(browser: object):
     footer.main_logo_fb()
     assert footer.main_logo_button.is_enabled()
     assert footer.main_logo_button.is_displayed()
-    # assert 1 == 0
+
+    # assert 1 == 0  # This line is to ensure that the test fails if it reaches 
+    # this point, which is useful for debugging purposes. Remove or comment out
+    # this line in production code.
+
 
