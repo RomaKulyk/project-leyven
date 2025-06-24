@@ -25,14 +25,15 @@ def test_footer(browser: object):
             f"Social media link {i} is not displayed."
         
         # 2.2.Click the social media link
+        link_text = footer.footer_social_media_links_list[i - 1].text
         footer.click_footer_social_media_link(i)
-        print(f"Social media link {i} is clicked.")
+        print(f"Social media link '{link_text}' is  clicked.")
         time.sleep(1)
         driver.back()
         
     footer.find_footer_about_us_links()
     for i in range(1,len(footer.footer_about_us_links_list) + 1):
-        # 3.1.Find the About Us link
+        # 3.1.Find the About Us link    
         footer.find_footer_about_us_link(i)  
 
         assert footer.footer_about_us_link_n.is_enabled(), \
@@ -41,8 +42,9 @@ def test_footer(browser: object):
             f"About us link {i} is not displayed."
         
         # 3.2.Click the About us link
+        link_text = footer.footer_about_us_links_list[i - 1].text
         footer.click_footer_about_us_link(i)
-        print(f"About Us link {i} is clicked.")
+        print(f"About Us link '{link_text}' is  clicked.")
         footer.main_logo_fb()
         main_page.scroll_to_the_footer()
 
@@ -57,8 +59,9 @@ def test_footer(browser: object):
             f"Legal link {i} is not displayed."
         
         # 4.2.Click the Legal link
+        link_text = footer.footer_legal_links_list[i - 1].text
         footer.click_footer_legal_link(i)
-        print(f"About Legal {i} is clicked.")
+        print(f"Legal link '{link_text}' is  clicked.")
         footer.main_logo_fb()
         main_page.scroll_to_the_footer()
 
@@ -74,7 +77,7 @@ def test_footer(browser: object):
         time.sleep(1)
         # 5.2.Click Social Media buttons
         footer.click_footer_social_media_button(i + 1)
-        print(f"Social media button {i + 1} is clicked.")
+        print(f"Social media button '{i + 1}' is  clicked.")
         
         # It goes to the social media page close it and returns back 
         # to the Main Page 
@@ -89,7 +92,7 @@ def test_footer(browser: object):
     assert footer.main_logo_button.is_enabled()
     assert footer.main_logo_button.is_displayed()
 
-    # assert 1 == 0  # This line is to ensure that the test fails if it reaches 
+    assert 1 == 0  # This line is to ensure that the test fails if it reaches 
     # this point, which is useful for debugging purposes. Remove or comment out
     # this line in production code.
 
