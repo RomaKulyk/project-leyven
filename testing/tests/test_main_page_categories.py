@@ -43,8 +43,6 @@ def test_main_page_categories(browser: object):
     main_page.open_page(MAIN_URL)
     
     main_page.product_categories()
-    # print(len(main_page.product_categories_list))
-    # print(main_page.product_categories_list)
     assert len(main_page.product_categories_list) > 0, \
     "No product categories found on the main page."
     

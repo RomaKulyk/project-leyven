@@ -21,6 +21,8 @@ CAROUSEL_ITEMS = "//div[contains(@class,'relative h-[250px] w-full')]/child::a/i
 PRODUCT_CATEGORIES = "//ul[contains(@class,'mx-auto mt-2 hidden items-center')]/child::li"
 PRODUCT_CATEGORY = "//ul[contains(@class,'mx-auto mt-2 hidden items-center')]/child::li"
 
+MAIN_PRODUCTS_CATEGORIES = "//div[@class='flex flex-1 flex-col justify-between space-y-5']/child::a"
+
 # Help Me Form
 HELP_ME_FORM = "//form[@class = 'modal-box mx-auto flex max-w-[800px] flex-col gap-5 overflow-hidden rounded-[50px] bg-white font-medium xl:p-10']"
 ENTER_USERNAME = "//input[@id = 'name']"

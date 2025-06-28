@@ -45,17 +45,14 @@ class MainPage:
         This is a method to find and defint TO BUY button on Product Cards
     verify_the_page_title
         This is a method to verify the page title
+    click_main_product_category
+        This is a method to find and click main product category
+    find_main_products_category
+        This is a method to find main product category
+    find_main_products_categories
+        This is a method to find main products categories list
     """
-    
-    main_page_popular_categories = ["🐕 Собакам",
-                                    "🐈 Котам",
-                                    "🍖 Корми",
-                                    "💊 Сімпаріка",
-                                    "🏭 Бренди",
-                                    "📒 Блог",
-                                    "🛏️ Лежаки",
-                                    "🔥 Акції",
-                                    "✨ Новинки"]
+
     
     def __init__(self, webdriver) -> None:
         """
@@ -96,9 +93,6 @@ class MainPage:
         
     def product_category(self, index) -> None:
         """This is a method to define Product category."""
-        # wait = WebDriverWait(self.driver, 10)
-        # self.product_category_n = wait.until(EC.element_to_be_clickable((
-        #     By.XPATH, f"{PRODUCT_CATEGORY}[{index}]")))
         self.product_category_n = self.driver.find_element(
             By.XPATH, f"{PRODUCT_CATEGORY}[{index}]")
         self.product_category_n.click()
@@ -134,8 +128,6 @@ class MainPage:
         wait = WebDriverWait(self.driver, 10)
         self.product_card_n = wait.until(EC.element_to_be_clickable((
             By.XPATH, f"{PR_CARD}[{index}]")))
-        # self.product_card_n = self.driver.find_element(
-        #     By.XPATH, f"{PR_CARD}[{index}]")
         self.product_card_n.click()
         
     def product_cards(self) -> None:
@@ -158,3 +150,20 @@ class MainPage:
         """This is a method to verify the page title."""
         self.title = self.driver.title
         assert self.title == title, f"Expected title: {title}, but got: {self.title}"
+
+    def click_main_product_category(self, index: int) -> None:
+        """This is a method to find and click main product category."""    
+        wait = WebDriverWait(self.driver, 10)
+        self.main_product_category_n = wait.until(EC.element_to_be_clickable((
+            By.XPATH, f"{MAIN_PRODUCTS_CATEGORIES}[{index}]")))
+        self.main_product_category_n.click()
+
+    def find_main_products_category(self, index: int) -> None:
+        """This is a method to find main product category."""
+        self.main_product_category_n = self.driver.find_element(
+            By.XPATH, f"{MAIN_PRODUCTS_CATEGORIES}[{index}]")
+        
+    def find_main_products_categories(self) -> None:
+        """This is a method to find main products categories list."""
+        self.main_products_categories_list = list(self.driver.find_elements(
+            By.XPATH, MAIN_PRODUCTS_CATEGORIES))
