@@ -160,8 +160,9 @@ class MainPage:
 
     def find_main_products_category(self, index: int) -> None:
         """This is a method to find main product category."""
-        self.main_product_category_n = self.driver.find_element(
-            By.XPATH, f"{MAIN_PRODUCTS_CATEGORIES}[{index}]")
+        wait = WebDriverWait(self.driver, 10)
+        self.main_product_category_n = wait.until(EC.element_to_be_clickable((
+            By.XPATH, f"{MAIN_PRODUCTS_CATEGORIES}[{index}]")))
         
     def find_main_products_categories(self) -> None:
         """This is a method to find main products categories list."""
