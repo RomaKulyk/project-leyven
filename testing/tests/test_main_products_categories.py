@@ -34,6 +34,15 @@ def test_main_products_categories(browser: object):
         main_page.click_main_product_category(i)
         print(f"Main page main product category link '{link_text}' is  clicked.")
         time.sleep(3)
+
+        current_page_title = driver.title
+        print(f"Current page title is '{current_page_title}'")
+        expected_title = page_titles[i-1]
+        print(f"Expected title is '{expected_title}', and got '{current_page_title}'")
+        assert current_page_title == expected_title, \
+            f"Expected title is '{expected_title}', but got '{current_page_title}'"
+        print('=' * 100)
         main_menu.main_logo()
     # assert 1 == 0
-    
+# TO-DO_1 - Implement some login functionality to be able to log test execution
+# order to the file.
