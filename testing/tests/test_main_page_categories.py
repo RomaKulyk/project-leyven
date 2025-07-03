@@ -1,19 +1,11 @@
 import pytest
 from testing.pages.main_page import MainPage
 from testing.pages.main_menu import MainMenu
-from testing.pages.dogs_page import DogsPage
-from testing.pages.cats_page import CatsPage
-from testing.pages.foods_page import FoodsPage
-from testing.pages.simparica_page import SimparicaPage
-from testing.pages.brands_page import BrandsPage
-from testing.pages.blog_page import BlogPage
-from testing.pages.beds_page import BedsPage
-from testing.pages.discounts_page import DiscountsPage
-from testing.pages.new_arrivals_page import NewArrivalsPage
 from testing.lib.constants import MAIN_URL
 import time
 
-page_titles =["Собаки | Лейвен",
+
+page_titles = ["Собаки | Лейвен",
               "Коти | Лейвен",
               "Сухий корм | Лейвен",
               "Сімпаріка | Інтернет-зоомагазин Лейвен",
@@ -22,23 +14,12 @@ page_titles =["Собаки | Лейвен",
               "Будиночки, лежанки, м'які місця | Лейвен",
               "Акції | Інтернет-зоомагазин Лейвен",
               "Новинки | Інтернет-зоомагазин Лейвен"]
-    
-page_classes = [DogsPage,
-                CatsPage,
-                FoodsPage,
-                SimparicaPage,
-                BrandsPage,
-                BlogPage,
-                BedsPage,
-                DiscountsPage,
-                NewArrivalsPage]
 
 def test_main_page_categories(browser: object):
     driver = browser
     main_page = MainPage(driver)
     main_menu = MainMenu(driver)
     
-
     # 1.Open MAIN_URL page
     main_page.open_page(MAIN_URL)
     
@@ -70,7 +51,5 @@ def test_main_page_categories(browser: object):
         main_menu.main_logo()
 
     # assert 1 == 0
-
-
 # TO-DO_1 - Implement some login functionality to be able to log test execution
 # order to the file.
