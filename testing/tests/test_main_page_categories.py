@@ -3,7 +3,10 @@ from testing.pages.main_page import MainPage
 from testing.pages.main_menu import MainMenu
 from testing.lib.constants import MAIN_URL
 import time
+import logging
 
+
+logger = logging.getLogger('leyven_tests_logger')
 
 page_titles = ["Собаки | Лейвен",
               "Коти | Лейвен",
@@ -16,6 +19,8 @@ page_titles = ["Собаки | Лейвен",
               "Новинки | Інтернет-зоомагазин Лейвен"]
 
 def test_main_page_categories(browser: object):
+    """Test to ensure that the product categories on the main page
+    are displayed and clickable."""
     driver = browser
     main_page = MainPage(driver)
     main_menu = MainMenu(driver)
@@ -32,24 +37,21 @@ def test_main_page_categories(browser: object):
     for i in range(1, len(main_page.product_categories_list) + 1):
         main_page.product_category(i)
      
-        print(f"{i}. Click the '{page_titles[i - 1]}' product\'s category link.")
+        logger.info(
+            f"Click the '{page_titles[i - 1]}' product\'s category link.")
         assert main_page.product_category_n.is_enabled(),\
         f"Product category {page_titles[i - 1]} is not enabled."
         assert main_page.product_category_n.is_displayed(),\
         f"Product category {page_titles[i - 1]} is not displayed."        
-        print(f"The '{page_titles[i - 1]}' product\'s category link is enabled"
-              f" and displayed.")
         
         time.sleep(1)
         current_page_title = driver.title
-        print(f"Current page title is '{current_page_title}'")
+        logger.info(f"Page with title '{current_page_title}' is opened.")
         expected_title = page_titles[i-1]
-        print(f"Expected title is '{expected_title}', and got '{current_page_title}'")
+        logger.info(f"Expected title is '{expected_title}'," \
+                     f"and got '{current_page_title}'\n{'=' * 200}")
         assert current_page_title == expected_title, \
             f"Expected title is '{expected_title}', but got '{current_page_title}'"
-        print('=' * 100)
         main_menu.main_logo()
 
-    # assert 1 == 0
-# TO-DO_1 - Implement some login functionality to be able to log test execution
-# order to the file.
+    # assert 1 == 0 # Uncomment to fail the test intentionally

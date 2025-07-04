@@ -1,6 +1,17 @@
 import json
 import pytest
 import selenium.webdriver
+import logging
+
+@pytest.fixture(autouse=True, scope="session")
+def configure_logging():
+    logging.basicConfig(
+        format="{asctime} - {levelname} - {message}",
+        style="{",
+        datefmt="%Y-%m-%d %H:%M:%S",
+        level=logging.INFO,
+    )
+logger = logging.getLogger('leyven_tests_logger')
 
 @pytest.fixture
 def config(scope='session'):

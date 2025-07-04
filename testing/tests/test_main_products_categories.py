@@ -3,15 +3,19 @@ from testing.pages.main_page import MainPage
 from testing.pages.main_menu import MainMenu
 from testing.lib.constants import MAIN_URL
 import time
+import logging
 
 
-page_titles = [
-              "Годування домашніх тварин і птахів | Лейвен",
-              "Ветеринарні засоби та препарати | Лейвен",
-              "Товари для комфорту домашніх тварин | Лейвен",
-              "Товари для прогулянок і подорожей з тваринами | Лейвен",
-              ]
+logger = logging.getLogger('leyven_tests_logger')
+
+page_titles = ["Годування домашніх тварин і птахів | Лейвен",
+               "Ветеринарні засоби та препарати | Лейвен",
+               "Товари для комфорту домашніх тварин | Лейвен",
+               "Товари для прогулянок і подорожей з тваринами | Лейвен"]
+
 def test_main_products_categories(browser: object):
+    """Test to ensure that the main product categories on the main page
+    are displayed and clickable."""
     driver = browser
     main_page = MainPage(driver)
 
@@ -33,17 +37,19 @@ def test_main_products_categories(browser: object):
         time.sleep(3)
         link_text = main_page.main_products_categories_list[i - 1].text
         main_page.click_main_product_category(i)
-        print(f"Main page main product category link '{link_text}' is  clicked.")
+        logger.info(
+            f"Click the Main page main product category link '{link_text}'.")
         time.sleep(3)
 
         current_page_title = driver.title
-        print(f"Current page title is '{current_page_title}'")
+        logger.info(f"Page with title '{current_page_title}' is opened.")
         expected_title = page_titles[i-1]
-        print(f"Expected title is '{expected_title}', and got '{current_page_title}'")
+        logger.info(f"Expected title is '{expected_title}'," \
+                     f"and got '{current_page_title}'\n{'=' * 200}")
         assert current_page_title == expected_title, \
-            f"Expected title is '{expected_title}', but got '{current_page_title}'"
-        print('=' * 100)
+        f"Expected title is '{expected_title}', but got '{current_page_title}'"
         main_menu.main_logo()
-    # assert 1 == 0
-# TO-DO_1 - Implement some login functionality to be able to log test execution
-# order to the file.
+        
+    # assert 1 == 0 # Uncomment to fail the test intentionally
+# TO-DO_1 - Update login functionality in conftest.py to be able to add 
+# timestamps to the log.
