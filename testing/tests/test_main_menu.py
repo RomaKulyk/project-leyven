@@ -104,3 +104,20 @@ def test_main_menu(browser: object):
 # TO_DO-4 - Check that Cart button redirects to the Cart page
 # TO_DO-5 - Check the Main Menu language switcher functionality
 # TO_DO-6 - Check the "Кошик" button functionality
+
+# TO_DO-7 - add the following steps for logging:
+# # 4. Click on the main logo to return to the main page
+#     logger.info(f"4.1. Click on the main logo to return to the main page.")
+#     main_menu = MainMenu(driver)
+#     main_menu.main_logo()
+#     logger.info(f"4.2. The main logo is clicked.")
+#     current_page_title = driver.title
+#     logger.info(f"4.3. Ensure that page with the title "
+#                 f"'{current_page_title}' is opened.")
+#     expected_title = MAIN_PAGE_TITLE
+#     assert current_page_title == expected_title,\
+#     f"Expected title is '{expected_title}', but got '{current_page_title}'"
+#     time.sleep(3)
+#     logger.info(f"4.4. Expected title is '{MAIN_PAGE_TITLE}', "
+#                 f"and got '{current_page_title}'\n{'=' * 200}")
+
