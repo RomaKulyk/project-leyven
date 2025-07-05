@@ -33,11 +33,13 @@ def test_main_products_categories(browser: object):
         # 1.1-2 Find and click the each main product category link
         main_page.find_main_products_categories()
         main_page.find_main_products_category(i)
+
         assert main_page.main_product_category_n.is_enabled(),\
             f"Main page main product category link {i} is not enabled."
         assert main_page.main_product_category_n.is_displayed(),\
             f"Main page main product category link {i} is not displayed."
         time.sleep(1)
+        
         link_text = main_page.main_products_categories_list[i - 1].text
         logger.info(f"{i}.1. Click the '{link_text}' Main page main product "
                     f"category link.")
@@ -55,10 +57,11 @@ def test_main_products_categories(browser: object):
         f"Expected title is '{expected_title}', but got '{current_page_title}'"
         logger.info(f"{i}.4. Expected title is '{expected_title}', "
                     f" and got '{current_page_title}'")
+        logger.info(f"[PASSED]\n{'=' * 200}")
         
         # 2. Click the Main Logo button to return to the main page
         main_menu.main_logo()
-        logger.info(f"[PASSED]\n{'=' * 200}")
+        
 
 # TO-DO_1 - Update login functionality in conftest.py to be able to add
 # timestamps to the log.
