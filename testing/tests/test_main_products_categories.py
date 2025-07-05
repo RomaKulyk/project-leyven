@@ -25,11 +25,12 @@ def test_main_products_categories(browser: object):
     # PRECONDITIONS: The main page is opened
     main_page.open_page(MAIN_URL)
     logger.info(f"PRECONDITIONS: The main page: {MAIN_URL}"
-                f" is opened.\n{'=' * 200}")
+                f" is opened.")
+    logger.info(f"[PASSED]\n{'=' * 200}")
     main_page.find_main_products_categories()
 
     for i in range(1, len(main_page.main_products_categories_list) + 1):
-        # 1. Find and click the main product category link
+        # 1.1-2 Find and click the each main product category link
         main_page.find_main_products_categories()
         main_page.find_main_products_category(i)
         assert main_page.main_product_category_n.is_enabled(),\
@@ -38,23 +39,26 @@ def test_main_products_categories(browser: object):
             f"Main page main product category link {i} is not displayed."
         time.sleep(1)
         link_text = main_page.main_products_categories_list[i - 1].text
-        main_page.click_main_product_category(i)
         logger.info(f"{i}.1. Click the '{link_text}' Main page main product "
                     f"category link.")
+        main_page.click_main_product_category(i)
         time.sleep(1)
+        logger.info(f"{i}.2. The '{link_text}' Main page main product "
+                    f"category link is clicked.")
 
-        # 2. Ensure that the page with the correct title is opened
+        # 1.3-4. Ensure that the page with the correct title is opened
         current_page_title = driver.title
-        logger.info(f"{i}.2. Ensure that page with the title"
+        logger.info(f"{i}.3. Ensure that page with the title "
                     f"'{current_page_title}' is opened.")
         expected_title = page_titles[i-1]
-
-        # 3. Check that the page title is correct
         assert current_page_title == expected_title,\
         f"Expected title is '{expected_title}', but got '{current_page_title}'"
-        logger.info(f"{i}.3. Expected title is '{expected_title}', "
-                    f" and got '{current_page_title}'\n{'=' * 200}")
+        logger.info(f"{i}.4. Expected title is '{expected_title}', "
+                    f" and got '{current_page_title}'")
+        
+        # 2. Click the Main Logo button to return to the main page
         main_menu.main_logo()
+        logger.info(f"[PASSED]\n{'=' * 200}")
 
 # TO-DO_1 - Update login functionality in conftest.py to be able to add
 # timestamps to the log.
