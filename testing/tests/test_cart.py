@@ -40,10 +40,10 @@ def test_cart_page(browser: object):
     # assert cart_page.close_cart_button.is_displayed()
     
     # 6.Find and click GO_TO_CATEGORY_1 button
-    main_page.go_to_category_1()
-    assert main_page.go_to_category_1_button.is_enabled()
-    assert main_page.go_to_category_1_button.is_displayed()
-    main_page.go_to_category_1_button.click()
+    main_page.find_go_to_category(2)
+    assert main_page.go_to_category_button.is_enabled()
+    assert main_page.go_to_category_button.is_displayed()
+    main_page.click_go_to_category(2)
 
     page = InventoryPage(driver)
     # 7.Add product 1 to cart from product's category page

@@ -12,11 +12,13 @@ def test_main_page(browser: object):
     main_page.open_page(MAIN_URL)
     time.sleep(3)
     
-    # 2.Find and click GO_TO_CATEGORY_1 button
-    main_page.go_to_category_2()
-    assert main_page.go_to_category_2_button.is_enabled()
-    assert main_page.go_to_category_2_button.is_displayed()
-    main_page.go_to_category_2_button.click()
+    # 2.Find and click GO_TO_CATEGORY_2 button
+    main_page.find_go_to_category(3)
+    assert main_page.go_to_category_button.is_enabled(),\
+        "GO_TO_CATEGORY_2 button is not enabled."
+    assert main_page.go_to_category_button.is_displayed(),\
+        "GO_TO_CATEGORY_2 button is not displayed."
+    main_page.click_go_to_category(3)
 
     # 3.Find and click SORTING dropdown list    
     # list of available options in dropdown    

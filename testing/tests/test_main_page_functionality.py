@@ -14,10 +14,10 @@ def test_main_page(browser: object):
     main_page.open_page(MAIN_URL)
     
     # 2.Find and click GO_TO_CATEGORY_1 button
-    main_page.go_to_category_1()
-    assert main_page.go_to_category_1_button.is_enabled()
-    assert main_page.go_to_category_1_button.is_displayed()
-    main_page.go_to_category_1_button.click()
+    main_page.find_go_to_category(2)
+    assert main_page.go_to_category_button.is_enabled()
+    assert main_page.go_to_category_button.is_displayed()
+    main_page.click_go_to_category(2)
 
     main_menu = MainMenu(driver)
     # 3.Find and click MAIN_LOGO button
@@ -26,10 +26,12 @@ def test_main_page(browser: object):
     assert main_menu.main_logo_button.is_displayed()
 
     # 4.Find and click GO_TO_CATEGORY_2 button
-    main_page.go_to_category_2()
-    assert main_page.go_to_category_2_button.is_enabled()
-    assert main_page.go_to_category_2_button.is_displayed()
-    main_page.go_to_category_2_button.click()
+    main_page.find_go_to_category(3)
+    assert main_page.go_to_category_button.is_enabled(),\
+        "GO_TO_CATEGORY_2 button is not enabled."
+    assert main_page.go_to_category_button.is_displayed(),\
+        "GO_TO_CATEGORY_2 button is not displayed."
+    main_page.click_go_to_category(3)
 
     main_page.product_cards()
     # 5.Find and click first Product Card in the list

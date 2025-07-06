@@ -47,15 +47,10 @@ class CategoryPage(MainPage):
    
     def filter(self, index) -> None:
         """This is a method to find and define filter itself."""
-        # wait = WebDriverWait(self.driver, 10)
-        # self.filter_n = wait.until(EC.element_to_be_clickable((
-        #     By.XPATH, f"{FILTER_ITEM}[{index}]")))
-        
-        # self.driver.implicitly_wait(3)
         self.filter_n = self.driver.find_element(
             By.XPATH, f"{FILTER_ITEM}[{index}]")
         
-    def show_more(self) -> None:
+    def scroll_to_show_more(self) -> None:
         """This is a method to find and define SHOW MORE button."""
         wait = WebDriverWait(self.driver, 10)
         self.show_more_button = wait.until(EC.element_to_be_clickable((

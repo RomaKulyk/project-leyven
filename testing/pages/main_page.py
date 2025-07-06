@@ -17,10 +17,10 @@ class MainPage:
         This is a method to initialize instance of the MainPage class
     open_page
         This is a method to open a certain web page
-    go_to_category_1
-        This is a method to define GO_TO_CATEGORY_1 button
-    go_to_category_2
-        This is a method to define GO_TO_CATEGORY_2 button
+    find_go_to_category
+        This is a method to define GO_TO_CATEGORY button
+    click_go_to_category
+        This is a method to find and click GO_TO_CATEGORY button
     help_me
        This is a method to define Help Me button
     hm_form
@@ -68,17 +68,18 @@ class MainPage:
         self.driver.get(url)
         self.driver.implicitly_wait(3)
 
-    def go_to_category_1(self) -> None:
-        """This is a method to define GO_TO_CATEGORY_1 button."""
+    def find_go_to_category(self, index) -> None:
+        """This is a method to define GO_TO_CATEGORY button."""
         wait = WebDriverWait(self.driver, 10)
-        self.go_to_category_1_button = wait.until(EC.element_to_be_clickable((
-            By.XPATH, GO_TO_CATEGORY_1)))
+        self.go_to_category_button = wait.until(EC.element_to_be_clickable((
+            By.XPATH, f"{GO_TO_CATEGORY}[{index}]")))
         
-    def go_to_category_2(self) -> None:
-        """This is a method to define GO_TO_CATEGORY_2 button."""
+    def click_go_to_category(self, index) -> None:
+        """This is a method to find and click GO_TO_CATEGORY button."""
         wait = WebDriverWait(self.driver, 10)
-        self.go_to_category_2_button = wait.until(EC.element_to_be_clickable((
-            By.XPATH, GO_TO_CATEGORY_2)))
+        self.go_to_category_button = wait.until(EC.element_to_be_clickable((
+            By.XPATH, f"{GO_TO_CATEGORY}[{index}]")))
+        self.go_to_category_button.click()
         
     def help_me(self) -> None:
         """This is a method to define Help Me button."""

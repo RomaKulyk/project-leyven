@@ -16,10 +16,12 @@ def test_main_page(browser: object):
     time.sleep(0.5)
 
      # 2.Find and click GO_TO_CATEGORY_2 button
-    main_page.go_to_category_2()
-    assert main_page.go_to_category_2_button.is_enabled()
-    assert main_page.go_to_category_2_button.is_displayed()
-    main_page.go_to_category_2_button.click()
+    main_page.find_go_to_category(3)
+    assert main_page.go_to_category_button.is_enabled(),\
+        "GO_TO_CATEGORY_2 button is not enabled."
+    assert main_page.go_to_category_button.is_displayed(),\
+        "GO_TO_CATEGORY_2 button is not displayed."
+    main_page.click_go_to_category(3)
 
     # 3.Find and click SORTING dropdown list
     # list of available options in dropdown
@@ -83,4 +85,3 @@ def test_main_page(browser: object):
     for i in range(0, (len(product_card_prices) - 1), step):
         assert product_card_prices[i] >= product_card_prices[i + 1]
 
-    # assert False == True  # Is there any way to do it more smarter
