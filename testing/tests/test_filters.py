@@ -38,5 +38,3 @@ def test_main_page(browser: object):
     print(category_page.filters_list_item)
     print(len(category_page.filters_list_item))
     assert len(category_page.filters_list_item) != 0
-    
-    # assert False == True
