@@ -161,3 +161,7 @@ cython_debug/
 
 # RealPython folder
 RealPython/
+
+# Report's files
+report*
+test_list_for_project_leyven.txt
