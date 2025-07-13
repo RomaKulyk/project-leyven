@@ -3,22 +3,32 @@ from testing.pages.main_page import MainPage
 from testing.pages.hm_form import HelpMeForm
 from testing.pages.main_menu import MainMenu
 from testing.pages.catalog_dropdown import CatalogDropdown
-from testing.lib.constants import MAIN_URL
+from testing.lib.constants import MAIN_URL, \
+                                  AQUA_PAGE_TITLE, \
+                                  VET_PAGE_TITILE, \
+                                  FEED_PAGE_TITLE, \
+                                  RODEN_PAGE_TITLE, \
+                                  OUTLET_PAGE_TITLE, \
+                                  DIFF_PAGE_TITLE, \
+                                  CARE_PAGE_TITLE, \
+                                  COMFORT_PAGE_TITLE, \
+                                  TRAVEL_PAGE_TITLE                                                         
+                                  
+                                  
 import logging
 import time
 
 logger = logging.getLogger('leyven_tests_logger')
 
-page_titles = ["Акваріумістика | Лейвен",
-               "Ветеринарні засоби та препарати | Лейвен",
-               "Годування домашніх тварин і птахів | Лейвен",
-               "Родентициди | Лейвен",
-               "Розпродаж | Лейвен",
-               "Різне | Лейвен",
-               "Товари для догляду за домашніми тваринами | Лейвен",
-               "Товари для комфорту домашніх тварин | Лейвен",
-               "Товари для прогулянок і подорожей з тваринами | Лейвен"]
-MAIN_PAGE_TITLE = "Інтернет-зоомагазин Лейвен ✅"
+page_titles = [AQUA_PAGE_TITLE,
+               VET_PAGE_TITILE,
+               FEED_PAGE_TITLE,
+               RODEN_PAGE_TITLE,
+               OUTLET_PAGE_TITLE,
+               DIFF_PAGE_TITLE,
+               CARE_PAGE_TITLE,
+               COMFORT_PAGE_TITLE,
+               TRAVEL_PAGE_TITLE]
 
 @pytest.mark.with_logging
 def test_main_menu(browser: object):
