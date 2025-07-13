@@ -2,21 +2,30 @@ import pytest
 from testing.pages.main_page import MainPage
 from testing.pages.main_menu import MainMenu
 from testing.lib.constants import MAIN_URL
+from testing.lib.constants import DOGS_PAGE_TITLE, \
+                                  BEDS_PAGE_TITLE, \
+                                  BLOG_PAGE_TITLE, \
+                                  BRANDS_PAGE_TITLE, \
+                                  CATS_PAGE_TITLE, \
+                                  DISCOUNTS_PAGE_TITLE, \
+                                  FOODS_PAGE_TITLE, \
+                                  NEW_ARRIVALS_PAGE_TITLE, \
+                                  SIMPARICA_PAGE_TITLE
 import time
 import logging
 
 
 logger = logging.getLogger('leyven_tests_logger')
 
-page_titles = ["Собаки | Лейвен",
-               "Коти | Лейвен",
-               "Сухий корм | Лейвен",
-               "Сімпаріка | Інтернет-зоомагазин Лейвен",
-               "Бренди | Лейвен - Інтернет-зоомагазин",
-               "Лейвен Блог",
-               "Будиночки, лежанки, м'які місця | Лейвен",
-               "Акції | Інтернет-зоомагазин Лейвен",
-               "Новинки | Інтернет-зоомагазин Лейвен"]
+page_titles = [DOGS_PAGE_TITLE,
+               CATS_PAGE_TITLE,
+               FOODS_PAGE_TITLE,
+               SIMPARICA_PAGE_TITLE,
+               BRANDS_PAGE_TITLE,
+               BLOG_PAGE_TITLE,
+               BEDS_PAGE_TITLE,
+               DISCOUNTS_PAGE_TITLE,
+               NEW_ARRIVALS_PAGE_TITLE]
 
 
 @pytest.mark.with_logging

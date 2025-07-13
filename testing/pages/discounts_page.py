@@ -1,4 +1,5 @@
 from testing.pages.category_page import CategoryPage
+from testing.lib.constants import DISCOUNTS_PAGE_TITLE
 
 
 class DiscountsPage(CategoryPage):
@@ -10,3 +11,4 @@ class DiscountsPage(CategoryPage):
                 webdriver to initialize
         """
         self.driver = webdriver
+        self.title = DISCOUNTS_PAGE_TITLE

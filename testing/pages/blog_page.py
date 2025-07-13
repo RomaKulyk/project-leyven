@@ -1,4 +1,5 @@
 from testing.pages.category_page import CategoryPage
+from testing.lib.constants import BLOG_PAGE_TITLE
 
 
 class BlogPage(CategoryPage):
@@ -10,3 +11,4 @@ class BlogPage(CategoryPage):
                 webdriver to initialize
         """
         self.driver = webdriver
+        self.title = BLOG_PAGE_TITLE

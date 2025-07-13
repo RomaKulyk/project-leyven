@@ -62,6 +62,7 @@ class MainPage:
                 webdriver to initialize
         """
         self.driver = webdriver
+        self.title = MAIN_PAGE_TITLE
 
     def open_page(self, url) -> None:
         """This is a method to open a certain web page."""

@@ -1,4 +1,5 @@
 from testing.pages.category_page import CategoryPage
+from testing.lib.constants import NEW_ARRIVALS_PAGE_TITLE
 
 
 class NewArrivalsPage(CategoryPage):
@@ -10,3 +11,4 @@ class NewArrivalsPage(CategoryPage):
                 webdriver to initialize
         """
         self.driver = webdriver
+        self.title = NEW_ARRIVALS_PAGE_TITLE

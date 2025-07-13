@@ -1,4 +1,5 @@
 from testing.pages.category_page import CategoryPage
+from testing.lib.constants import SIMPARICA_PAGE_TITLE
 
 
 class SimparicaPage(CategoryPage):
@@ -10,3 +11,4 @@ class SimparicaPage(CategoryPage):
                 webdriver to initialize
         """
         self.driver = webdriver
+        self.title = SIMPARICA_PAGE_TITLE
