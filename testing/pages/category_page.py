@@ -22,8 +22,13 @@ class CategoryPage(MainPage):
         This is a method to find and define filters list
     filter
         This is a method to find and define filter itself
-    show_more
-        This is a method to find and define SHOW MORE button
+    scroll_to_show_more
+        This is a method to scroll page until the  SHOW MORE button will
+    be visible.    
+    find_show_more
+        This is a method to define SHOW_MORE_BUTTON.
+    click_show_more
+        This is a method to find and click SHOW_MORE_BUTTON.
     """
 
     def __init__(self, webdriver) -> None:
@@ -51,7 +56,8 @@ class CategoryPage(MainPage):
             By.XPATH, f"{FILTER_ITEM}[{index}]")
         
     def scroll_to_show_more(self) -> None:
-        """This is a method to find and define SHOW MORE button."""
+        """This is a method to scroll page until the  SHOW MORE button will
+        be visible."""
         wait = WebDriverWait(self.driver, 10)
         self.show_more_button = wait.until(EC.element_to_be_clickable((
             By.XPATH, SHOW_MORE_BUTTON )))
@@ -60,3 +66,15 @@ class CategoryPage(MainPage):
         action.scroll_to_element(self.show_more_button)
         action.perform()
 
+    def find_show_more(self) -> None:
+            """This is a method to define SHOW_MORE_BUTTON."""
+            wait = WebDriverWait(self.driver, 10)
+            self.show_more_button = wait.until(EC.element_to_be_clickable((
+                By.XPATH, SHOW_MORE_BUTTON)))
+            
+    def click_show_more(self) -> None:
+        """This is a method to find and click SHOW_MORE_BUTTON."""
+        wait = WebDriverWait(self.driver, 10)
+        self.show_more_button = wait.until(EC.element_to_be_clickable((
+            By.XPATH, SHOW_MORE_BUTTON)))
+        self.show_more_button.click()
