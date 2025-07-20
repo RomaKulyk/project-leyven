@@ -33,7 +33,7 @@ CLICK_SEND = "//button[@class = 'btn btn-primary btn-lg mx-auto mb-10 w-full max
 MAIN_LOGO = "(//img[@alt='Лейвен логотип'])[2]"
 CATALOG = "//div[@class='dropdown dropdown-hover']"
 CATALOG_DROPDOWN = "//div[@class='dropdown-content z-20 w-[1000px] rounded-xl border bg-base-100 shadow-2xl']"
-LANGUAGE_BUTTON = "//button[contains(@class,'flex h-9 items-center justify-between whitespace-nowrap')]"
+LANGUAGE_BUTTON = "(//button[contains(@class,'flex h-9 items-center justify-between')])[1]"
 SOCIAL_MEDIA_BUTTONS_LIST_ITEMS = "//div[@class='flex items-center gap-5 xl:scale-90 2xl:scale-100']/child::a"
 
 # For Dynamic list definition

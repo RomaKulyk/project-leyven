@@ -15,6 +15,7 @@ from testing.lib.constants import MAIN_LOGO,\
                                   CART,\
                                   SEARCH_FOUND_ITEMS,\
                                   SEARCH_FOUND_ITEM
+from selenium.common.exceptions import TimeoutException
 
 
 class MainMenu:
@@ -26,7 +27,7 @@ class MainMenu:
     Methods:
     __init__
         This is a method to initialize instance of the MainPage class
-    main_logo
+    click_main_logo
         This is a method to define and click Main Logo button
     catalog
         This is a method to find catalog button
@@ -42,6 +43,8 @@ class MainMenu:
         This is a method to find and define Phone button of Main Menu
     cross
         This is a method to define Cross Button of Search Field
+    find_language_switcher
+        This is a method to find and define Language button
     find_social_media_buttons
         This is a method to find and define Social Media buttons list
     click_social_media_button
@@ -61,7 +64,7 @@ class MainMenu:
         """
         self.driver = webdriver
 
-    def main_logo(self) -> None:
+    def click_main_logo(self) -> None:
         """This is a method to define and click Main Logo button."""
         wait = WebDriverWait(self.driver, 10)
         self.main_logo_button = wait.until(EC.element_to_be_clickable((
@@ -137,11 +140,10 @@ class MainMenu:
         self.social_media_buttons_list =  list(self.driver.find_elements(
             By.XPATH, SOCIAL_MEDIA_BUTTONS_LIST_ITEMS))
     
-    def language_switcher(self) -> None:
+    def find_language_switcher(self) -> None:
         """This is a method to find and define Language button."""
         self.language_button = self.driver.find_element(
             By.XPATH, LANGUAGE_BUTTON)
-        # self.language_button.click()
 
     def log_in(self) -> None:
         "This is a method to find and define Log In button."

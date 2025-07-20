@@ -33,7 +33,7 @@ def test_main_page(browser: object):
 
     main_menu = MainMenu(driver)
     # 4.Find and click MAIN_LOGO button
-    main_menu.main_logo()
+    main_menu.click_main_logo()
     assert main_menu.main_logo_button.is_enabled()
     assert main_menu.main_logo_button.is_displayed()
     time.sleep(1)

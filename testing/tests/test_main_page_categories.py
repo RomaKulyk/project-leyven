@@ -74,5 +74,5 @@ def test_main_page_categories(browser: object):
         logger.info(f"[PASSED]\n{'=' * 200}")
         
         # 2. Click the Main Logo button to return to the main page
-        main_menu.main_logo()
+        main_menu.click_main_logo()
         

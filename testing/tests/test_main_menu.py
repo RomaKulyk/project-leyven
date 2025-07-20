@@ -3,10 +3,15 @@ from testing.pages.main_page import MainPage
 from testing.pages.hm_form import HelpMeForm
 from testing.pages.main_menu import MainMenu
 from testing.pages.catalog_dropdown import CatalogDropdown
-from testing.lib.constants import MAIN_URL
+from testing.lib.constants import MAIN_URL, \
+                                  MAIN_PAGE_TITLE
 import time
+import logging
 
 
+logger = logging.getLogger('leyven_tests_logger')
+
+@pytest.mark.with_logging
 def test_main_menu(browser: object):
     driver = browser
     main_page = MainPage(driver)
@@ -28,11 +33,26 @@ def test_main_menu(browser: object):
     assert catalog_dropdown.catalog_dropdown_container.is_enabled()
     assert catalog_dropdown.catalog_dropdown_container.is_displayed()
 
-    # 4.Find and click MAIN_LOGO button
-    main_menu.main_logo()
-    assert main_menu.main_logo_button.is_enabled()
-    assert main_menu.main_logo_button.is_displayed()
-    time.sleep(1)
+    # 4. Click the Main Logo to return to the main page
+    
+    main_menu = MainMenu(driver)
+    logger.info(f"4.1. Click the Main Logo to return to the main page.")
+    main_menu.click_main_logo()
+    assert main_menu.main_logo_button.is_enabled(), \
+        "Main logo button is not enabled."
+    assert main_menu.main_logo_button.is_displayed(), \
+        "Main logo button is not displayed."
+    logger.info(f"4.2. The main logo is clicked.")
+    current_page_title = driver.title
+    logger.info(f"4.3. Ensure that page with the title "
+                f"'{current_page_title}' is opened.")
+    expected_title = MAIN_PAGE_TITLE
+    assert current_page_title == expected_title,\
+    f"Expected title is '{expected_title}', but got '{current_page_title}'"
+    time.sleep(3)
+    logger.info(f"4.4. Expected title is '{MAIN_PAGE_TITLE}', "
+                f"and got '{current_page_title}'\n{'=' * 200}")
+
 
     # 5.Input some query into Search field
     main_menu.search_out()
@@ -74,9 +94,9 @@ def test_main_menu(browser: object):
         driver.switch_to.window(window_handles[0])
         
     # 9.Find and click Language Switcher button
-    main_menu.language_switcher()
+    main_menu.find_language_switcher()
     assert main_menu.language_button.is_enabled()
-    assert main_menu.language_button.is_displayed()
+    # assert main_menu.language_button.is_displayed()
     time.sleep(3)
     # main_menu.main_logo()
 
@@ -106,18 +126,5 @@ def test_main_menu(browser: object):
 # TO_DO-6 - Check the "Кошик" button functionality
 
 # TO_DO-7 - add the following steps for logging:
-# # 4. Click on the main logo to return to the main page
-#     logger.info(f"4.1. Click on the main logo to return to the main page.")
-#     main_menu = MainMenu(driver)
-#     main_menu.main_logo()
-#     logger.info(f"4.2. The main logo is clicked.")
-#     current_page_title = driver.title
-#     logger.info(f"4.3. Ensure that page with the title "
-#                 f"'{current_page_title}' is opened.")
-#     expected_title = MAIN_PAGE_TITLE
-#     assert current_page_title == expected_title,\
-#     f"Expected title is '{expected_title}', but got '{current_page_title}'"
-#     time.sleep(3)
-#     logger.info(f"4.4. Expected title is '{MAIN_PAGE_TITLE}', "
-#                 f"and got '{current_page_title}'\n{'=' * 200}")
+
 

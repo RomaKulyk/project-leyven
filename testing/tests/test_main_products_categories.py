@@ -60,7 +60,7 @@ def test_main_products_categories(browser: object):
         logger.info(f"[PASSED]\n{'=' * 200}")
         
         # 2. Click the Main Logo button to return to the main page
-        main_menu.main_logo()
+        main_menu.click_main_logo()
         
 
 # TO-DO_1 - Update login functionality in conftest.py to be able to add

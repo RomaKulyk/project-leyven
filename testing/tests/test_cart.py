@@ -66,5 +66,5 @@ def test_cart_page(browser: object):
     # assert cart_page.checkout_button.is_displayed()
         
     # 12. Return back to the main page
-    main_menu.main_logo()
+    main_menu.click_main_logo()
 
