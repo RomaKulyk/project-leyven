@@ -14,7 +14,8 @@ from testing.lib.constants import MAIN_LOGO,\
                                   LANGUAGE_BUTTON,\
                                   CART,\
                                   SEARCH_FOUND_ITEMS,\
-                                  SEARCH_FOUND_ITEM
+                                  SEARCH_FOUND_ITEM, \
+                                  SIGN_IN_BUTTON
 from selenium.common.exceptions import TimeoutException
 
 
@@ -53,6 +54,8 @@ class MainMenu:
         This is a method to find and define Log In button
     cart
         This is a method to find and define Cart button
+    find_sign_in_button
+        This is a method to find and define Sign In button
     """
 
     def __init__(self, webdriver) -> None:
@@ -149,6 +152,11 @@ class MainMenu:
         "This is a method to find and define Log In button."
         self.log_in_button = self.driver.find_element(
             By.XPATH, LOG_IN)
+        
+    def find_sign_in_button(self) -> None:
+        """This is a method to find and define Sign In button."""
+        self.sign_in_button = self.driver.find_element(
+            By.XPATH, SIGN_IN_BUTTON)
 
     def cart(self) -> None:
         """This is a method to find and define Cart button."""

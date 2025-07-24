@@ -36,6 +36,7 @@ def test_main_menu(browser: object):
     # 4. Click the Main Logo to return to the main page
     
     main_menu = MainMenu(driver)
+
     logger.info(f"4.1. Click the Main Logo to return to the main page.")
     main_menu.click_main_logo()
     assert main_menu.main_logo_button.is_enabled(), \
@@ -43,13 +44,17 @@ def test_main_menu(browser: object):
     assert main_menu.main_logo_button.is_displayed(), \
         "Main logo button is not displayed."
     logger.info(f"4.2. The main logo is clicked.")
+
+
     current_page_title = driver.title
+
     logger.info(f"4.3. Ensure that page with the title "
                 f"'{current_page_title}' is opened.")
     expected_title = MAIN_PAGE_TITLE
     assert current_page_title == expected_title,\
     f"Expected title is '{expected_title}', but got '{current_page_title}'"
     time.sleep(3)
+
     logger.info(f"4.4. Expected title is '{MAIN_PAGE_TITLE}', "
                 f"and got '{current_page_title}'\n{'=' * 200}")
 
@@ -98,13 +103,27 @@ def test_main_menu(browser: object):
     assert main_menu.language_button.is_enabled()
     # assert main_menu.language_button.is_displayed()
     time.sleep(3)
-    # main_menu.main_logo()
 
     # 10.Find and click Log In button
     main_menu.log_in()
-    assert main_menu.log_in_button.is_enabled()
-    assert main_menu.log_in_button.is_displayed()
+
+    logger.info(f"10.1. Find and click Log In button.")
+    assert main_menu.log_in_button.is_enabled(), \
+        "Log In button is not enabled."
+    assert main_menu.log_in_button.is_displayed(), \
+        "Log In button is not displayed."
     main_menu.log_in_button.click()
+    logger.info(f"10.2. Log In button is clicked.")
+
+    logger.info(f"10.3. Ensure that Sign In form is opened.")
+    main_menu.find_sign_in_button()
+    assert main_menu.sign_in_button.is_enabled(), \
+        "Sign In button is not enabled."
+    assert main_menu.sign_in_button.is_displayed(), \
+        "Sign In button is not displayed."
+
+    logger.info(f"10.4. 'Sign In' form is opened.\n{'=' * 200}")
+
     time.sleep(3)
     driver.back()
     time.sleep(3)
@@ -119,12 +138,6 @@ def test_main_menu(browser: object):
 # TO_DO-1 - Check in step # 7 that appropriate tooltip is shown and that
 # correct phone number is shown, and that phone number was copied after click
 
-# TO_DO-2 - Return back to the Main Page after opening social media pages - DONE
-# TO_DO-3 - Check that Log In button redirects to the Log In page
-# TO_DO-4 - Check that Cart button redirects to the Cart page
-# TO_DO-5 - Check the Main Menu language switcher functionality
-# TO_DO-6 - Check the "Кошик" button functionality
-
-# TO_DO-7 - add the following steps for logging:
-
-
+# TO_DO-2 - Check that Cart button redirects to the Cart page
+# TO_DO-2 - Check the Main Menu language switcher functionality
+# TO_DO-4 - Check the "Кошик" button functionality

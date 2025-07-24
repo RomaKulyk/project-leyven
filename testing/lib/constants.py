@@ -35,6 +35,7 @@ CATALOG = "//div[@class='dropdown dropdown-hover']"
 CATALOG_DROPDOWN = "//div[@class='dropdown-content z-20 w-[1000px] rounded-xl border bg-base-100 shadow-2xl']"
 LANGUAGE_BUTTON = "(//button[contains(@class,'flex h-9 items-center justify-between')])[1]"
 SOCIAL_MEDIA_BUTTONS_LIST_ITEMS = "//div[@class='flex items-center gap-5 xl:scale-90 2xl:scale-100']/child::a"
+SIGN_IN_BUTTON = "//button[contains(@class,'w-full rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-500')]"
 
 # For Dynamic list definition
 DROPDOWN_LIST_ITEMS = "//ul[@class = 'flex flex-col gap-2']/child::li"

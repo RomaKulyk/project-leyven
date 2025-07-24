@@ -6,8 +6,7 @@ import logging
 @pytest.fixture(autouse=True, scope="session")
 def configure_logging():
     logging.basicConfig(
-        format="{asctime} - {levelname} - {message}",
-        style="{",
+        format="%(asctime)s - %(levelname)s - %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
         level=logging.INFO,
     )

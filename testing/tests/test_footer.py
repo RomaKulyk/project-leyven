@@ -92,8 +92,5 @@ def test_footer(browser: object):
     assert footer.main_logo_button.is_enabled()
     assert footer.main_logo_button.is_displayed()
 
-    # assert 1 == 0  # This line is to ensure that the test fails if it reaches 
-    # this point, which is useful for debugging purposes. Remove or comment out
-    # this line in production code.
 
 
