@@ -90,6 +90,7 @@ CHECKOUT = "//a[@class='false w-full']"
 CONTINUE_SHOPPING = "//button/span[@class = 'group relative inline-block h-fit']"
 CLOSE_CART = "//button[contains(@class,'h-fit rounded-lg p-1 outline-none')]"
 REMOVE_PDP_1 = "(//button[@class='h-fit'])[1]"
+CART_POPUP = "//div[@class='modal-box w-full rounded-[50px] bg-white px-0 sm:max-w-[800px] xl:max-w-[1180px]']"
 
 # Product cards
 PRODUCT_CARDS = "//div[@class='grid w-full grid-cols-2 gap-3 sm:grid-cols-4 xl:gap-5']/child::a"

@@ -44,7 +44,7 @@ def test_main_menu(browser: object):
     assert main_menu.main_logo_button.is_displayed(), \
         "Main logo button is not displayed."
     logger.info(f"4.2. The main logo is clicked.")
-
+    logger.info(f"[PASSED]\n{'=' * 200}")
 
     current_page_title = driver.title
 
@@ -56,8 +56,8 @@ def test_main_menu(browser: object):
     time.sleep(3)
 
     logger.info(f"4.4. Expected title is '{MAIN_PAGE_TITLE}', "
-                f"and got '{current_page_title}'\n{'=' * 200}")
-
+                f"and got '{current_page_title}'")
+    logger.info(f"[PASSED]\n{'=' * 200}")
 
     # 5.Input some query into Search field
     main_menu.search_out()
@@ -122,22 +122,21 @@ def test_main_menu(browser: object):
     assert main_menu.sign_in_button.is_displayed(), \
         "Sign In button is not displayed."
 
-    logger.info(f"10.4. 'Sign In' form is opened.\n{'=' * 200}")
+    logger.info(f"10.4. 'Sign In' form is opened.")
+    logger.info(f"[PASSED]\n{'=' * 200}")
 
     time.sleep(3)
     driver.back()
     time.sleep(3)
 
     # 11.Find and click Cart button
-    main_menu.cart()
+    main_menu.click_cart_button()
     assert main_menu.cart_button.is_enabled()
     assert main_menu.cart_button.is_displayed()
     time.sleep(3)
 
-
 # TO_DO-1 - Check in step # 7 that appropriate tooltip is shown and that
 # correct phone number is shown, and that phone number was copied after click
 
-# TO_DO-2 - Check that Cart button redirects to the Cart page
 # TO_DO-2 - Check the Main Menu language switcher functionality
 # TO_DO-4 - Check the "Кошик" button functionality
