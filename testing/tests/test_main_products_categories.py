@@ -61,7 +61,4 @@ def test_main_products_categories(browser: object):
         
         # 2. Click the Main Logo button to return to the main page
         main_menu.click_main_logo()
-        
 
-# TO-DO_1 - Update login functionality in conftest.py to be able to add
-# timestamps to the log.

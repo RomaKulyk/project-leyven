@@ -130,7 +130,11 @@ BLOG_PAGE_URL = "https://www.leyven.com.ua/blog"
 BLOG_PAGE_HEADER = "Блог"
 
 BRANDS_PAGE_TITLE = "Бренди | Лейвен - Інтернет-зоомагазин"
+
 CATS_PAGE_TITLE = "Коти | Лейвен"
+CATS_PAGE_HEADER = "Коти"
+CATS_PAGE_URL = "https://www.leyven.com.ua/pages/catalog/animal-type=Cats"
+
 DISCOUNTS_PAGE_TITLE = "Акції | Інтернет-зоомагазин Лейвен"
 FOODS_PAGE_TITLE = "Сухий корм | Лейвен"
 NEW_ARRIVALS_PAGE_TITLE = "Новинки | Інтернет-зоомагазин Лейвен"
