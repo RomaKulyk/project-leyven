@@ -123,6 +123,9 @@ BEDS_PAGE_URL = "https://www.leyven.com.ua/c/120-budinochki-lezhanki-myaki-miscy
 BEDS_PAGE_HEADER = "Будиночки, лежанки, м'які місця"
 
 BLOG_PAGE_TITLE = "Лейвен Блог"
+BLOG_PAGE_URL = "https://www.leyven.com.ua/blog"
+BLOG_PAGE_HEADER = "Блог"
+
 BRANDS_PAGE_TITLE = "Бренди | Лейвен - Інтернет-зоомагазин"
 CATS_PAGE_TITLE = "Коти | Лейвен"
 DISCOUNTS_PAGE_TITLE = "Акції | Інтернет-зоомагазин Лейвен"
