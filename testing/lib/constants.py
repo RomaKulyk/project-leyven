@@ -136,7 +136,11 @@ CATS_PAGE_HEADER = "Коти"
 CATS_PAGE_URL = "https://www.leyven.com.ua/pages/catalog/animal-type=Cats"
 
 DISCOUNTS_PAGE_TITLE = "Акції | Інтернет-зоомагазин Лейвен"
+
 FOODS_PAGE_TITLE = "Сухий корм | Лейвен"
+FOODS_PAGE_URL = "https://www.leyven.com.ua/pages/catalog/food-type=Dry-food"
+FOODS_PAGE_HEADER = "Сухий корм"    
+
 NEW_ARRIVALS_PAGE_TITLE = "Новинки | Інтернет-зоомагазин Лейвен"
 SIMPARICA_PAGE_TITLE = "Сімпаріка | Інтернет-зоомагазин Лейвен"
 
