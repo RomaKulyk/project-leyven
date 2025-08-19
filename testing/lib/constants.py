@@ -116,7 +116,10 @@ SHOW_MORE_BUTTON = "//button[contains(@class,'text-[16px] h-[47px] xl:h-[69px] t
 
 # Page Titles
 MAIN_PAGE_TITLE = "Інтернет-зоомагазин Лейвен ✅"
+
 DOGS_PAGE_TITLE = "Собаки | Лейвен"
+DOGS_PAGE_URL = "https://www.leyven.com.ua/pages/catalog/animal-type=Dogs"
+DOGS_PAGE_HEADER = "Собаки"
 
 BEDS_PAGE_TITLE = "Будиночки, лежанки, м'які місця | Лейвен"
 BEDS_PAGE_URL = "https://www.leyven.com.ua/c/120-budinochki-lezhanki-myaki-miscya"
