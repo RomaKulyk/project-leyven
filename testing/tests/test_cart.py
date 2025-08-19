@@ -24,7 +24,7 @@ def test_cart_page(browser: object):
     logger.info(f"PRECONDITIONS: The main page: {MAIN_URL} is opened.")
     logger.info(f"[PASSED]\n{'=' * 200}")
     
-    # 1.Find and click CART button
+    # 1. Find and click CART button
     logger.info(f"1.1. Find and click Cart button.")
     main_menu.click_cart_button()
     assert main_menu.cart_button.is_enabled(), \

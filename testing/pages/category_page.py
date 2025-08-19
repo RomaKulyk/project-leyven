@@ -29,6 +29,8 @@ class CategoryPage(MainPage):
         This is a method to define SHOW_MORE_BUTTON.
     click_show_more
         This is a method to find and click SHOW_MORE_BUTTON.
+    find_the_h1_header
+        This is a method to find and define the H1 header on the page.
     """
 
     def __init__(self, webdriver) -> None:
@@ -67,14 +69,18 @@ class CategoryPage(MainPage):
         action.perform()
 
     def find_show_more(self) -> None:
-            """This is a method to define SHOW_MORE_BUTTON."""
-            wait = WebDriverWait(self.driver, 10)
-            self.show_more_button = wait.until(EC.element_to_be_clickable((
-                By.XPATH, SHOW_MORE_BUTTON)))
-            
+        """This is a method to define SHOW_MORE_BUTTON."""
+        wait = WebDriverWait(self.driver, 10)
+        self.show_more_button = wait.until(EC.element_to_be_clickable((
+            By.XPATH, SHOW_MORE_BUTTON)))
+        
     def click_show_more(self) -> None:
         """This is a method to find and click SHOW_MORE_BUTTON."""
         wait = WebDriverWait(self.driver, 10)
         self.show_more_button = wait.until(EC.element_to_be_clickable((
             By.XPATH, SHOW_MORE_BUTTON)))
         self.show_more_button.click()
+
+    def find_the_h1_header(self) -> None:
+        """This is a method to find and define the H1 header on the page."""
+        self.h1_header = self.driver.find_element(By.TAG_NAME, "h1")

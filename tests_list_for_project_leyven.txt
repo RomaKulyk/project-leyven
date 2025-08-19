@@ -1,0 +1,19 @@
+ NAME                                      WITH LOGGING
+ 1. test_cart.py                                +
+ 2. test_catalog.py                             +
+ 3. test_category_page_scrolling.py             +
+ 4. test_filter.py
+ 5. test_footer.py
+ 6. test_happy_path.py
+ 7. test_help_form.py
+ 8. test_main_menu.py                           in progress
+ 9. test_main_page_categories.py                +
+10. test_main_page_functionality_d.py
+11. test_main_page_functionality.py
+12. test_main_page_products_categories.py       +
+13. test_search_field.py
+14. test_sorting_sel.py
+15. test_sorting.py
+
+
+
