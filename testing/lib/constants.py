@@ -146,6 +146,8 @@ FOODS_PAGE_URL = "https://www.leyven.com.ua/pages/catalog/food-type=Dry-food"
 FOODS_PAGE_HEADER = "Сухий корм"    
 
 NEW_ARRIVALS_PAGE_TITLE = "Новинки | Інтернет-зоомагазин Лейвен"
+NEW_ARRIVALS_PAGE_HEADER = "✨ Новинки"
+NEW_ARRIVALS_PAGE_URL = "https://www.leyven.com.ua/pages/new"
 
 SIMPARICA_PAGE_TITLE = "Сімпаріка | Інтернет-зоомагазин Лейвен"
 SIMPARICA_PAGE_HEADER = "💊 Сімпаріка"
@@ -160,5 +162,3 @@ DIFF_PAGE_TITLE = "Різне | Лейвен"
 CARE_PAGE_TITLE = "Товари для догляду за домашніми тваринами | Лейвен"
 COMFORT_PAGE_TITLE = "Товари для комфорту домашніх тварин | Лейвен"
 TRAVEL_PAGE_TITLE = "Товари для прогулянок і подорожей з тваринами | Лейвен"
-
-DRY_FOOD_PAGE_TITLE = "Сухий корм | Лейвен"
