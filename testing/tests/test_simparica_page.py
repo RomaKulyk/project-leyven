@@ -15,7 +15,8 @@ def test_simparica_page(browser: object):
 
     # PRECONDITIONS: The Simparica page is opened
     simparica_page.open_page(SIMPARICA_PAGE_URL)
-    logger.info(f"PRECONDITIONS: The Simparica page: {SIMPARICA_PAGE_URL} is opened.")
+    logger.info(
+        f"PRECONDITIONS: The Simparica page: {SIMPARICA_PAGE_URL} is opened.")
     logger.info(f"[PASSED]\n{'=' * 200}")
     
     # 1. Ensure that the H1 header is displayed
