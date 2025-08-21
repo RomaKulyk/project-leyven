@@ -1,7 +1,7 @@
 import pytest
 from testing.pages.main_page import MainPage
 from testing.pages.category_page import CategoryPage
-from testing.lib.constants import MAIN_URL, DRY_FOOD_PAGE_TITLE
+from testing.lib.constants import MAIN_URL, FOODS_PAGE_TITLE
 import logging
 import time
 
@@ -53,7 +53,7 @@ def test_main_page(browser: object):
 
     logger.info(f"2.3. Ensure that page with the title "
                 f"'{current_page_title}' is opened.")
-    expected_title = DRY_FOOD_PAGE_TITLE
+    expected_title = FOODS_PAGE_TITLE
     assert current_page_title == expected_title,\
     f"Expected title is '{expected_title}', but got '{current_page_title}'"
 
@@ -93,7 +93,7 @@ def test_main_page(browser: object):
 
     logger.info(f"4.3. Ensure that page with the title "
                 f"'{current_page_title}' is opened.")
-    expected_title = DRY_FOOD_PAGE_TITLE
+    expected_title = FOODS_PAGE_TITLE
     assert current_page_title == expected_title,\
     f"Expected title is '{expected_title}', but got '{current_page_title}'"
 

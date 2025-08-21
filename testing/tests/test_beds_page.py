@@ -16,8 +16,18 @@ def test_beds_page(browser: object):
     # PRECONDITIONS: The Beds page is opened
     beds_page.open_page(BEDS_PAGE_URL)
     logger.info(f"PRECONDITIONS: The Beds page: {BEDS_PAGE_URL} is opened.")
+
+    # Press the browser's back button
+    driver.back()
+    logger.info("Press the browser's back button.")
+    # Press the browser's forward button
+    driver.forward()
+    logger.info("Press the browser's forward button.")
+    # Press browser's refresh button
+    driver.refresh()
+    logger.info("Page was reloaded using browser's refresh button.")
     logger.info(f"[PASSED]\n{'=' * 200}")
-    
+
     # 1. Ensure that the H1 header is displayed
     logger.info(
         f"1.1. Ensure that the H1 '{BEDS_PAGE_HEADER}' header is displayed.")

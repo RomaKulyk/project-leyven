@@ -44,7 +44,7 @@ def test_main_page_categories(browser: object):
     main_page.find_product_categories()
 
     for i in range(1, len(main_page.product_categories_list) + 1):
-        # 1.1-2. Find and click each Product's category link
+        # i.1-2. Find and click each Product's category link
         main_page.find_product_categories()
         main_page.find_product_category(i)
 
@@ -61,7 +61,7 @@ def test_main_page_categories(browser: object):
         logger.info(f"{i}.2. The '{link_text}' product\'s category link" 
                     f"is clicked.")
         
-        # 1.3-4. Ensure that the the page with the correct title is opened
+        # i.3-4. Ensure that the the page with the correct title is opened
         current_page_title = driver.title
         logger.info(f"{i}.3. Ensure that page with the title"
                     f" '{current_page_title}' is opened.")
@@ -72,7 +72,6 @@ def test_main_page_categories(browser: object):
         logger.info(f"{i}.4. Expected title is '{expected_title}', "
                     f"and got '{current_page_title}'")
         logger.info(f"[PASSED]\n{'=' * 200}")
-        
+
         # 2. Click the Main Logo button to return to the main page
         main_menu.click_main_logo()
-        
