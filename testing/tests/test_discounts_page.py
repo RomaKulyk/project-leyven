@@ -8,6 +8,7 @@ import logging
 logger = logging.getLogger('leyven_tests_logger')   
 
 @pytest.mark.with_logging
+@pytest.mark.main_category
 def test_discounts_page(browser: object):
     driver = browser
     discounts_page = DiscountsPage(driver)
@@ -15,6 +16,7 @@ def test_discounts_page(browser: object):
 
     # PRECONDITIONS: The Discounts page is opened
     discounts_page.open_page(DISCOUNTS_PAGE_URL)
+    discounts_page.check_if_page_is_loaded()
     logger.info(f"PRECONDITIONS: The Discounts page: {DISCOUNTS_PAGE_URL} is opened.")
     logger.info(f"[PASSED]\n{'=' * 200}")
     

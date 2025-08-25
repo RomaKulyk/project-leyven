@@ -44,6 +44,16 @@ def browser(config):
 
     # Make its calls wait for elements to appear
     b.implicitly_wait(config['implicit_wait'])
+
+    # # Set window size
+    # width = 900
+    # height = 600
+    # b.set_window_size(width, height)
+    # # Set window to full screen
+    # b.fullscreen_window()
+    # # Minimize the browser window
+    # b.minimize_window()
+    # Maximize the browser window
     b.maximize_window()
 
     # Return the WebDriver instance for the setup

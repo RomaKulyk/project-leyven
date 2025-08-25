@@ -8,6 +8,7 @@ import logging
 logger = logging.getLogger('leyven_tests_logger')   
 
 @pytest.mark.with_logging
+@pytest.mark.main_category
 def test_blog_page(browser: object):
     driver = browser
     blog_page = BlogPage(driver)
@@ -15,6 +16,7 @@ def test_blog_page(browser: object):
 
     # PRECONDITIONS: The Blog page is opened
     blog_page.open_page(BLOG_PAGE_URL)
+    blog_page.check_if_page_is_loaded()
     logger.info(f"PRECONDITIONS: The Blog page: {BLOG_PAGE_URL} is opened.")
     logger.info(f"[PASSED]\n{'=' * 200}")
     
@@ -29,3 +31,13 @@ def test_blog_page(browser: object):
     logger.info(
         f"1.2. The H1 '{blog_page.h1_header.text}' header is displayed.")
     logger.info(f"[PASSED]\n{'=' * 200}")
+
+    # 2. Print the current URL
+    blog_page.print_my_current_url()
+    logger.info(f"Current URL: {blog_page.driver.current_url}")
+    assert blog_page.driver.current_url == BLOG_PAGE_URL, \
+        f"Current URL is '{blog_page.driver.current_url}', " \
+        f"expected '{BLOG_PAGE_URL}'."
+    logger.info(f"[PASSED]\n{'=' * 200}")
+
+

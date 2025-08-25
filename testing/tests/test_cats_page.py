@@ -8,6 +8,7 @@ import logging
 logger = logging.getLogger('leyven_tests_logger')   
 
 @pytest.mark.with_logging
+@pytest.mark.main_category
 def test_cats_page(browser: object):
     driver = browser
     cats_page = CatsPage(driver)
@@ -15,6 +16,7 @@ def test_cats_page(browser: object):
 
     # PRECONDITIONS: The Cats page is opened
     cats_page.open_page(CATS_PAGE_URL)
+    cats_page.check_if_page_is_loaded()
     logger.info(f"PRECONDITIONS: The Cats page: {CATS_PAGE_URL} is opened.")
     logger.info(f"[PASSED]\n{'=' * 200}")
     

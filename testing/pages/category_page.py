@@ -31,6 +31,10 @@ class CategoryPage(MainPage):
         This is a method to find and click SHOW_MORE_BUTTON.
     find_the_h1_header
         This is a method to find and define the H1 header on the page.
+    print_my_current_url
+        This is a method to print the current URL of the page.
+    check_if_page_is_loaded
+        This is a method to check if the page is loaded.
     """
 
     def __init__(self, webdriver) -> None:
@@ -84,3 +88,13 @@ class CategoryPage(MainPage):
     def find_the_h1_header(self) -> None:
         """This is a method to find and define the H1 header on the page."""
         self.h1_header = self.driver.find_element(By.TAG_NAME, "h1")
+
+    def print_my_current_url(self) -> None:
+        """This is a method to print the current URL of the page."""
+        current_url = self.driver.current_url
+        print(f"Current URL: {current_url}")
+
+    def check_if_page_is_loaded(self) -> None:
+        """This is a method to check if the page is loaded."""
+        wait = WebDriverWait(self.driver, 10)
+        wait.until(EC.presence_of_element_located((By.TAG_NAME, "h1")))

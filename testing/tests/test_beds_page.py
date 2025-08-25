@@ -8,6 +8,7 @@ import logging
 logger = logging.getLogger('leyven_tests_logger')   
 
 @pytest.mark.with_logging
+@pytest.mark.main_category
 def test_beds_page(browser: object):
     driver = browser
     beds_page = BedsPage(driver)
@@ -15,6 +16,7 @@ def test_beds_page(browser: object):
     
     # PRECONDITIONS: The Beds page is opened
     beds_page.open_page(BEDS_PAGE_URL)
+    beds_page.check_if_page_is_loaded()
     logger.info(f"PRECONDITIONS: The Beds page: {BEDS_PAGE_URL} is opened.")
 
     # Press the browser's back button

@@ -8,6 +8,7 @@ import logging
 logger = logging.getLogger('leyven_tests_logger')   
 
 @pytest.mark.with_logging
+@pytest.mark.main_category
 def test_simparica_page(browser: object):
     driver = browser
     simparica_page = SimparicaPage(driver)
@@ -15,6 +16,7 @@ def test_simparica_page(browser: object):
 
     # PRECONDITIONS: The Simparica page is opened
     simparica_page.open_page(SIMPARICA_PAGE_URL)
+    simparica_page.check_if_page_is_loaded()
     logger.info(
         f"PRECONDITIONS: The Simparica page: {SIMPARICA_PAGE_URL} is opened.")
     logger.info(f"[PASSED]\n{'=' * 200}")

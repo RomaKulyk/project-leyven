@@ -8,6 +8,7 @@ import logging
 logger = logging.getLogger('leyven_tests_logger')   
 
 @pytest.mark.with_logging
+@pytest.mark.main_category
 def test_new_arrivals_page(browser: object):
     driver = browser
     new_arrivals_page = NewArrivalsPage(driver)
@@ -15,6 +16,7 @@ def test_new_arrivals_page(browser: object):
 
     # PRECONDITIONS: The New Arrivals page is opened
     new_arrivals_page.open_page(NEW_ARRIVALS_PAGE_URL)
+    new_arrivals_page.check_if_page_is_loaded()
     logger.info(f"PRECONDITIONS: The New Arrivals page: {NEW_ARRIVALS_PAGE_URL} is opened.")
     logger.info(f"[PASSED]\n{'=' * 200}")
     
