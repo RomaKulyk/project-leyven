@@ -17,6 +17,8 @@ def test_dogs_page(browser: object):
     # PRECONDITIONS: The Dogs page is opened
     dogs_page.open_page(DOGS_PAGE_URL)
     dogs_page.check_if_page_is_loaded()
+    # Save screenshot of the page to the pages_screenshots directory
+    driver.save_screenshot('pages_screenshots/dogs_page.png')
     logger.info(f"PRECONDITIONS: The Dogs page: {DOGS_PAGE_URL} is opened.")
     logger.info(f"[PASSED]\n{'=' * 200}")
     

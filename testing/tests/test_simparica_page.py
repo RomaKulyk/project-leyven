@@ -17,6 +17,8 @@ def test_simparica_page(browser: object):
     # PRECONDITIONS: The Simparica page is opened
     simparica_page.open_page(SIMPARICA_PAGE_URL)
     simparica_page.check_if_page_is_loaded()
+    # Save screenshot of the page
+    driver.save_screenshot('pages_screenshots/simparica_page.png')
     logger.info(
         f"PRECONDITIONS: The Simparica page: {SIMPARICA_PAGE_URL} is opened.")
     logger.info(f"[PASSED]\n{'=' * 200}")

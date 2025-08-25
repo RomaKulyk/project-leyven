@@ -17,6 +17,8 @@ def test_beds_page(browser: object):
     # PRECONDITIONS: The Beds page is opened
     beds_page.open_page(BEDS_PAGE_URL)
     beds_page.check_if_page_is_loaded()
+    # Save screenshot of the page to the pages_screenshots directory
+    driver.save_screenshot('pages_screenshots/beds_page.png')
     logger.info(f"PRECONDITIONS: The Beds page: {BEDS_PAGE_URL} is opened.")
 
     # Press the browser's back button
@@ -41,3 +43,4 @@ def test_beds_page(browser: object):
     logger.info(
         f"1.2. The H1 '{beds_page.h1_header.text}' header is displayed.")
     logger.info(f"[PASSED]\n{'=' * 200}")
+

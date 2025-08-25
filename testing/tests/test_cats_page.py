@@ -17,6 +17,8 @@ def test_cats_page(browser: object):
     # PRECONDITIONS: The Cats page is opened
     cats_page.open_page(CATS_PAGE_URL)
     cats_page.check_if_page_is_loaded()
+    # Save screenshot of the page to the pages_screenshots directory
+    driver.save_screenshot('pages_screenshots/cats_page.png')
     logger.info(f"PRECONDITIONS: The Cats page: {CATS_PAGE_URL} is opened.")
     logger.info(f"[PASSED]\n{'=' * 200}")
     

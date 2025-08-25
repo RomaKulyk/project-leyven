@@ -17,6 +17,8 @@ def test_foods_page(browser: object):
     # PRECONDITIONS: The Foods page is opened
     foods_page.open_page(FOODS_PAGE_URL)
     foods_page.check_if_page_is_loaded()
+    # Save screenshot of the page to the pages_screenshots directory
+    driver.save_screenshot('pages_screenshots/foods_page.png')
     logger.info(f"PRECONDITIONS: The Foods page: {FOODS_PAGE_URL} is opened.")
     logger.info(f"[PASSED]\n{'=' * 200}")
     

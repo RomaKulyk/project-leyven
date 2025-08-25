@@ -17,6 +17,8 @@ def test_blog_page(browser: object):
     # PRECONDITIONS: The Blog page is opened
     blog_page.open_page(BLOG_PAGE_URL)
     blog_page.check_if_page_is_loaded()
+    # Save screenshot of the page to the pages_screenshots directory
+    driver.save_screenshot('pages_screenshots/blog_page.png')
     logger.info(f"PRECONDITIONS: The Blog page: {BLOG_PAGE_URL} is opened.")
     logger.info(f"[PASSED]\n{'=' * 200}")
     

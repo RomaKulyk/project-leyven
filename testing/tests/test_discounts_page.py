@@ -17,6 +17,8 @@ def test_discounts_page(browser: object):
     # PRECONDITIONS: The Discounts page is opened
     discounts_page.open_page(DISCOUNTS_PAGE_URL)
     discounts_page.check_if_page_is_loaded()
+    # Save screenshot of the page to the pages_screenshots directory
+    driver.save_screenshot('pages_screenshots/discounts_page.png')
     logger.info(f"PRECONDITIONS: The Discounts page: {DISCOUNTS_PAGE_URL} is opened.")
     logger.info(f"[PASSED]\n{'=' * 200}")
     
