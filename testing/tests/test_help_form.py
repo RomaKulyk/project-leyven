@@ -2,6 +2,7 @@ import pytest
 from testing.pages.main_page import MainPage
 from testing.pages.hm_form import HelpMeForm
 from testing.lib.constants import MAIN_URL
+import time
 
 def test_main_page(browser: object):
     driver = browser
@@ -26,4 +27,4 @@ def test_main_page(browser: object):
     hm_form.enter_phone("095-777-77-77")
     hm_form.enter_your_question(
         "Why I have to log in if there is not any functionality for that?")
-
+    time.sleep(2)
