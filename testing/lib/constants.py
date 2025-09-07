@@ -24,9 +24,9 @@ MAIN_PRODUCTS_CATEGORIES = "//div[@class='flex flex-1 flex-col justify-between s
 
 # Help Me Form
 HELP_ME_FORM = "//form[@class = 'modal-box mx-auto flex max-w-[800px] flex-col gap-5 overflow-hidden rounded-[50px] bg-white font-medium xl:p-10']"
-ENTER_USERNAME = "//input[@id = 'name']"
+ENTER_USERNAME = "//input[@name = 'name']"
 ENTER_PHONE = "//input[@id = 'phone']"
-ENTER_YOUR_QUESTION = "//input[@id = 'question']"
+ENTER_YOUR_QUESTION = "//input[@name = 'question']"
 CLICK_SEND = "//button[@class = 'btn btn-primary btn-lg mx-auto mb-10 w-full max-w-sm text-white']"
 
 # Main Menu
@@ -162,3 +162,28 @@ DIFF_PAGE_TITLE = "Різне | Лейвен"
 CARE_PAGE_TITLE = "Товари для догляду за домашніми тваринами | Лейвен"
 COMFORT_PAGE_TITLE = "Товари для комфорту домашніх тварин | Лейвен"
 TRAVEL_PAGE_TITLE = "Товари для прогулянок і подорожей з тваринами | Лейвен"
+
+# CHECKOUT_PAGE
+CHECKOUT_PAGE_TITLE = "Інтернет-зоомагазин Лейвен ✅"
+CHECKOUT_PAGE_HEADER = "Оформлення замовлення"
+CHECKOUT_PAGE_URL = "https://www.leyven.com.ua/order"
+
+CHECKOUT_PHONE = "//input[@name='phone']"
+PHONE = '1234567890'
+CHECKOUT_FIRST_NAME = "//input[@name='firstName']"
+FIRST_NAME = "John"
+CHECKOUT_LAST_NAME = "//input[@name='lastName']"
+LAST_NAME = "Doe"
+CHECKOUT_EMAIL = "//input[@name='email']"
+EMAIL = "john.doe@example.com"
+CHECKOUT_DELIVERY_CITY = "//input[@id='city']"
+DELIVERY_CITY = "Софіївська Борщагівка"
+# Delivery options
+RB_WH_NP = "//button[@value='warehouse']"
+RB_PM_NP = "//button[@value='postomat']"
+RB_WH_UP = "//button[@value='warehouseUkrPoshta']"
+
+# Payment options
+RB_CARD = "//button[@value='card']"
+RB_PAYMENT_BY_BANK_DETAILS = "//button[@value='payment by bank details']"
+RB_CASH_ON_DELIVERY = "//button[@value='cash on delivery']"

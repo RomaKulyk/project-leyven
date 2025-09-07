@@ -1,11 +1,18 @@
 from testing.pages.main_page import MainPage
 from testing.pages.cart import CartPage
+from testing.pages.checkout_page import CheckoutPage
 from testing.pages.inventory_page import InventoryPage
 from testing.lib.constants import MAIN_URL,\
                                   TO_BUY_1,\
                                   TO_BUY_2,\
                                   TO_BUY_5,\
-                                  TO_BUY_6
+                                  TO_BUY_6,\
+                                  PHONE,\
+                                  FIRST_NAME,\
+                                  LAST_NAME,\
+                                  EMAIL,\
+                                  DELIVERY_CITY
+
 import time
 
 
@@ -79,5 +86,60 @@ def test_main_page(browser: object):
     cart_page.continue_shopping()
     assert cart_page.continue_shopping_button.is_enabled()
     assert cart_page.continue_shopping_button.is_displayed()
-    cart_page.continue_shopping_button.click()
+    time.sleep(3)
+    # cart_page.continue_shopping_button.click()
+    cart_page.checkout()
+     
+    checkout_page = CheckoutPage(driver)
+    checkout_page.check_if_page_is_loaded()
+    checkout_page.find_the_h1_header()
+    checkout_page.print_my_current_url()
+
+    # 13. Fill in the checkout form
+    # Fill in the contact phone number, first name, last name, email, city
+    checkout_page.input_contact_phone(PHONE)
+    checkout_page.input_first_name(FIRST_NAME)
+    checkout_page.input_last_name(LAST_NAME)
+    checkout_page.input_email(EMAIL)
+    checkout_page.input_delivery_city(DELIVERY_CITY)
+    time.sleep(3)
+
+    # 14. Select delivery method "Новою поштою" (Postomat)
+    checkout_page.click_delivery_radio_button_pm_np()
+    assert checkout_page.click_delivery_radio_button_pm_np_rb.is_enabled()
+    assert checkout_page.click_delivery_radio_button_pm_np_rb.is_displayed()
+    time.sleep(3)
+
+    # 15. Select delivery method "Новою поштою" (Warehouse)
+    checkout_page.click_delivery_radio_button_wh_np()
+    assert checkout_page.click_delivery_radio_button_wh_np_rb.is_enabled()
+    assert checkout_page.click_delivery_radio_button_wh_np_rb.is_displayed()
+    time.sleep(3)
+
+    # 16. Select delivery method "Укрпоштою" (Warehouse)
+    checkout_page.click_delivery_radio_button_wh_up()
+    assert checkout_page.click_delivery_radio_button_wh_up_rb.is_enabled()
+    assert checkout_page.click_delivery_radio_button_wh_up_rb.is_displayed()
+    time.sleep(3)
+
+    # 17. Select payment method "Оплата онлайн" (Payment by card)
+    checkout_page.choose_payment_by_card()
+    assert checkout_page.choose_payment_by_card_rb.is_enabled()
+    assert checkout_page.choose_payment_by_card_rb.is_displayed()
+    time.sleep(3)
+    
+    # 18. Select payment method "Оплата карткою за реквізитами" 
+    # (Payment by bank details)
+    checkout_page.choose_payment_by_bank_details()
+    assert checkout_page.choose_payment_by_bank_details_rb.is_enabled()
+    assert checkout_page.choose_payment_by_bank_details_rb.is_displayed()
+    time.sleep(3)
+    
+    # 19. Select payment method "Готівкою або карткою: при отриманні" 
+    # (Cash on delivery)
+    checkout_page.choose_cash_on_delivery()
+    assert checkout_page.choose_cash_on_delivery_rb.is_enabled()
+    assert checkout_page.choose_cash_on_delivery_rb.is_displayed()
+    time.sleep(3)
+
     driver.back()
