@@ -141,5 +141,16 @@ def test_main_page(browser: object):
     assert checkout_page.choose_cash_on_delivery_rb.is_enabled()
     assert checkout_page.choose_cash_on_delivery_rb.is_displayed()
     time.sleep(3)
+    
+    # 20. Ensure the checkbox "Не зв'язуватися для додаткового підтвердження" is
+    # not selected. Select the checkbox
+    checkout_page.ensure_no_contact_checkbox_is_selected()
+    assert not checkout_page.pick_no_contact_checkbox_cb.is_selected()
 
+    checkout_page.pick_no_contact_checkbox()
+    assert checkout_page.pick_no_contact_checkbox_cb.is_enabled()
+    assert checkout_page.pick_no_contact_checkbox_cb.is_displayed()
+    time.sleep(3)
+
+    # 21. Go back to the previous page
     driver.back()

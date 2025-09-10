@@ -10,7 +10,8 @@ from testing.lib.constants import CHECKOUT_PHONE,\
                                   RB_WH_UP,\
                                   RB_CARD,\
                                   RB_PAYMENT_BY_BANK_DETAILS,\
-                                  RB_CASH_ON_DELIVERY
+                                  RB_CASH_ON_DELIVERY,\
+                                  CHECKBOX_NO_CONTACT
 
 from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC    
@@ -48,6 +49,10 @@ class CheckoutPage(CategoryPage):
         This is a method to choose payment by bank details radio button
     choose_cash_on_delivery
         This is a method to choose cash on delivery radio button
+    ensure_no_contact_checkbox_is_selected
+        This is a method to ensure "No contact" checkbox is selected
+    pick_no_contact_checkbox
+        This is a method to find and click "No contact" checkbox
     """
     def __init__(self, webdriver) -> None:
         """
@@ -164,3 +169,24 @@ class CheckoutPage(CategoryPage):
         self.choose_cash_on_delivery_rb = self.driver.find_element(
             By.XPATH,  RB_CASH_ON_DELIVERY)
         self.choose_cash_on_delivery_rb.click()
+
+    def ensure_no_contact_checkbox_is_selected(self) -> None:
+        # Find checkbox element
+        self.pick_no_contact_checkbox_cb = self.driver.find_element(
+            By.XPATH, CHECKBOX_NO_CONTACT)
+
+        # Check if checkbox is selected
+        if self.pick_no_contact_checkbox_cb.is_selected():
+            print(f"{self.pick_no_contact_checkbox_cb.get_attribute('value')}" 
+                  f"checkbox is selected.")
+        else:
+            print(f"{self.pick_no_contact_checkbox_cb.get_attribute('value')}"
+                  f"checkbox is not selected.")
+    
+    def pick_no_contact_checkbox(self) -> None:
+        """
+        This is a method to find and click "No contact" checkbox.
+        """
+        self.pick_no_contact_checkbox_cb = self.driver.find_element(
+            By.XPATH, CHECKBOX_NO_CONTACT)
+        self.pick_no_contact_checkbox_cb.click()
