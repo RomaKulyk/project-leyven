@@ -35,6 +35,7 @@ class CatalogDropdown:
         """This is a method to find and define Catalog Dropdown Container."""
         self.catalog_dropdown_container = self.driver.find_element(
             By.XPATH, CATALOG_DROPDOWN)
+        self.size = self.catalog_dropdown_container.size
         
     def catalog_dropdown_items(self, locator) -> None:
         action = ActionChains(self.driver)

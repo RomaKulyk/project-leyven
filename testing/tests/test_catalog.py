@@ -67,6 +67,8 @@ def test_main_menu(browser: object):
     
     logger.info(f"2.2. The 'Каталог' dropdown container is displayed "
                 f"and enabled.")
+    logger.info(f"2.3. The size of the 'Каталог' dropdown container is "
+                f"{catalog_dropdown.catalog_dropdown_container.size}.")
     logger.info(f"[PASSED]\n{'=' * 200}")
 
     catalog_dropdown.catalog_dropdown_ul()

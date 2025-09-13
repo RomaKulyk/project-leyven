@@ -67,6 +67,8 @@ def test_cart_page(browser: object):
     assert cart_page.close_cart_button.is_enabled()
     # assert cart_page.close_cart_button.is_displayed()
     logger.info(f"4.2. Close Cart button is clicked.")
+    logger.info(f"4.3. Close Cart button size is "
+                f"{cart_page.close_cart_button.size}.")
     logger.info(f"[PASSED]\n{'=' * 200}")
 
     # 5.Find and click GO_TO_CATEGORY_1 button
@@ -93,6 +95,8 @@ def test_cart_page(browser: object):
     assert cart_page.continue_shopping_button.is_enabled()
     # assert cart_page.continue_shopping_button.is_displayed()
     logger.info(f"7.2. Continue Shopping button is clicked.")
+    logger.info(f"7.3. Continue Shopping button size is "
+                f"{cart_page.continue_shopping_button.size}.")
     logger.info(f"[PASSED]\n{'=' * 200}")
 
     # 8.Add product 2 to cart from product's category page
@@ -113,6 +117,8 @@ def test_cart_page(browser: object):
     assert cart_page.checkout_button.is_enabled()
     # assert cart_page.checkout_button.is_displayed()
     logger.info(f"10.2. Checkout button is clicked.")
+    logger.info(
+        f"10.3. Checkout button size is {cart_page.size}.")
     logger.info(f"[PASSED]\n{'=' * 200}")
 
     # 11. Return back to the main page
