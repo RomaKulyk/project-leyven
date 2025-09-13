@@ -42,5 +42,7 @@ def test_beds_page(browser: object):
         f" expected '{BEDS_PAGE_HEADER}'."
     logger.info(
         f"1.2. The H1 '{beds_page.h1_header.text}' header is displayed.")
+    logger.info(
+        f"1.3. The H1 '{beds_page.style}' header style is correct.")
     logger.info(f"[PASSED]\n{'=' * 200}")
 

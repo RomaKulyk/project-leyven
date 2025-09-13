@@ -35,7 +35,7 @@ CATALOG = "//div[@class='dropdown dropdown-hover']"
 CATALOG_DROPDOWN = "//div[@class='dropdown-content z-20 w-[1000px] rounded-xl border bg-base-100 shadow-2xl']"
 LANGUAGE_BUTTON = "(//button[contains(@class,'flex h-9 items-center justify-between')])[1]"
 SOCIAL_MEDIA_BUTTONS_LIST_ITEMS = "//div[@class='flex items-center gap-5 xl:scale-90 2xl:scale-100']/child::a"
-SIGN_IN_BUTTON = "//button[contains(@class,'w-full rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-indigo-500')]"
+SIGN_IN_BUTTON = "//button[contains(@class,'w-full rounded-md bg-indigo-600 px-4 py-2 text-sm')]"
 
 # For Dynamic list definition
 DROPDOWN_LIST_ITEMS = "//ul[@class = 'flex flex-col gap-2']/child::li"
@@ -60,6 +60,7 @@ SEARCH_FOUND_ITEM = "//div[@class='flex-1 overflow-y-auto px-6 py-4']/child::div
 
 CROSS_BUTTON = "(//button[@class='ml-auto text-base-content/80'])[2]"
 PHONE = "//div[@class = 'relative flex items-center gap-[8px] xl:cursor-pointer']"
+TOOLTIP = "//div[contains(text(),'Натисніть, щоб скопіювати')]"
 FACEBOOK = "(//*[contains(@href,'www.facebook.com')])[1]"
 INSTAGRAM = "(//*[contains(@href,'www.instagram.com')])[1]"
 TIKTOK = "(//*[contains(@href,'www.tiktok.com')])[1]"
@@ -169,7 +170,7 @@ CHECKOUT_PAGE_HEADER = "Оформлення замовлення"
 CHECKOUT_PAGE_URL = "https://www.leyven.com.ua/order"
 
 CHECKOUT_PHONE = "//input[@name='phone']"
-PHONE = '1234567890'
+PHONE_NUMBER = '1234567890'
 CHECKOUT_FIRST_NAME = "//input[@name='firstName']"
 FIRST_NAME = "John"
 CHECKOUT_LAST_NAME = "//input[@name='lastName']"

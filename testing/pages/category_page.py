@@ -88,6 +88,7 @@ class CategoryPage(MainPage):
     def find_the_h1_header(self) -> None:
         """This is a method to find and define the H1 header on the page."""
         self.h1_header = self.driver.find_element(By.TAG_NAME, "h1")
+        self.style = self.h1_header.get_attribute("class")
 
     def print_my_current_url(self) -> None:
         """This is a method to print the current URL of the page."""
