@@ -7,7 +7,7 @@ from testing.lib.constants import MAIN_URL,\
                                   TO_BUY_2,\
                                   TO_BUY_5,\
                                   TO_BUY_6,\
-                                  PHONE,\
+                                  PHONE_NUMBER,\
                                   FIRST_NAME,\
                                   LAST_NAME,\
                                   EMAIL,\
@@ -97,7 +97,7 @@ def test_main_page(browser: object):
 
     # 13. Fill in the checkout form
     # Fill in the contact phone number, first name, last name, email, city
-    checkout_page.input_contact_phone(PHONE)
+    checkout_page.input_contact_phone(PHONE_NUMBER)
     checkout_page.input_first_name(FIRST_NAME)
     checkout_page.input_last_name(LAST_NAME)
     checkout_page.input_email(EMAIL)
@@ -154,3 +154,4 @@ def test_main_page(browser: object):
 
     # 21. Go back to the previous page
     driver.back()
+

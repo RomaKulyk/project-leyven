@@ -86,15 +86,21 @@ def test_main_menu(browser: object):
 
     # 5.Hover mouse over Phone button
     logger.info(f"5.1. Hover mouse over Phone button.")
-    main_menu.phone()
+    main_menu.hover_over_phone()
     assert main_menu.phone_button.is_enabled()
     assert main_menu.phone_button.is_displayed()
-    time.sleep(3)
     logger.info(f"5.2. Phone button is hovered and tooltip is displayed.")
+    
+    tooltip_text = main_menu.tooltip.text
+    logger.info(f"5.3. Ensure that Tooltip is visible and has correct text.")
+    assert main_menu.tooltip.is_enabled(), "Tooltip is not enabled."
+    assert main_menu.tooltip.is_displayed(), "Tooltip is not displayed."
+    assert main_menu.tooltip.text == "Натисніть, щоб скопіювати"
+    logger.info(f"5.4. Tooltip is visible and has correct '{tooltip_text}' text.")
     logger.info(f"[PASSED]\n{'=' * 200}")
+    time.sleep(3)
 
     # 6.Find and click social media buttons
-    
     main_menu.find_social_media_buttons()
     for i in range((len(main_menu.social_media_buttons_list) + 1) // 2):
         logger.info(f"6.{i + 1}.1. Click Social Media Button {i + 1}.")

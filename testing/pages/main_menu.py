@@ -16,8 +16,8 @@ from testing.lib.constants import MAIN_LOGO,\
                                   SEARCH_FOUND_ITEMS,\
                                   SEARCH_FOUND_ITEM, \
                                   SIGN_IN_BUTTON, \
-                                  CART_POPUP
-from selenium.common.exceptions import TimeoutException
+                                  CART_POPUP, \
+                                  TOOLTIP
 
 
 class MainMenu:
@@ -57,6 +57,8 @@ class MainMenu:
         This is a method to find and click Cart button
     find_sign_in_button
         This is a method to find and define Sign In button
+    find_tooltip
+        This is a method to hover over Phone button and find Tooltip
     """
 
     def __init__(self, webdriver) -> None:
@@ -125,13 +127,16 @@ class MainMenu:
         self.cross_button = wait.until(EC.element_to_be_clickable((
             By.XPATH, CROSS_BUTTON)))
         
-    def phone(self) -> None:
-        # action = ActionChains(self.driver)
-        """This is a method to find and define Phone button of Main Menu."""
+    def hover_over_phone(self) -> None:
+        """This is a method to hover over Phone button and find Tooltip."""
+        action = ActionChains(self.driver)
         self.phone_button = self.driver.find_element(
             By.XPATH, PHONE)
-        # action.move_to_element(self.phone_button)
-        # action.perform()
+        action.move_to_element(self.phone_button)
+        action.perform()
+        self.tooltip = WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located((
+                By.XPATH, TOOLTIP)))
 
     def click_social_media_button(self, index: int) -> None:
         """This is a method to find and click Social Media button."""
