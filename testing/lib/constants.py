@@ -3,6 +3,9 @@ MAIN_URL = "https://www.leyven.com.ua/"
 SHOW_ALL = "//button[@class = 'group mt-3 flex items-center gap-3 rounded-xl px-5 py-3 text-lg font-medium transition-all  duration-300 hover:bg-primary hover:text-white hover:shadow-xl max-sm:hidden sm:text-xl']"
 GO_TO_CATEGORY = "(//div[@class ='font-[500] flex items-center gap-[6px] xl:text-[16px]'])"
 HELP_ME = "//div[@class = 'fixed bottom-2 right-2 z-[1] transition duration-200 sm:bottom-5 sm:right-5']"
+CONTACT_PHONE_NUMBER = '+380505987477'
+DISCOUNT_MESSAGE = "🎉 Знижка 5% на замовлення"
+DISCOUNT_5 = "//div[contains(@class,'text-[14px] relative z-10 bg-white font-[500] xl:text-[14px]')]"
 
 CATS = "(//a[contains(@class,'w-40 overflow-hidden rounded-3xl')])[1]"
 DOGS ="(//a[contains(@class,'w-40 overflow-hidden rounded-3xl')])[2]"
@@ -60,6 +63,7 @@ SEARCH_FOUND_ITEM = "//div[@class='flex-1 overflow-y-auto px-6 py-4']/child::div
 
 CROSS_BUTTON = "(//button[@class='ml-auto text-base-content/80'])[2]"
 PHONE = "//div[@class = 'relative flex items-center gap-[8px] xl:cursor-pointer']"
+PHONE_NUM = "//div[contains(text(),'+380505987477')]"
 TOOLTIP = "//div[contains(text(),'Натисніть, щоб скопіювати')]"
 FACEBOOK = "(//*[contains(@href,'www.facebook.com')])[1]"
 INSTAGRAM = "(//*[contains(@href,'www.instagram.com')])[1]"

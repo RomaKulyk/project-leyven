@@ -17,7 +17,11 @@ from testing.lib.constants import MAIN_LOGO,\
                                   SEARCH_FOUND_ITEM, \
                                   SIGN_IN_BUTTON, \
                                   CART_POPUP, \
-                                  TOOLTIP
+                                  TOOLTIP, \
+                                  PHONE_NUM, \
+                                  CONTACT_PHONE_NUMBER, \
+                                  DISCOUNT_5, \
+                                  DISCOUNT_MESSAGE
 
 
 class MainMenu:
@@ -59,6 +63,8 @@ class MainMenu:
         This is a method to find and define Sign In button
     find_tooltip
         This is a method to hover over Phone button and find Tooltip
+    find_the_phone_number
+        This is a method to find and return Phone number text
     """
 
     def __init__(self, webdriver) -> None:
@@ -69,6 +75,8 @@ class MainMenu:
                 webdriver to initialize
         """
         self.driver = webdriver
+        self.phone_number = CONTACT_PHONE_NUMBER
+        self.discount_message = DISCOUNT_MESSAGE
 
     def click_main_logo(self) -> None:
         """This is a method to define and click Main Logo button."""
@@ -137,6 +145,18 @@ class MainMenu:
         self.tooltip = WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located((
                 By.XPATH, TOOLTIP)))
+        
+    def find_the_phone_number(self) -> str:
+        """This is a method to find and return Phone number text."""
+        self.phone_number_text = self.driver.find_element(
+            By.XPATH, PHONE_NUM)
+        self.phone_text = self.phone_number_text.text
+
+    def find_greeting_message(self) -> None:
+        """This is a method to find and define Greeting message."""
+        self.greeting_message = self.driver.find_element(
+            By.XPATH, DISCOUNT_5)
+        self.greeting_text = self.greeting_message.text
 
     def click_social_media_button(self, index: int) -> None:
         """This is a method to find and click Social Media button."""

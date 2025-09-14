@@ -3,8 +3,12 @@ from testing.pages.main_page import MainPage
 from testing.pages.hm_form import HelpMeForm
 from testing.pages.main_menu import MainMenu
 from testing.pages.catalog_dropdown import CatalogDropdown
+from testing.pages.cart import CartPage
 from testing.lib.constants import MAIN_URL, \
-                                  MAIN_PAGE_TITLE
+                                  MAIN_PAGE_TITLE, \
+                                  CONTACT_PHONE_NUMBER, \
+                                  DISCOUNT_5, \
+                                  DISCOUNT_MESSAGE
 import time
 import logging
 
@@ -155,6 +159,7 @@ def test_main_menu(browser: object):
     driver.back()
     time.sleep(3)
 
+    cart_page = CartPage(driver)
     # 9.Find and click Cart button
     logger.info(f"9.1. Find and click Cart button.")
     main_menu.click_cart_button()
@@ -163,9 +168,35 @@ def test_main_menu(browser: object):
     time.sleep(3)
     logger.info(f"9.2. The Cart button is clicked.")
     logger.info(f"[PASSED]\n{'=' * 200}")
+    logging.info(f"9.3. Find and click Close Cart button.")
+    cart_page.close_cart()
+    # assert cart_page.close_cart_button.is_enabled()
+    # assert cart_page.close_cart_button.is_displayed()
+    logging.info(f"9.4. Cart is closed.")
+    logging.info(f"[PASSED]\n{'=' * 200}")
 
-# TO_DO-1 - Check in step # 7 that appropriate tooltip is shown and that
-# correct phone number is shown, and that phone number was copied after click
+    # 10.Ensure the phone number is correct
+    logger.info(f"10.1. Ensure that the phone number is correct.")
+    main_menu.find_the_phone_number()
+    assert main_menu.phone_number_text.is_enabled(), "Phone button is not enabled."
+    assert main_menu.phone_number_text.is_displayed(), \
+        "Phone button is not displayed."
+    assert main_menu.phone_text == CONTACT_PHONE_NUMBER, \
+        (f"Expected phone number is {CONTACT_PHONE_NUMBER}, "
+         f"but got {main_menu.phone_text}")
 
-# TO_DO-2 - Check the Main Menu language switcher functionality
-# TO_DO-4 - Check the "Кошик" button functionality
+    logger.info(f"10.2. Expected phone is {CONTACT_PHONE_NUMBER} and got "
+                f"{main_menu.phone_text}.")
+    logger.info(f"[PASSED]\n{'=' * 200}")
+
+    # 11.Enasure that the greeting message is correct
+    logger.info(f"11.1. Ensure that the greeting message is correct.")
+    main_menu.find_greeting_message()
+    assert main_menu.greeting_message.is_enabled(), "Greeting message is not enabled."
+    assert main_menu.greeting_message.is_displayed(), "Greeting message is not displayed."
+    assert main_menu.greeting_text == DISCOUNT_MESSAGE, \
+        (f"Expected greeting message is {DISCOUNT_MESSAGE}, "
+         f"but got {main_menu.greeting_text}")
+    logger.info(f"11.2. Expected greeting is '{DISCOUNT_MESSAGE}' and got "
+                f"'{main_menu.greeting_text}'.")
+    logger.info(f"[PASSED]\n{'=' * 200}")
