@@ -26,7 +26,7 @@ PRODUCT_CATEGORY = "//ul[contains(@class,'mx-auto mt-2 hidden items-center')]/ch
 MAIN_PRODUCTS_CATEGORIES = "//div[@class='flex flex-1 flex-col justify-between space-y-5']/child::a"
 
 # Help Me Form
-HELP_ME_FORM = "//form[@class = 'modal-box mx-auto flex max-w-[800px] flex-col gap-5 overflow-hidden rounded-[50px] bg-white font-medium xl:p-10']"
+HELP_ME_FORM = "//form[contains(@class, 'modal-box mx-auto flex max-w-[800px]')]"
 ENTER_USERNAME = "//input[@name = 'name']"
 ENTER_PHONE = "//input[@id = 'phone']"
 ENTER_YOUR_QUESTION = "//input[@name = 'question']"

@@ -1,3 +1,4 @@
+import time
 import pytest
 from testing.pages.category_page import CategoryPage
 from testing.lib.constants import CATS_PAGE_HEADER, CATS_PAGE_URL
@@ -18,7 +19,13 @@ def test_cats_page(browser: object):
     cats_page.open_page(CATS_PAGE_URL)
     cats_page.check_if_page_is_loaded()
     # Save screenshot of the page to the pages_screenshots directory
-    driver.save_screenshot('pages_screenshots/cats_page.png')
+    driver.save_screenshot('pages_screenshots/cats_page_0.png')
+
+    for i in range(5):  # Scroll down five times
+        driver.execute_script(f"window.scrollBy(0, window.innerHeight);")
+        time.sleep(1)  # Optional pause for visibility or loading
+        driver.save_screenshot(f'pages_screenshots/cats_page_{i + 1}.png')
+
     logger.info(f"PRECONDITIONS: The Cats page: {CATS_PAGE_URL} is opened.")
     logger.info(f"[PASSED]\n{'=' * 200}")
     
