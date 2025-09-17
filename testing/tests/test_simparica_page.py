@@ -1,6 +1,8 @@
 import pytest
 from testing.pages.category_page import CategoryPage
-from testing.lib.constants import SIMPARICA_PAGE_HEADER, SIMPARICA_PAGE_URL
+from testing.lib.constants import SIMPARICA_PAGE_HEADER,\
+                                  SIMPARICA_PAGE_URL,\
+                                  SCREEN
 from testing.pages.simparica_page import SimparicaPage
 import logging
 
@@ -17,8 +19,8 @@ def test_simparica_page(browser: object):
     # PRECONDITIONS: The Simparica page is opened
     simparica_page.open_page(SIMPARICA_PAGE_URL)
     simparica_page.check_if_page_is_loaded()
-    # Save screenshot of the page
-    driver.save_screenshot('pages_screenshots/simparica_page.png')
+    simparica_page.scroll_to_bottom()
+    logger.info(f"{SCREEN}")
     logger.info(
         f"PRECONDITIONS: The Simparica page: {SIMPARICA_PAGE_URL} is opened.")
     logger.info(f"[PASSED]\n{'=' * 200}")

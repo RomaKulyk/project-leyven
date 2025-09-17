@@ -5,6 +5,9 @@ from testing.pages.main_page import MainPage
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.action_chains import ActionChains
+import time
+import os
+import inspect
 
 
 class CategoryPage(MainPage):
@@ -35,6 +38,8 @@ class CategoryPage(MainPage):
         This is a method to print the current URL of the page.
     check_if_page_is_loaded
         This is a method to check if the page is loaded.
+    scroll_to_bottom
+        This method scrolls to the bottom of the page, taking screenshots
     """
 
     def __init__(self, webdriver) -> None:
@@ -99,3 +104,33 @@ class CategoryPage(MainPage):
         """This is a method to check if the page is loaded."""
         wait = WebDriverWait(self.driver, 10)
         wait.until(EC.presence_of_element_located((By.TAG_NAME, "h1")))
+
+    def scroll_to_bottom(self) -> None:
+        """ This method scrolls to the bottom of the page, taking screenshots 
+        at each step.
+        """
+        # Get the current vertical scroll position
+        last_height = self.driver.execute_script("return window.pageYOffset;")
+        i = 0
+        while True:
+            # Get the filename of the caller file (the file from which the 
+            # method is called)
+            caller_frame = inspect.stack()[1]
+            caller_filename = os.path.basename(
+                caller_frame.filename).split('.')[0]
+            # Save a screenshot of the current page view
+            self.driver.save_screenshot(
+                f"pages_screenshots/{caller_filename[5:]}_{i}.png")
+            # Scroll down by one viewport height
+            self.driver.execute_script(
+                "window.scrollBy(0, window.innerHeight);")
+            # Wait for the page to load new content (if any)
+            time.sleep(1)
+            # Get the new vertical scroll position
+            new_height = self.driver.execute_script(
+                "return window.pageYOffset;")
+            # If the scroll position hasn't changed, we've reached the bottom
+            if new_height == last_height:
+                break
+            last_height = new_height
+            i += 1

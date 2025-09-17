@@ -1,7 +1,7 @@
 import time
 import pytest
 from testing.pages.category_page import CategoryPage
-from testing.lib.constants import DOGS_PAGE_HEADER, DOGS_PAGE_URL
+from testing.lib.constants import DOGS_PAGE_HEADER, DOGS_PAGE_URL, SCREEN
 from testing.pages.dogs_page import DogsPage
 import logging
 
@@ -18,14 +18,8 @@ def test_dogs_page(browser: object):
     # PRECONDITIONS: The Dogs page is opened
     dogs_page.open_page(DOGS_PAGE_URL)
     dogs_page.check_if_page_is_loaded()
-    # Save screenshot of the page to the pages_screenshots directory
-    driver.save_screenshot('pages_screenshots/dogs_page_0.png')
-
-    for i in range(5):  # Scroll down five times
-        driver.execute_script(f"window.scrollBy(0, window.innerHeight);")
-        time.sleep(1)  # Optional pause for visibility or loading
-        driver.save_screenshot(f'pages_screenshots/dogs_page_{i + 1}.png')
-
+    dogs_page.scroll_to_bottom()
+    logger.info(f"{SCREEN}")
     logger.info(f"PRECONDITIONS: The Dogs page: {DOGS_PAGE_URL} is opened.")
     logger.info(f"[PASSED]\n{'=' * 200}")
     

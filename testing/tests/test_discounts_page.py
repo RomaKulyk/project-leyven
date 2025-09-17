@@ -1,8 +1,11 @@
 import pytest
 from testing.pages.category_page import CategoryPage
-from testing.lib.constants import DISCOUNTS_PAGE_HEADER, DISCOUNTS_PAGE_URL
+from testing.lib.constants import DISCOUNTS_PAGE_HEADER,\
+                                  DISCOUNTS_PAGE_URL,\
+                                  SCREEN
 from testing.pages.discounts_page import DiscountsPage
 import logging
+import time
 
 
 logger = logging.getLogger('leyven_tests_logger')   
@@ -13,12 +16,11 @@ def test_discounts_page(browser: object):
     driver = browser
     discounts_page = DiscountsPage(driver)
 
-
     # PRECONDITIONS: The Discounts page is opened
     discounts_page.open_page(DISCOUNTS_PAGE_URL)
     discounts_page.check_if_page_is_loaded()
-    # Save screenshot of the page to the pages_screenshots directory
-    driver.save_screenshot('pages_screenshots/discounts_page.png')
+    discounts_page.scroll_to_bottom()
+    logger.info(f"{SCREEN}")
     logger.info(f"PRECONDITIONS: The Discounts page: {DISCOUNTS_PAGE_URL} is opened.")
     logger.info(f"[PASSED]\n{'=' * 200}")
     

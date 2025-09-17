@@ -1,6 +1,6 @@
 import pytest
 from testing.pages.category_page import CategoryPage
-from testing.lib.constants import BLOG_PAGE_HEADER, BLOG_PAGE_URL
+from testing.lib.constants import BLOG_PAGE_HEADER, BLOG_PAGE_URL, SCREEN
 from testing.pages.blog_page import BlogPage
 import logging
 
@@ -17,8 +17,8 @@ def test_blog_page(browser: object):
     # PRECONDITIONS: The Blog page is opened
     blog_page.open_page(BLOG_PAGE_URL)
     blog_page.check_if_page_is_loaded()
-    # Save screenshot of the page to the pages_screenshots directory
-    driver.save_screenshot('pages_screenshots/blog_page.png')
+    blog_page.scroll_to_bottom()
+    logger.info(f"{SCREEN}")
     logger.info(f"PRECONDITIONS: The Blog page: {BLOG_PAGE_URL} is opened.")
     logger.info(f"[PASSED]\n{'=' * 200}")
     

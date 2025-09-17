@@ -1,6 +1,8 @@
 import pytest
 from testing.pages.category_page import CategoryPage
-from testing.lib.constants import NEW_ARRIVALS_PAGE_HEADER, NEW_ARRIVALS_PAGE_URL
+from testing.lib.constants import NEW_ARRIVALS_PAGE_HEADER,\
+                                  NEW_ARRIVALS_PAGE_URL,\
+                                  SCREEN
 from testing.pages.new_arrivals_page import NewArrivalsPage
 import logging
 
@@ -17,8 +19,8 @@ def test_new_arrivals_page(browser: object):
     # PRECONDITIONS: The New Arrivals page is opened
     new_arrivals_page.open_page(NEW_ARRIVALS_PAGE_URL)
     new_arrivals_page.check_if_page_is_loaded()
-    # Save screenshot of the page
-    driver.save_screenshot('pages_screenshots/new_arrivals_page.png')
+    new_arrivals_page.scroll_to_bottom()
+    logger.info(f"{SCREEN}")
     logger.info(f"PRECONDITIONS: The New Arrivals page: {NEW_ARRIVALS_PAGE_URL} is opened.")
     logger.info(f"[PASSED]\n{'=' * 200}")
     

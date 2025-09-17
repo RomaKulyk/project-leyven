@@ -121,6 +121,8 @@ SHOW_MORE_BUTTON = "//button[contains(@class,'text-[16px] h-[47px] xl:h-[69px] t
 
 # Page Titles
 MAIN_PAGE_TITLE = "Інтернет-зоомагазин Лейвен ✅"
+SCREEN = "Screenshot(s) was(re) taken while scrolling to the bottom of the page" \
+" and can be found in the 'pages_screenshots' directory."
 
 DOGS_PAGE_TITLE = "Собаки | Лейвен"
 DOGS_PAGE_URL = "https://www.leyven.com.ua/pages/catalog/animal-type=Dogs"

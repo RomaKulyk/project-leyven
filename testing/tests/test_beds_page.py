@@ -1,7 +1,7 @@
 import time
 import pytest
 from testing.pages.category_page import CategoryPage
-from testing.lib.constants import BEDS_PAGE_HEADER, BEDS_PAGE_URL
+from testing.lib.constants import BEDS_PAGE_HEADER, BEDS_PAGE_URL, SCREEN 
 from testing.pages.beds_page import BedsPage
 import logging
 
@@ -18,13 +18,7 @@ def test_beds_page(browser: object):
     # PRECONDITIONS: The Beds page is opened
     beds_page.open_page(BEDS_PAGE_URL)
     beds_page.check_if_page_is_loaded()
-    # Save screenshot of the page to the pages_screenshots directory
-    driver.save_screenshot('pages_screenshots/beds_page_0.png')
-
-    for i in range(5):  # Scroll down five times
-        driver.execute_script(f"window.scrollBy(0, window.innerHeight);")
-        time.sleep(1)  # Optional pause for visibility or loading
-        driver.save_screenshot(f'pages_screenshots/beds_page_{i + 1}.png')
+    beds_page.scroll_to_bottom()
 
     logger.info(f"PRECONDITIONS: The Beds page: {BEDS_PAGE_URL} is opened.")
 
@@ -36,6 +30,7 @@ def test_beds_page(browser: object):
     logger.info("Press the browser's forward button.")
     # Press browser's refresh button
     driver.refresh()
+    logger.info(f"{SCREEN}")
     logger.info("Page was reloaded using browser's refresh button.")
     logger.info(f"[PASSED]\n{'=' * 200}")
 

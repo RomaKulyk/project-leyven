@@ -1,6 +1,6 @@
 import pytest
 from testing.pages.category_page import CategoryPage
-from testing.lib.constants import BRANDS_PAGE_HEADER, BRANDS_PAGE_URL
+from testing.lib.constants import BRANDS_PAGE_HEADER, BRANDS_PAGE_URL, SCREEN
 from testing.pages.brands_page import BrandsPage
 import logging
 
@@ -17,8 +17,8 @@ def test_brands_page(browser: object):
     # PRECONDITIONS: The Brands page is opened
     brands_page.open_page(BRANDS_PAGE_URL)
     brands_page.check_if_page_is_loaded()
-    # Save screenshot of the page to the pages_screenshots directory
-    driver.save_screenshot('pages_screenshots/brands_page.png')
+    brands_page.scroll_to_bottom()
+    logger.info(f"{SCREEN}")
     logger.info(f"PRECONDITIONS: The Brands page: {BRANDS_PAGE_URL} is opened.")
     logger.info(f"[PASSED]\n{'=' * 200}")
     
