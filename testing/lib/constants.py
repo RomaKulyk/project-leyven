@@ -33,13 +33,14 @@ ENTER_YOUR_QUESTION = "//input[@name = 'question']"
 CLICK_SEND = "//button[@class = 'btn btn-primary btn-lg mx-auto mb-10 w-full max-w-sm text-white']"
 
 # Main Menu
+MAIN_MENU = "//div[@class='bg-[#0069FF] text-white shadow']"
 MAIN_LOGO = "(//img[@alt='Лейвен логотип'])[2]"
 CATALOG = "//div[@class='dropdown dropdown-hover']"
 CATALOG_DROPDOWN = "//div[@class='dropdown-content z-20 w-[1000px] rounded-xl border bg-base-100 shadow-2xl']"
 LANGUAGE_BUTTON = "(//button[contains(@class,'flex h-9 items-center justify-between')])[1]"
 SOCIAL_MEDIA_BUTTONS_LIST_ITEMS = "//div[@class='flex items-center gap-5 xl:scale-90 2xl:scale-100']/child::a"
 SIGN_IN_BUTTON = "//button[contains(@class,'w-full rounded-md bg-indigo-600 px-4 py-2 text-sm')]"
-
+SIGN_UP_BUTTON = "(//button[contains(@class,'transition-all w-full duration-300 active:scale-95')])[1]"
 # For Dynamic list definition
 DROPDOWN_LIST_ITEMS = "//ul[@class = 'flex flex-col gap-2']/child::li"
 

@@ -21,7 +21,9 @@ from testing.lib.constants import MAIN_LOGO,\
                                   PHONE_NUM, \
                                   CONTACT_PHONE_NUMBER, \
                                   DISCOUNT_5, \
-                                  DISCOUNT_MESSAGE
+                                  DISCOUNT_MESSAGE,\
+                                  MAIN_MENU,\
+                                  SIGN_UP_BUTTON
 
 
 class MainMenu:
@@ -65,6 +67,12 @@ class MainMenu:
         This is a method to hover over Phone button and find Tooltip
     find_the_phone_number
         This is a method to find and return Phone number text
+    find_main_menu
+        This is a method to find and define Main Menu
+    find_greeting_message
+        This is a method to find and define Greeting message
+    find_sign_up_button
+        This is a method to find and define Sign Up button
     """
 
     def __init__(self, webdriver) -> None:
@@ -77,6 +85,11 @@ class MainMenu:
         self.driver = webdriver
         self.phone_number = CONTACT_PHONE_NUMBER
         self.discount_message = DISCOUNT_MESSAGE
+
+    def find_main_menu(self) -> None:
+        """This is a method to find and define Main Menu."""
+        self.main_menu = self.driver.find_element(
+            By.XPATH, MAIN_MENU)
 
     def click_main_logo(self) -> None:
         """This is a method to define and click Main Logo button."""
@@ -194,3 +207,8 @@ class MainMenu:
         """This is a method to find Cart popup."""
         self.cart_popup = self.driver.find_element(
             By.XPATH, CART_POPUP)
+        
+    def find_sign_up_button(self) -> None:
+        """This is a method to find and define Sign Up button."""
+        self.sign_up_button = self.driver.find_element(
+            By.XPATH, SIGN_UP_BUTTON)

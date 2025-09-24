@@ -24,6 +24,12 @@ def test_main_menu(browser: object):
     logger.info(f"[PASSED]\n{'=' * 200}")
 
     main_menu = MainMenu(driver)
+    logger.info("1. Ensure that Main Menu is enabled and displayed.")
+    main_menu.find_main_menu()
+    assert main_menu.main_menu.is_enabled(), "Main menu is not enabled."
+    assert main_menu.main_menu.is_displayed(), "Main menu is not displayed."
+    logger.info(f"1.0. Main menu is enabled and displayed.")
+
     # 1.1. Hover mouse over Catalog button
     logger.info(f"1.1. Hover mouse over Catalog button.")
     main_menu.catalog()
@@ -177,3 +183,22 @@ def test_main_menu(browser: object):
     logger.info(f"11.2. Expected greeting is '{DISCOUNT_MESSAGE}' and got "
                 f"'{main_menu.greeting_text}'.")
     logger.info(f"[PASSED]\n{'=' * 200}")
+
+    # 12.Find and click Sign Up button
+    logger.info(f"12.1. Find and click Sign Up button.")
+    main_menu.find_sign_up_button()
+    assert main_menu.sign_up_button.is_enabled(), "Sign Up button is not enabled."
+    assert main_menu.sign_up_button.is_displayed(), "Sign Up button is not displayed."
+    main_menu.sign_up_button.click()
+    logger.info(f"12.2. Sign Up button is clicked.")
+
+    logger.info(f"12.3. Ensure that Sign In form is opened.")
+    main_menu.find_sign_in_button()
+    assert main_menu.sign_in_button.is_enabled(), \
+        "Sign In button is not enabled."
+    assert main_menu.sign_in_button.is_displayed(), \
+        "Sign In button is not displayed."
+    logger.info(f"12.4. 'Sign In' form is opened.")
+    logger.info(f"[PASSED]\n{'=' * 200}")
+    driver.back()
+
